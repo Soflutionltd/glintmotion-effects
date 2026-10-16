@@ -9,9 +9,13 @@
 import { readFileSync } from "node:fs";
 import { join, resolve } from "node:path";
 
-const MODEL = process.env.GEMINI_MODEL || "gemini-flash-latest";
+// Flash models are often overloaded (503): the next one is tried when one is.
+const MODELS = (process.env.GEMINI_MODEL || "gemini-flash-latest,gemini-2.5-flash,gemini-flash-lite-latest")
+  .split(",")
+  .map((name) => name.trim())
+  .filter(Boolean);
 const MAX_DIFF_CHARS = 120_000;
-const ATTEMPTS = 4;
+const ATTEMPTS = 2;
 
 const diffFile = process.argv[2];
 if (!diffFile) {
@@ -68,15 +72,29 @@ const schema = {
   required: ["verdict", "summary", "issues"],
 };
 
+const body = {
+  systemInstruction: { parts: [{ text: system }] },
+  contents: [{ role: "user", parts: [{ text: `Diff to review:\n\n${diff}` }] }],
+  generationConfig: { responseMimeType: "application/json", responseSchema: schema, temperature: 0.2 },
+};
+
 async function review() {
-  const body = {
-    systemInstruction: { parts: [{ text: system }] },
-    contents: [{ role: "user", parts: [{ text: `Diff to review:\n\n${diff}` }] }],
-    generationConfig: { responseMimeType: "application/json", responseSchema: schema, temperature: 0.2 },
-  };
+  const failures = [];
+  for (const model of MODELS) {
+    try {
+      return { model, result: await reviewWith(model) };
+    } catch (error) {
+      if (!error.retryable) throw error;
+      failures.push(error.message);
+    }
+  }
+  throw new Error(`Every Gemini model is unavailable:\n${failures.join("\n")}`);
+}
+
+async function reviewWith(model) {
   for (let attempt = 1; attempt <= ATTEMPTS; attempt += 1) {
     const response = await fetch(
-      `https://generativelanguage.googleapis.com/v1beta/models/${MODEL}:generateContent`,
+      `https://generativelanguage.googleapis.com/v1beta/models/${model}:generateContent`,
       {
         method: "POST",
         headers: { "content-type": "application/json", "x-goog-api-key": apiKey },
@@ -93,14 +111,16 @@ async function review() {
       return JSON.parse(answer);
     }
     if (!retryable || attempt === ATTEMPTS) {
-      throw new Error(`Gemini ${MODEL} answered ${response.status}: ${text.slice(0, 300)}`);
+      const error = new Error(`Gemini ${model} answered ${response.status}: ${text.slice(0, 300)}`);
+      error.retryable = retryable;
+      throw error;
     }
-    await new Promise((done) => setTimeout(done, attempt * 15_000));
+    await new Promise((done) => setTimeout(done, attempt * 10_000));
   }
   throw new Error("unreachable");
 }
 
-const result = await review();
+const { model, result } = await review();
 const VERDICTS = {
   "looks-good": "Looks good",
   "needs-changes": "Needs changes",
@@ -120,5 +140,5 @@ if (result.issues.length > 0) {
   lines.push("");
 }
 if (truncated) lines.push(`The diff was cut at ${MAX_DIFF_CHARS} characters; the rest was not reviewed.`, "");
-lines.push(`<sub>Advisory review by ${MODEL}. A maintainer reviews and merges every pull request.</sub>`);
+lines.push(`<sub>Advisory review by ${model}. A maintainer reviews and merges every pull request.</sub>`);
 console.log(lines.join("\n"));
