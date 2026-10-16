@@ -1,0 +1,28 @@
+{
+  "$schema": "https://hyperframes.heygen.com/schema/registry-item.json",
+  "name": "gl-power-kaleido",
+  "type": "hyperframes:component",
+  "title": "PowerKaleido transition",
+  "description": "The image folds into an animated kaleidoscope before revealing the incoming one. Load vendor/glintmotion/hyper-shader.js, then this file, then call HyperShader.init({ transitions: [{ time, shader: \"gl-power-kaleido\", duration }] }).",
+  "tags": [
+    "transition",
+    "shader",
+    "webgl",
+    "gl-transitions",
+    "kaleidoscope",
+    "distort"
+  ],
+  "author": "Boundless",
+  "authorUrl": "https://gl-transitions.com",
+  "license": "MIT",
+  "registryDependencies": [
+    "hyper-shader"
+  ],
+  "files": [
+    {
+      "path": "gl-power-kaleido.js",
+      "target": "vendor/glintmotion/transitions/gl-power-kaleido.js",
+      "type": "hyperframes:asset"
+    }
+  ]
+}

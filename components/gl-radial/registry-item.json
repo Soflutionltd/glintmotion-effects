@@ -1,0 +1,29 @@
+{
+  "$schema": "https://hyperframes.heygen.com/schema/registry-item.json",
+  "name": "gl-radial",
+  "type": "hyperframes:component",
+  "title": "Radial transition",
+  "description": "A radial wipe that sweeps around the center like a clock hand. Load vendor/glintmotion/hyper-shader.js, then this file, then call HyperShader.init({ transitions: [{ time, shader: \"gl-radial\", duration }] }).",
+  "tags": [
+    "transition",
+    "shader",
+    "webgl",
+    "gl-transitions",
+    "wipe",
+    "radial",
+    "clock"
+  ],
+  "author": "Xaychru",
+  "authorUrl": "https://gl-transitions.com",
+  "license": "MIT",
+  "registryDependencies": [
+    "hyper-shader"
+  ],
+  "files": [
+    {
+      "path": "gl-radial.js",
+      "target": "vendor/glintmotion/transitions/gl-radial.js",
+      "type": "hyperframes:asset"
+    }
+  ]
+}

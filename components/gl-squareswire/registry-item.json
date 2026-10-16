@@ -1,0 +1,30 @@
+{
+  "$schema": "https://hyperframes.heygen.com/schema/registry-item.json",
+  "name": "gl-squareswire",
+  "type": "hyperframes:component",
+  "title": "Squareswire transition",
+  "description": "Squares grow along a diagonal sweep to reveal the incoming image. Load vendor/glintmotion/hyper-shader.js, then this file, then call HyperShader.init({ transitions: [{ time, shader: \"gl-squareswire\", duration }] }).",
+  "tags": [
+    "transition",
+    "shader",
+    "webgl",
+    "gl-transitions",
+    "squares",
+    "grid",
+    "wipe",
+    "directional"
+  ],
+  "author": "gre",
+  "authorUrl": "https://gl-transitions.com",
+  "license": "MIT",
+  "registryDependencies": [
+    "hyper-shader"
+  ],
+  "files": [
+    {
+      "path": "gl-squareswire.js",
+      "target": "vendor/glintmotion/transitions/gl-squareswire.js",
+      "type": "hyperframes:asset"
+    }
+  ]
+}

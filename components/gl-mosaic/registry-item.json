@@ -1,0 +1,29 @@
+{
+  "$schema": "https://hyperframes.heygen.com/schema/registry-item.json",
+  "name": "gl-mosaic",
+  "type": "hyperframes:component",
+  "title": "Mosaic transition",
+  "description": "The view pans across a mosaic of rotated tiles from both images and settles on the incoming one. Load vendor/glintmotion/hyper-shader.js, then this file, then call HyperShader.init({ transitions: [{ time, shader: \"gl-mosaic\", duration }] }).",
+  "tags": [
+    "transition",
+    "shader",
+    "webgl",
+    "gl-transitions",
+    "mosaic",
+    "tiles",
+    "zoom"
+  ],
+  "author": "Xaychru",
+  "authorUrl": "https://gl-transitions.com",
+  "license": "MIT",
+  "registryDependencies": [
+    "hyper-shader"
+  ],
+  "files": [
+    {
+      "path": "gl-mosaic.js",
+      "target": "vendor/glintmotion/transitions/gl-mosaic.js",
+      "type": "hyperframes:asset"
+    }
+  ]
+}

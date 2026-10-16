@@ -1,0 +1,507 @@
+{
+  "$schema": "https://hyperframes.heygen.com/schema/registry.json",
+  "name": "glintmotion-effects",
+  "homepage": "https://github.com/Soflutionltd/glintmotion-effects",
+  "items": [
+    {
+      "name": "hyper-shader",
+      "type": "hyperframes:component"
+    },
+    {
+      "name": "gl-advanced-mosaic",
+      "type": "hyperframes:component"
+    },
+    {
+      "name": "gl-block-dissolve",
+      "type": "hyperframes:component"
+    },
+    {
+      "name": "gl-book-flip",
+      "type": "hyperframes:component"
+    },
+    {
+      "name": "gl-bounce",
+      "type": "hyperframes:component"
+    },
+    {
+      "name": "gl-bow-tie-horizontal",
+      "type": "hyperframes:component"
+    },
+    {
+      "name": "gl-bow-tie-vertical",
+      "type": "hyperframes:component"
+    },
+    {
+      "name": "gl-bow-tie-with-parameter",
+      "type": "hyperframes:component"
+    },
+    {
+      "name": "gl-box",
+      "type": "hyperframes:component"
+    },
+    {
+      "name": "gl-butterfly-wave-scrawler",
+      "type": "hyperframes:component"
+    },
+    {
+      "name": "gl-circle-crop",
+      "type": "hyperframes:component"
+    },
+    {
+      "name": "gl-colour-distance",
+      "type": "hyperframes:component"
+    },
+    {
+      "name": "gl-crazy-parametric-fun",
+      "type": "hyperframes:component"
+    },
+    {
+      "name": "gl-cross-zoom",
+      "type": "hyperframes:component"
+    },
+    {
+      "name": "gl-defocus-blur",
+      "type": "hyperframes:component"
+    },
+    {
+      "name": "gl-directional",
+      "type": "hyperframes:component"
+    },
+    {
+      "name": "gl-directional-scaled",
+      "type": "hyperframes:component"
+    },
+    {
+      "name": "gl-doom-screen-transition",
+      "type": "hyperframes:component"
+    },
+    {
+      "name": "gl-dreamy",
+      "type": "hyperframes:component"
+    },
+    {
+      "name": "gl-dreamy-zoom",
+      "type": "hyperframes:component"
+    },
+    {
+      "name": "gl-drop-zone-flicker",
+      "type": "hyperframes:component"
+    },
+    {
+      "name": "gl-edge-transition",
+      "type": "hyperframes:component"
+    },
+    {
+      "name": "gl-film-burn",
+      "type": "hyperframes:component"
+    },
+    {
+      "name": "gl-fold",
+      "type": "hyperframes:component"
+    },
+    {
+      "name": "gl-glitch-displace",
+      "type": "hyperframes:component"
+    },
+    {
+      "name": "gl-glitch-memories",
+      "type": "hyperframes:component"
+    },
+    {
+      "name": "gl-grid-flip",
+      "type": "hyperframes:component"
+    },
+    {
+      "name": "gl-hs-vfade",
+      "type": "hyperframes:component"
+    },
+    {
+      "name": "gl-horizontal-close",
+      "type": "hyperframes:component"
+    },
+    {
+      "name": "gl-horizontal-open",
+      "type": "hyperframes:component"
+    },
+    {
+      "name": "gl-inverted-page-curl",
+      "type": "hyperframes:component"
+    },
+    {
+      "name": "gl-left-right",
+      "type": "hyperframes:component"
+    },
+    {
+      "name": "gl-linear-blur",
+      "type": "hyperframes:component"
+    },
+    {
+      "name": "gl-mosaic",
+      "type": "hyperframes:component"
+    },
+    {
+      "name": "gl-overexposure",
+      "type": "hyperframes:component"
+    },
+    {
+      "name": "gl-polka-dots-curtain",
+      "type": "hyperframes:component"
+    },
+    {
+      "name": "gl-puzzle-right",
+      "type": "hyperframes:component"
+    },
+    {
+      "name": "gl-radial",
+      "type": "hyperframes:component"
+    },
+    {
+      "name": "gl-rectangle",
+      "type": "hyperframes:component"
+    },
+    {
+      "name": "gl-rectangle-crop",
+      "type": "hyperframes:component"
+    },
+    {
+      "name": "gl-revolve-left",
+      "type": "hyperframes:component"
+    },
+    {
+      "name": "gl-rolls",
+      "type": "hyperframes:component"
+    },
+    {
+      "name": "gl-rotate-scale-vanish",
+      "type": "hyperframes:component"
+    },
+    {
+      "name": "gl-simple-flip",
+      "type": "hyperframes:component"
+    },
+    {
+      "name": "gl-simple-zoom",
+      "type": "hyperframes:component"
+    },
+    {
+      "name": "gl-simple-zoom-out",
+      "type": "hyperframes:component"
+    },
+    {
+      "name": "gl-slides",
+      "type": "hyperframes:component"
+    },
+    {
+      "name": "gl-star-wipe",
+      "type": "hyperframes:component"
+    },
+    {
+      "name": "gl-static-fade",
+      "type": "hyperframes:component"
+    },
+    {
+      "name": "gl-stereo-viewer",
+      "type": "hyperframes:component"
+    },
+    {
+      "name": "gl-strip-datamosh-glitch",
+      "type": "hyperframes:component"
+    },
+    {
+      "name": "gl-swirl",
+      "type": "hyperframes:component"
+    },
+    {
+      "name": "gl-tv-static",
+      "type": "hyperframes:component"
+    },
+    {
+      "name": "gl-tiles-wave",
+      "type": "hyperframes:component"
+    },
+    {
+      "name": "gl-top-bottom",
+      "type": "hyperframes:component"
+    },
+    {
+      "name": "gl-vertical-close",
+      "type": "hyperframes:component"
+    },
+    {
+      "name": "gl-vertical-open",
+      "type": "hyperframes:component"
+    },
+    {
+      "name": "gl-water-drop",
+      "type": "hyperframes:component"
+    },
+    {
+      "name": "gl-zoom-in-circles",
+      "type": "hyperframes:component"
+    },
+    {
+      "name": "gl-zoom-left-wipe",
+      "type": "hyperframes:component"
+    },
+    {
+      "name": "gl-zoom-rigth-wipe",
+      "type": "hyperframes:component"
+    },
+    {
+      "name": "gl-angular",
+      "type": "hyperframes:component"
+    },
+    {
+      "name": "gl-burn",
+      "type": "hyperframes:component"
+    },
+    {
+      "name": "gl-burn0",
+      "type": "hyperframes:component"
+    },
+    {
+      "name": "gl-cannabisleaf",
+      "type": "hyperframes:component"
+    },
+    {
+      "name": "gl-chessboard",
+      "type": "hyperframes:component"
+    },
+    {
+      "name": "gl-circle",
+      "type": "hyperframes:component"
+    },
+    {
+      "name": "gl-circleopen",
+      "type": "hyperframes:component"
+    },
+    {
+      "name": "gl-colorphase",
+      "type": "hyperframes:component"
+    },
+    {
+      "name": "gl-coord-from-in",
+      "type": "hyperframes:component"
+    },
+    {
+      "name": "gl-crosshatch",
+      "type": "hyperframes:component"
+    },
+    {
+      "name": "gl-crosswarp",
+      "type": "hyperframes:component"
+    },
+    {
+      "name": "gl-cube",
+      "type": "hyperframes:component"
+    },
+    {
+      "name": "gl-directional-easing",
+      "type": "hyperframes:component"
+    },
+    {
+      "name": "gl-directionalwarp",
+      "type": "hyperframes:component"
+    },
+    {
+      "name": "gl-directionalwipe",
+      "type": "hyperframes:component"
+    },
+    {
+      "name": "gl-dissolve",
+      "type": "hyperframes:component"
+    },
+    {
+      "name": "gl-doorway",
+      "type": "hyperframes:component"
+    },
+    {
+      "name": "gl-fade",
+      "type": "hyperframes:component"
+    },
+    {
+      "name": "gl-fadecolor",
+      "type": "hyperframes:component"
+    },
+    {
+      "name": "gl-fadegrayscale",
+      "type": "hyperframes:component"
+    },
+    {
+      "name": "gl-flyeye",
+      "type": "hyperframes:component"
+    },
+    {
+      "name": "gl-fragment",
+      "type": "hyperframes:component"
+    },
+    {
+      "name": "gl-heart",
+      "type": "hyperframes:component"
+    },
+    {
+      "name": "gl-hexagonalize",
+      "type": "hyperframes:component"
+    },
+    {
+      "name": "gl-kaleidoscope",
+      "type": "hyperframes:component"
+    },
+    {
+      "name": "gl-luminance-melt",
+      "type": "hyperframes:component"
+    },
+    {
+      "name": "gl-morph",
+      "type": "hyperframes:component"
+    },
+    {
+      "name": "gl-mosaic-transition",
+      "type": "hyperframes:component"
+    },
+    {
+      "name": "gl-multiply-blend",
+      "type": "hyperframes:component"
+    },
+    {
+      "name": "gl-old-tv-lost-signal",
+      "type": "hyperframes:component"
+    },
+    {
+      "name": "gl-parametric-glitch",
+      "type": "hyperframes:component"
+    },
+    {
+      "name": "gl-perlin",
+      "type": "hyperframes:component"
+    },
+    {
+      "name": "gl-pinwheel",
+      "type": "hyperframes:component"
+    },
+    {
+      "name": "gl-pixelize",
+      "type": "hyperframes:component"
+    },
+    {
+      "name": "gl-polar-function",
+      "type": "hyperframes:component"
+    },
+    {
+      "name": "gl-power-kaleido",
+      "type": "hyperframes:component"
+    },
+    {
+      "name": "gl-random-noisex",
+      "type": "hyperframes:component"
+    },
+    {
+      "name": "gl-randomsquares",
+      "type": "hyperframes:component"
+    },
+    {
+      "name": "gl-ripple",
+      "type": "hyperframes:component"
+    },
+    {
+      "name": "gl-rotate-transition",
+      "type": "hyperframes:component"
+    },
+    {
+      "name": "gl-rotate-scale-fade",
+      "type": "hyperframes:component"
+    },
+    {
+      "name": "gl-scale-in",
+      "type": "hyperframes:component"
+    },
+    {
+      "name": "gl-split-slide-in-horizontal",
+      "type": "hyperframes:component"
+    },
+    {
+      "name": "gl-split-slide-in-out-horizontal",
+      "type": "hyperframes:component"
+    },
+    {
+      "name": "gl-split-slide-in-out-vertical",
+      "type": "hyperframes:component"
+    },
+    {
+      "name": "gl-split-slide-in-vertical",
+      "type": "hyperframes:component"
+    },
+    {
+      "name": "gl-split-slide-out-horizontal",
+      "type": "hyperframes:component"
+    },
+    {
+      "name": "gl-split-slide-out-vertical",
+      "type": "hyperframes:component"
+    },
+    {
+      "name": "gl-squareswire",
+      "type": "hyperframes:component"
+    },
+    {
+      "name": "gl-squeeze",
+      "type": "hyperframes:component"
+    },
+    {
+      "name": "gl-static-wipe",
+      "type": "hyperframes:component"
+    },
+    {
+      "name": "gl-swap",
+      "type": "hyperframes:component"
+    },
+    {
+      "name": "gl-tangent-motion-blur",
+      "type": "hyperframes:component"
+    },
+    {
+      "name": "gl-undulating-burn-out",
+      "type": "hyperframes:component"
+    },
+    {
+      "name": "gl-wind",
+      "type": "hyperframes:component"
+    },
+    {
+      "name": "gl-windowblinds",
+      "type": "hyperframes:component"
+    },
+    {
+      "name": "gl-windowslice",
+      "type": "hyperframes:component"
+    },
+    {
+      "name": "gl-wipe-down",
+      "type": "hyperframes:component"
+    },
+    {
+      "name": "gl-wipe-left",
+      "type": "hyperframes:component"
+    },
+    {
+      "name": "gl-wipe-right",
+      "type": "hyperframes:component"
+    },
+    {
+      "name": "gl-wipe-up",
+      "type": "hyperframes:component"
+    },
+    {
+      "name": "gl-x-axis-translation",
+      "type": "hyperframes:component"
+    },
+    {
+      "name": "gl-zoom-in-out",
+      "type": "hyperframes:component"
+    },
+    {
+      "name": "gl-transitions",
+      "type": "hyperframes:component"
+    }
+  ]
+}

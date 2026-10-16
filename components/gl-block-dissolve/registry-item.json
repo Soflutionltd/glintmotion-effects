@@ -1,0 +1,29 @@
+{
+  "$schema": "https://hyperframes.heygen.com/schema/registry-item.json",
+  "name": "gl-block-dissolve",
+  "type": "hyperframes:component",
+  "title": "BlockDissolve transition",
+  "description": "The incoming image appears in small random blocks. Load vendor/glintmotion/hyper-shader.js, then this file, then call HyperShader.init({ transitions: [{ time, shader: \"gl-block-dissolve\", duration }] }).",
+  "tags": [
+    "transition",
+    "shader",
+    "webgl",
+    "gl-transitions",
+    "dissolve",
+    "blocks",
+    "noise"
+  ],
+  "author": "nwoeanhinnogaehr",
+  "authorUrl": "https://gl-transitions.com",
+  "license": "MIT",
+  "registryDependencies": [
+    "hyper-shader"
+  ],
+  "files": [
+    {
+      "path": "gl-block-dissolve.js",
+      "target": "vendor/glintmotion/transitions/gl-block-dissolve.js",
+      "type": "hyperframes:asset"
+    }
+  ]
+}

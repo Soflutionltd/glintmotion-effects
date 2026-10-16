@@ -1,0 +1,29 @@
+{
+  "$schema": "https://hyperframes.heygen.com/schema/registry-item.json",
+  "name": "gl-wind",
+  "type": "hyperframes:component",
+  "title": "Wind transition",
+  "description": "A ragged left-to-right wipe, as if the image was blown away by the wind. Load vendor/glintmotion/hyper-shader.js, then this file, then call HyperShader.init({ transitions: [{ time, shader: \"gl-wind\", duration }] }).",
+  "tags": [
+    "transition",
+    "shader",
+    "webgl",
+    "gl-transitions",
+    "wipe",
+    "horizontal",
+    "noise"
+  ],
+  "author": "gre",
+  "authorUrl": "https://gl-transitions.com",
+  "license": "MIT",
+  "registryDependencies": [
+    "hyper-shader"
+  ],
+  "files": [
+    {
+      "path": "gl-wind.js",
+      "target": "vendor/glintmotion/transitions/gl-wind.js",
+      "type": "hyperframes:asset"
+    }
+  ]
+}

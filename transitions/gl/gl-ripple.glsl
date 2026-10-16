@@ -1,0 +1,30 @@
+// gl-ripple, from GL Transitions "ripple" by gre (MIT).
+float progress;
+float ratio;
+vec4 getFromColor(vec2 p){return texture2D(u_from,vec2(p.x,1.0-p.y));}
+vec4 getToColor(vec2 p){return texture2D(u_to,vec2(p.x,1.0-p.y));}
+// Author: gre
+// License: MIT
+// Description: Ripples spread from the center while crossfading
+// Tags: ripple, wave, blend
+// @param Frequency of the ripples
+const float amplitude = 100.0;
+// @param Speed of the ripples
+const float speed = 50.0;
+
+vec4 transition (vec2 uv) {
+  vec2 dir = uv - vec2(.5);
+  float dist = length(dir);
+  vec2 offset = dir * (sin(progress * dist * amplitude - progress * speed) + .5) / 30. * progress;
+  return mix(
+    getFromColor(uv + offset),
+    getToColor(uv),
+    smoothstep(0.2, 1.0, progress)
+  );
+}
+
+void main(){
+  progress=u_progress;
+  ratio=u_resolution.x/u_resolution.y;
+  gl_FragColor=transition(vec2(v_uv.x,1.0-v_uv.y));
+}

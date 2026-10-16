@@ -1,0 +1,28 @@
+{
+  "$schema": "https://hyperframes.heygen.com/schema/registry-item.json",
+  "name": "gl-horizontal-close",
+  "type": "hyperframes:component",
+  "title": "HorizontalClose transition",
+  "description": "The incoming image closes in from the top and bottom edges toward the middle. Load vendor/glintmotion/hyper-shader.js, then this file, then call HyperShader.init({ transitions: [{ time, shader: \"gl-horizontal-close\", duration }] }).",
+  "tags": [
+    "transition",
+    "shader",
+    "webgl",
+    "gl-transitions",
+    "wipe",
+    "split"
+  ],
+  "author": "martiniti",
+  "authorUrl": "https://gl-transitions.com",
+  "license": "MIT",
+  "registryDependencies": [
+    "hyper-shader"
+  ],
+  "files": [
+    {
+      "path": "gl-horizontal-close.js",
+      "target": "vendor/glintmotion/transitions/gl-horizontal-close.js",
+      "type": "hyperframes:asset"
+    }
+  ]
+}

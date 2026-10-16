@@ -1,0 +1,29 @@
+{
+  "$schema": "https://hyperframes.heygen.com/schema/registry-item.json",
+  "name": "gl-water-drop",
+  "type": "hyperframes:component",
+  "title": "WaterDrop transition",
+  "description": "Ripples spread from the center like a drop falling into water, crossfading to the incoming image. Load vendor/glintmotion/hyper-shader.js, then this file, then call HyperShader.init({ transitions: [{ time, shader: \"gl-water-drop\", duration }] }).",
+  "tags": [
+    "transition",
+    "shader",
+    "webgl",
+    "gl-transitions",
+    "ripple",
+    "water",
+    "blend"
+  ],
+  "author": "Paweł Płóciennik",
+  "authorUrl": "https://gl-transitions.com",
+  "license": "MIT",
+  "registryDependencies": [
+    "hyper-shader"
+  ],
+  "files": [
+    {
+      "path": "gl-water-drop.js",
+      "target": "vendor/glintmotion/transitions/gl-water-drop.js",
+      "type": "hyperframes:asset"
+    }
+  ]
+}

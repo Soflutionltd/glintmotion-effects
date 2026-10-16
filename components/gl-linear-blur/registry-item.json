@@ -1,0 +1,28 @@
+{
+  "$schema": "https://hyperframes.heygen.com/schema/registry-item.json",
+  "name": "gl-linear-blur",
+  "type": "hyperframes:component",
+  "title": "LinearBlur transition",
+  "description": "A crossfade through a blur. Load vendor/glintmotion/hyper-shader.js, then this file, then call HyperShader.init({ transitions: [{ time, shader: \"gl-linear-blur\", duration }] }).",
+  "tags": [
+    "transition",
+    "shader",
+    "webgl",
+    "gl-transitions",
+    "blur",
+    "blend"
+  ],
+  "author": "gre",
+  "authorUrl": "https://gl-transitions.com",
+  "license": "MIT",
+  "registryDependencies": [
+    "hyper-shader"
+  ],
+  "files": [
+    {
+      "path": "gl-linear-blur.js",
+      "target": "vendor/glintmotion/transitions/gl-linear-blur.js",
+      "type": "hyperframes:asset"
+    }
+  ]
+}

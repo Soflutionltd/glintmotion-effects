@@ -1,0 +1,29 @@
+{
+  "$schema": "https://hyperframes.heygen.com/schema/registry-item.json",
+  "name": "gl-puzzle-right",
+  "type": "hyperframes:component",
+  "title": "PuzzleRight transition",
+  "description": "The image splits into a grid of tiles that flip one by one to the incoming image. Load vendor/glintmotion/hyper-shader.js, then this file, then call HyperShader.init({ transitions: [{ time, shader: \"gl-puzzle-right\", duration }] }).",
+  "tags": [
+    "transition",
+    "shader",
+    "webgl",
+    "gl-transitions",
+    "grid",
+    "tiles",
+    "flip"
+  ],
+  "author": "JustKirillS",
+  "authorUrl": "https://gl-transitions.com",
+  "license": "MIT",
+  "registryDependencies": [
+    "hyper-shader"
+  ],
+  "files": [
+    {
+      "path": "gl-puzzle-right.js",
+      "target": "vendor/glintmotion/transitions/gl-puzzle-right.js",
+      "type": "hyperframes:asset"
+    }
+  ]
+}

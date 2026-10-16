@@ -1,0 +1,29 @@
+{
+  "$schema": "https://hyperframes.heygen.com/schema/registry-item.json",
+  "name": "gl-windowslice",
+  "type": "hyperframes:component",
+  "title": "Windowslice transition",
+  "description": "The incoming image appears through vertical slices that widen. Load vendor/glintmotion/hyper-shader.js, then this file, then call HyperShader.init({ transitions: [{ time, shader: \"gl-windowslice\", duration }] }).",
+  "tags": [
+    "transition",
+    "shader",
+    "webgl",
+    "gl-transitions",
+    "slices",
+    "stripes",
+    "wipe"
+  ],
+  "author": "gre",
+  "authorUrl": "https://gl-transitions.com",
+  "license": "MIT",
+  "registryDependencies": [
+    "hyper-shader"
+  ],
+  "files": [
+    {
+      "path": "gl-windowslice.js",
+      "target": "vendor/glintmotion/transitions/gl-windowslice.js",
+      "type": "hyperframes:asset"
+    }
+  ]
+}

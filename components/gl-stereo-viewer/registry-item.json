@@ -1,0 +1,29 @@
+{
+  "$schema": "https://hyperframes.heygen.com/schema/registry-item.json",
+  "name": "gl-stereo-viewer",
+  "type": "hyperframes:component",
+  "title": "StereoViewer transition",
+  "description": "Both images shrink into rounded cards that swap, like a stereo viewer toy. Load vendor/glintmotion/hyper-shader.js, then this file, then call HyperShader.init({ transitions: [{ time, shader: \"gl-stereo-viewer\", duration }] }).",
+  "tags": [
+    "transition",
+    "shader",
+    "webgl",
+    "gl-transitions",
+    "cards",
+    "zoom",
+    "retro"
+  ],
+  "author": "Ted Schundler",
+  "authorUrl": "https://gl-transitions.com",
+  "license": "BSD-2-Clause",
+  "registryDependencies": [
+    "hyper-shader"
+  ],
+  "files": [
+    {
+      "path": "gl-stereo-viewer.js",
+      "target": "vendor/glintmotion/transitions/gl-stereo-viewer.js",
+      "type": "hyperframes:asset"
+    }
+  ]
+}

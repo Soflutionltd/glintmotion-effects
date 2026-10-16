@@ -1,0 +1,29 @@
+{
+  "$schema": "https://hyperframes.heygen.com/schema/registry-item.json",
+  "name": "gl-crosshatch",
+  "type": "hyperframes:component",
+  "title": "Crosshatch transition",
+  "description": "The incoming image appears through a crosshatch of lines spreading from the center. Load vendor/glintmotion/hyper-shader.js, then this file, then call HyperShader.init({ transitions: [{ time, shader: \"gl-crosshatch\", duration }] }).",
+  "tags": [
+    "transition",
+    "shader",
+    "webgl",
+    "gl-transitions",
+    "pattern",
+    "lines",
+    "noise"
+  ],
+  "author": "pthrasher",
+  "authorUrl": "https://gl-transitions.com",
+  "license": "MIT",
+  "registryDependencies": [
+    "hyper-shader"
+  ],
+  "files": [
+    {
+      "path": "gl-crosshatch.js",
+      "target": "vendor/glintmotion/transitions/gl-crosshatch.js",
+      "type": "hyperframes:asset"
+    }
+  ]
+}

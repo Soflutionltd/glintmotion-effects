@@ -1,0 +1,28 @@
+{
+  "$schema": "https://hyperframes.heygen.com/schema/registry-item.json",
+  "name": "gl-polka-dots-curtain",
+  "type": "hyperframes:component",
+  "title": "PolkaDotsCurtain transition",
+  "description": "The incoming image appears through growing polka dots. Load vendor/glintmotion/hyper-shader.js, then this file, then call HyperShader.init({ transitions: [{ time, shader: \"gl-polka-dots-curtain\", duration }] }).",
+  "tags": [
+    "transition",
+    "shader",
+    "webgl",
+    "gl-transitions",
+    "dots",
+    "pattern"
+  ],
+  "author": "bobylito",
+  "authorUrl": "https://gl-transitions.com",
+  "license": "MIT",
+  "registryDependencies": [
+    "hyper-shader"
+  ],
+  "files": [
+    {
+      "path": "gl-polka-dots-curtain.js",
+      "target": "vendor/glintmotion/transitions/gl-polka-dots-curtain.js",
+      "type": "hyperframes:asset"
+    }
+  ]
+}

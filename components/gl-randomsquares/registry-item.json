@@ -1,0 +1,29 @@
+{
+  "$schema": "https://hyperframes.heygen.com/schema/registry-item.json",
+  "name": "gl-randomsquares",
+  "type": "hyperframes:component",
+  "title": "Randomsquares transition",
+  "description": "The incoming image appears in random squares. Load vendor/glintmotion/hyper-shader.js, then this file, then call HyperShader.init({ transitions: [{ time, shader: \"gl-randomsquares\", duration }] }).",
+  "tags": [
+    "transition",
+    "shader",
+    "webgl",
+    "gl-transitions",
+    "squares",
+    "grid",
+    "dissolve"
+  ],
+  "author": "gre",
+  "authorUrl": "https://gl-transitions.com",
+  "license": "MIT",
+  "registryDependencies": [
+    "hyper-shader"
+  ],
+  "files": [
+    {
+      "path": "gl-randomsquares.js",
+      "target": "vendor/glintmotion/transitions/gl-randomsquares.js",
+      "type": "hyperframes:asset"
+    }
+  ]
+}

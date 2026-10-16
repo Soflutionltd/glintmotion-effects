@@ -1,0 +1,29 @@
+{
+  "$schema": "https://hyperframes.heygen.com/schema/registry-item.json",
+  "name": "gl-rectangle",
+  "type": "hyperframes:component",
+  "title": "Rectangle transition",
+  "description": "A rectangle grows from the center to cover the outgoing image, then shrinks to reveal the incoming one. Load vendor/glintmotion/hyper-shader.js, then this file, then call HyperShader.init({ transitions: [{ time, shader: \"gl-rectangle\", duration }] }).",
+  "tags": [
+    "transition",
+    "shader",
+    "webgl",
+    "gl-transitions",
+    "box",
+    "shape",
+    "iris"
+  ],
+  "author": "martiniti",
+  "authorUrl": "https://gl-transitions.com",
+  "license": "MIT",
+  "registryDependencies": [
+    "hyper-shader"
+  ],
+  "files": [
+    {
+      "path": "gl-rectangle.js",
+      "target": "vendor/glintmotion/transitions/gl-rectangle.js",
+      "type": "hyperframes:asset"
+    }
+  ]
+}

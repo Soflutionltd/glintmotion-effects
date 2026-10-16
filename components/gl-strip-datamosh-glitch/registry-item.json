@@ -1,0 +1,29 @@
+{
+  "$schema": "https://hyperframes.heygen.com/schema/registry-item.json",
+  "name": "gl-strip-datamosh-glitch",
+  "type": "hyperframes:component",
+  "title": "StripDatamoshGlitch transition",
+  "description": "A datamosh glitch: torn strips, chroma shifts and scan noise drag the outgoing image into the incoming one. Load vendor/glintmotion/hyper-shader.js, then this file, then call HyperShader.init({ transitions: [{ time, shader: \"gl-strip-datamosh-glitch\", duration }] }).",
+  "tags": [
+    "transition",
+    "shader",
+    "webgl",
+    "gl-transitions",
+    "glitch",
+    "datamosh",
+    "chromatic"
+  ],
+  "author": "bread",
+  "authorUrl": "https://gl-transitions.com",
+  "license": "MIT",
+  "registryDependencies": [
+    "hyper-shader"
+  ],
+  "files": [
+    {
+      "path": "gl-strip-datamosh-glitch.js",
+      "target": "vendor/glintmotion/transitions/gl-strip-datamosh-glitch.js",
+      "type": "hyperframes:asset"
+    }
+  ]
+}

@@ -1,0 +1,29 @@
+{
+  "$schema": "https://hyperframes.heygen.com/schema/registry-item.json",
+  "name": "gl-left-right",
+  "type": "hyperframes:component",
+  "title": "LeftRight transition",
+  "description": "The outgoing image shrinks away to the left while the incoming one slides in from the right. Load vendor/glintmotion/hyper-shader.js, then this file, then call HyperShader.init({ transitions: [{ time, shader: \"gl-left-right\", duration }] }).",
+  "tags": [
+    "transition",
+    "shader",
+    "webgl",
+    "gl-transitions",
+    "slide",
+    "zoom",
+    "horizontal"
+  ],
+  "author": "zhmy",
+  "authorUrl": "https://gl-transitions.com",
+  "license": "MIT",
+  "registryDependencies": [
+    "hyper-shader"
+  ],
+  "files": [
+    {
+      "path": "gl-left-right.js",
+      "target": "vendor/glintmotion/transitions/gl-left-right.js",
+      "type": "hyperframes:asset"
+    }
+  ]
+}

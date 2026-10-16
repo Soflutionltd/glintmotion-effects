@@ -1,0 +1,29 @@
+{
+  "$schema": "https://hyperframes.heygen.com/schema/registry-item.json",
+  "name": "gl-mosaic-transition",
+  "type": "hyperframes:component",
+  "title": "Mosaic_transition transition",
+  "description": "Both images break into mosaic blocks that blend, then sharpen into the incoming image. Load vendor/glintmotion/hyper-shader.js, then this file, then call HyperShader.init({ transitions: [{ time, shader: \"gl-mosaic-transition\", duration }] }).",
+  "tags": [
+    "transition",
+    "shader",
+    "webgl",
+    "gl-transitions",
+    "mosaic",
+    "pixelate",
+    "blend"
+  ],
+  "author": "YueDev",
+  "authorUrl": "https://gl-transitions.com",
+  "license": "MIT",
+  "registryDependencies": [
+    "hyper-shader"
+  ],
+  "files": [
+    {
+      "path": "gl-mosaic-transition.js",
+      "target": "vendor/glintmotion/transitions/gl-mosaic-transition.js",
+      "type": "hyperframes:asset"
+    }
+  ]
+}

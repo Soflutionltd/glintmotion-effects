@@ -1,0 +1,29 @@
+{
+  "$schema": "https://hyperframes.heygen.com/schema/registry-item.json",
+  "name": "gl-kaleidoscope",
+  "type": "hyperframes:component",
+  "title": "Kaleidoscope transition",
+  "description": "A crossfade through a spinning kaleidoscope. Load vendor/glintmotion/hyper-shader.js, then this file, then call HyperShader.init({ transitions: [{ time, shader: \"gl-kaleidoscope\", duration }] }).",
+  "tags": [
+    "transition",
+    "shader",
+    "webgl",
+    "gl-transitions",
+    "kaleidoscope",
+    "distort",
+    "blend"
+  ],
+  "author": "nwoeanhinnogaehr",
+  "authorUrl": "https://gl-transitions.com",
+  "license": "MIT",
+  "registryDependencies": [
+    "hyper-shader"
+  ],
+  "files": [
+    {
+      "path": "gl-kaleidoscope.js",
+      "target": "vendor/glintmotion/transitions/gl-kaleidoscope.js",
+      "type": "hyperframes:asset"
+    }
+  ]
+}

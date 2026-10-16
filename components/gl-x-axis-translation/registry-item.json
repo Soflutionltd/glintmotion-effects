@@ -1,0 +1,29 @@
+{
+  "$schema": "https://hyperframes.heygen.com/schema/registry-item.json",
+  "name": "gl-x-axis-translation",
+  "type": "hyperframes:component",
+  "title": "X_axis_translation transition",
+  "description": "The outgoing image slides to the right, uncovering a crossfade to the incoming one. Load vendor/glintmotion/hyper-shader.js, then this file, then call HyperShader.init({ transitions: [{ time, shader: \"gl-x-axis-translation\", duration }] }).",
+  "tags": [
+    "transition",
+    "shader",
+    "webgl",
+    "gl-transitions",
+    "slide",
+    "horizontal",
+    "blend"
+  ],
+  "author": "lizhongjian",
+  "authorUrl": "https://gl-transitions.com",
+  "license": "MIT",
+  "registryDependencies": [
+    "hyper-shader"
+  ],
+  "files": [
+    {
+      "path": "gl-x-axis-translation.js",
+      "target": "vendor/glintmotion/transitions/gl-x-axis-translation.js",
+      "type": "hyperframes:asset"
+    }
+  ]
+}

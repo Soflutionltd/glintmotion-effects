@@ -1,0 +1,29 @@
+{
+  "$schema": "https://hyperframes.heygen.com/schema/registry-item.json",
+  "name": "gl-old-tv-lost-signal",
+  "type": "hyperframes:component",
+  "title": "Old_tv_lost_signal transition",
+  "description": "A crossfade with drifting tracking lines and tearing, like a TV losing its signal. Load vendor/glintmotion/hyper-shader.js, then this file, then call HyperShader.init({ transitions: [{ time, shader: \"gl-old-tv-lost-signal\", duration }] }).",
+  "tags": [
+    "transition",
+    "shader",
+    "webgl",
+    "gl-transitions",
+    "retro",
+    "glitch",
+    "scanlines"
+  ],
+  "author": "mernking (gitlab.com/Godswork)",
+  "authorUrl": "https://gl-transitions.com",
+  "license": "MIT",
+  "registryDependencies": [
+    "hyper-shader"
+  ],
+  "files": [
+    {
+      "path": "gl-old-tv-lost-signal.js",
+      "target": "vendor/glintmotion/transitions/gl-old-tv-lost-signal.js",
+      "type": "hyperframes:asset"
+    }
+  ]
+}

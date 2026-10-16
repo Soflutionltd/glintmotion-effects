@@ -1,0 +1,29 @@
+{
+  "$schema": "https://hyperframes.heygen.com/schema/registry-item.json",
+  "name": "gl-burn0",
+  "type": "hyperframes:component",
+  "title": "Burn0 transition",
+  "description": "The outgoing image burns away in noisy, glowing patches. Load vendor/glintmotion/hyper-shader.js, then this file, then call HyperShader.init({ transitions: [{ time, shader: \"gl-burn0\", duration }] }).",
+  "tags": [
+    "transition",
+    "shader",
+    "webgl",
+    "gl-transitions",
+    "burn",
+    "fire",
+    "noise"
+  ],
+  "author": "liubailin2020@gmail.com",
+  "authorUrl": "https://gl-transitions.com",
+  "license": "MIT",
+  "registryDependencies": [
+    "hyper-shader"
+  ],
+  "files": [
+    {
+      "path": "gl-burn0.js",
+      "target": "vendor/glintmotion/transitions/gl-burn0.js",
+      "type": "hyperframes:asset"
+    }
+  ]
+}

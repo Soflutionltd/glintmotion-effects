@@ -1,0 +1,29 @@
+{
+  "$schema": "https://hyperframes.heygen.com/schema/registry-item.json",
+  "name": "gl-inverted-page-curl",
+  "type": "hyperframes:component",
+  "title": "InvertedPageCurl transition",
+  "description": "The outgoing image curls away like a page, revealing the incoming one. Load vendor/glintmotion/hyper-shader.js, then this file, then call HyperShader.init({ transitions: [{ time, shader: \"gl-inverted-page-curl\", duration }] }).",
+  "tags": [
+    "transition",
+    "shader",
+    "webgl",
+    "gl-transitions",
+    "page",
+    "curl",
+    "3d"
+  ],
+  "author": "Hewlett-Packard",
+  "authorUrl": "https://gl-transitions.com",
+  "license": "BSD-3-Clause",
+  "registryDependencies": [
+    "hyper-shader"
+  ],
+  "files": [
+    {
+      "path": "gl-inverted-page-curl.js",
+      "target": "vendor/glintmotion/transitions/gl-inverted-page-curl.js",
+      "type": "hyperframes:asset"
+    }
+  ]
+}

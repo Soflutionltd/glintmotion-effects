@@ -1,0 +1,29 @@
+{
+  "$schema": "https://hyperframes.heygen.com/schema/registry-item.json",
+  "name": "gl-heart",
+  "type": "hyperframes:component",
+  "title": "Heart transition",
+  "description": "A heart shape grows from the center to reveal the incoming image. Load vendor/glintmotion/hyper-shader.js, then this file, then call HyperShader.init({ transitions: [{ time, shader: \"gl-heart\", duration }] }).",
+  "tags": [
+    "transition",
+    "shader",
+    "webgl",
+    "gl-transitions",
+    "shape",
+    "wipe",
+    "heart"
+  ],
+  "author": "gre",
+  "authorUrl": "https://gl-transitions.com",
+  "license": "MIT",
+  "registryDependencies": [
+    "hyper-shader"
+  ],
+  "files": [
+    {
+      "path": "gl-heart.js",
+      "target": "vendor/glintmotion/transitions/gl-heart.js",
+      "type": "hyperframes:asset"
+    }
+  ]
+}

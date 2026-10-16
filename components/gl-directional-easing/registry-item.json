@@ -1,0 +1,29 @@
+{
+  "$schema": "https://hyperframes.heygen.com/schema/registry-item.json",
+  "name": "gl-directional-easing",
+  "type": "hyperframes:component",
+  "title": "Directional-easing transition",
+  "description": "Like Directional, with an eased movement. Load vendor/glintmotion/hyper-shader.js, then this file, then call HyperShader.init({ transitions: [{ time, shader: \"gl-directional-easing\", duration }] }).",
+  "tags": [
+    "transition",
+    "shader",
+    "webgl",
+    "gl-transitions",
+    "slide",
+    "push",
+    "directional"
+  ],
+  "author": "Max Plotnikov",
+  "authorUrl": "https://gl-transitions.com",
+  "license": "MIT",
+  "registryDependencies": [
+    "hyper-shader"
+  ],
+  "files": [
+    {
+      "path": "gl-directional-easing.js",
+      "target": "vendor/glintmotion/transitions/gl-directional-easing.js",
+      "type": "hyperframes:asset"
+    }
+  ]
+}

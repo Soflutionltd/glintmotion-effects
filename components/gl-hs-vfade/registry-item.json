@@ -1,0 +1,29 @@
+{
+  "$schema": "https://hyperframes.heygen.com/schema/registry-item.json",
+  "name": "gl-hs-vfade",
+  "type": "hyperframes:component",
+  "title": "HSVfade transition",
+  "description": "A crossfade through the HSV color space that cycles through hues. Load vendor/glintmotion/hyper-shader.js, then this file, then call HyperShader.init({ transitions: [{ time, shader: \"gl-hs-vfade\", duration }] }).",
+  "tags": [
+    "transition",
+    "shader",
+    "webgl",
+    "gl-transitions",
+    "fade",
+    "color",
+    "hue"
+  ],
+  "author": "nwoeanhinnogaehr",
+  "authorUrl": "https://gl-transitions.com",
+  "license": "MIT",
+  "registryDependencies": [
+    "hyper-shader"
+  ],
+  "files": [
+    {
+      "path": "gl-hs-vfade.js",
+      "target": "vendor/glintmotion/transitions/gl-hs-vfade.js",
+      "type": "hyperframes:asset"
+    }
+  ]
+}

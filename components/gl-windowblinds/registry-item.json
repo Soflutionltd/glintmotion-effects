@@ -1,0 +1,29 @@
+{
+  "$schema": "https://hyperframes.heygen.com/schema/registry-item.json",
+  "name": "gl-windowblinds",
+  "type": "hyperframes:component",
+  "title": "Windowblinds transition",
+  "description": "A crossfade through horizontal window blinds. Load vendor/glintmotion/hyper-shader.js, then this file, then call HyperShader.init({ transitions: [{ time, shader: \"gl-windowblinds\", duration }] }).",
+  "tags": [
+    "transition",
+    "shader",
+    "webgl",
+    "gl-transitions",
+    "blinds",
+    "stripes",
+    "blend"
+  ],
+  "author": "Fabien Benetou",
+  "authorUrl": "https://gl-transitions.com",
+  "license": "MIT",
+  "registryDependencies": [
+    "hyper-shader"
+  ],
+  "files": [
+    {
+      "path": "gl-windowblinds.js",
+      "target": "vendor/glintmotion/transitions/gl-windowblinds.js",
+      "type": "hyperframes:asset"
+    }
+  ]
+}

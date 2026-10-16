@@ -1,0 +1,29 @@
+{
+  "$schema": "https://hyperframes.heygen.com/schema/registry-item.json",
+  "name": "gl-overexposure",
+  "type": "hyperframes:component",
+  "title": "Overexposure transition",
+  "description": "A crossfade through a washed-out, overexposed white. Load vendor/glintmotion/hyper-shader.js, then this file, then call HyperShader.init({ transitions: [{ time, shader: \"gl-overexposure\", duration }] }).",
+  "tags": [
+    "transition",
+    "shader",
+    "webgl",
+    "gl-transitions",
+    "flash",
+    "light",
+    "fade"
+  ],
+  "author": "Ben Zhang",
+  "authorUrl": "https://gl-transitions.com",
+  "license": "MIT",
+  "registryDependencies": [
+    "hyper-shader"
+  ],
+  "files": [
+    {
+      "path": "gl-overexposure.js",
+      "target": "vendor/glintmotion/transitions/gl-overexposure.js",
+      "type": "hyperframes:asset"
+    }
+  ]
+}

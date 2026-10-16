@@ -1,0 +1,29 @@
+{
+  "$schema": "https://hyperframes.heygen.com/schema/registry-item.json",
+  "name": "gl-flyeye",
+  "type": "hyperframes:component",
+  "title": "Flyeye transition",
+  "description": "The image breaks into a fly's-eye grid of lenses with color separation. Load vendor/glintmotion/hyper-shader.js, then this file, then call HyperShader.init({ transitions: [{ time, shader: \"gl-flyeye\", duration }] }).",
+  "tags": [
+    "transition",
+    "shader",
+    "webgl",
+    "gl-transitions",
+    "lens",
+    "distort",
+    "chromatic"
+  ],
+  "author": "gre",
+  "authorUrl": "https://gl-transitions.com",
+  "license": "MIT",
+  "registryDependencies": [
+    "hyper-shader"
+  ],
+  "files": [
+    {
+      "path": "gl-flyeye.js",
+      "target": "vendor/glintmotion/transitions/gl-flyeye.js",
+      "type": "hyperframes:asset"
+    }
+  ]
+}

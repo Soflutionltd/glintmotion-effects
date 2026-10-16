@@ -1,0 +1,30 @@
+{
+  "$schema": "https://hyperframes.heygen.com/schema/registry-item.json",
+  "name": "gl-directional-scaled",
+  "type": "hyperframes:component",
+  "title": "DirectionalScaled transition",
+  "description": "Like Directional, with both images scaled down while they slide. Load vendor/glintmotion/hyper-shader.js, then this file, then call HyperShader.init({ transitions: [{ time, shader: \"gl-directional-scaled\", duration }] }).",
+  "tags": [
+    "transition",
+    "shader",
+    "webgl",
+    "gl-transitions",
+    "slide",
+    "push",
+    "zoom",
+    "directional"
+  ],
+  "author": "Thibaut Foussard",
+  "authorUrl": "https://gl-transitions.com",
+  "license": "MIT",
+  "registryDependencies": [
+    "hyper-shader"
+  ],
+  "files": [
+    {
+      "path": "gl-directional-scaled.js",
+      "target": "vendor/glintmotion/transitions/gl-directional-scaled.js",
+      "type": "hyperframes:asset"
+    }
+  ]
+}

@@ -1,0 +1,29 @@
+{
+  "$schema": "https://hyperframes.heygen.com/schema/registry-item.json",
+  "name": "gl-squeeze",
+  "type": "hyperframes:component",
+  "title": "Squeeze transition",
+  "description": "The outgoing image is squeezed into a line with color separation, revealing the incoming one. Load vendor/glintmotion/hyper-shader.js, then this file, then call HyperShader.init({ transitions: [{ time, shader: \"gl-squeeze\", duration }] }).",
+  "tags": [
+    "transition",
+    "shader",
+    "webgl",
+    "gl-transitions",
+    "squeeze",
+    "chromatic",
+    "vertical"
+  ],
+  "author": "gre",
+  "authorUrl": "https://gl-transitions.com",
+  "license": "MIT",
+  "registryDependencies": [
+    "hyper-shader"
+  ],
+  "files": [
+    {
+      "path": "gl-squeeze.js",
+      "target": "vendor/glintmotion/transitions/gl-squeeze.js",
+      "type": "hyperframes:asset"
+    }
+  ]
+}

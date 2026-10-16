@@ -1,0 +1,29 @@
+{
+  "$schema": "https://hyperframes.heygen.com/schema/registry-item.json",
+  "name": "gl-box",
+  "type": "hyperframes:component",
+  "title": "Box transition",
+  "description": "The outgoing image shrinks into a box, toward the center or a corner, revealing the incoming one. Load vendor/glintmotion/hyper-shader.js, then this file, then call HyperShader.init({ transitions: [{ time, shader: \"gl-box\", duration }] }).",
+  "tags": [
+    "transition",
+    "shader",
+    "webgl",
+    "gl-transitions",
+    "box",
+    "zoom",
+    "shape"
+  ],
+  "author": "lql",
+  "authorUrl": "https://gl-transitions.com",
+  "license": "MIT",
+  "registryDependencies": [
+    "hyper-shader"
+  ],
+  "files": [
+    {
+      "path": "gl-box.js",
+      "target": "vendor/glintmotion/transitions/gl-box.js",
+      "type": "hyperframes:asset"
+    }
+  ]
+}

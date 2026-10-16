@@ -1,0 +1,29 @@
+{
+  "$schema": "https://hyperframes.heygen.com/schema/registry-item.json",
+  "name": "gl-zoom-rigth-wipe",
+  "type": "hyperframes:component",
+  "title": "ZoomRigthWipe transition",
+  "description": "Zooms into the outgoing image, then the incoming one wipes in from left to right. Load vendor/glintmotion/hyper-shader.js, then this file, then call HyperShader.init({ transitions: [{ time, shader: \"gl-zoom-rigth-wipe\", duration }] }).",
+  "tags": [
+    "transition",
+    "shader",
+    "webgl",
+    "gl-transitions",
+    "zoom",
+    "wipe",
+    "horizontal"
+  ],
+  "author": "Handk",
+  "authorUrl": "https://gl-transitions.com",
+  "license": "MIT",
+  "registryDependencies": [
+    "hyper-shader"
+  ],
+  "files": [
+    {
+      "path": "gl-zoom-rigth-wipe.js",
+      "target": "vendor/glintmotion/transitions/gl-zoom-rigth-wipe.js",
+      "type": "hyperframes:asset"
+    }
+  ]
+}

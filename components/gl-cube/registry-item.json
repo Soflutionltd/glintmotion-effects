@@ -1,0 +1,30 @@
+{
+  "$schema": "https://hyperframes.heygen.com/schema/registry-item.json",
+  "name": "gl-cube",
+  "type": "hyperframes:component",
+  "title": "Cube transition",
+  "description": "The two images are faces of a rotating 3D cube, with a floor reflection. Load vendor/glintmotion/hyper-shader.js, then this file, then call HyperShader.init({ transitions: [{ time, shader: \"gl-cube\", duration }] }).",
+  "tags": [
+    "transition",
+    "shader",
+    "webgl",
+    "gl-transitions",
+    "3d",
+    "cube",
+    "rotate",
+    "reflection"
+  ],
+  "author": "gre",
+  "authorUrl": "https://gl-transitions.com",
+  "license": "MIT",
+  "registryDependencies": [
+    "hyper-shader"
+  ],
+  "files": [
+    {
+      "path": "gl-cube.js",
+      "target": "vendor/glintmotion/transitions/gl-cube.js",
+      "type": "hyperframes:asset"
+    }
+  ]
+}

@@ -1,0 +1,28 @@
+{
+  "$schema": "https://hyperframes.heygen.com/schema/registry-item.json",
+  "name": "gl-dreamy",
+  "type": "hyperframes:component",
+  "title": "Dreamy transition",
+  "description": "A crossfade with a gentle wavy distortion. Load vendor/glintmotion/hyper-shader.js, then this file, then call HyperShader.init({ transitions: [{ time, shader: \"gl-dreamy\", duration }] }).",
+  "tags": [
+    "transition",
+    "shader",
+    "webgl",
+    "gl-transitions",
+    "wave",
+    "blend"
+  ],
+  "author": "mikolalysenko",
+  "authorUrl": "https://gl-transitions.com",
+  "license": "MIT",
+  "registryDependencies": [
+    "hyper-shader"
+  ],
+  "files": [
+    {
+      "path": "gl-dreamy.js",
+      "target": "vendor/glintmotion/transitions/gl-dreamy.js",
+      "type": "hyperframes:asset"
+    }
+  ]
+}

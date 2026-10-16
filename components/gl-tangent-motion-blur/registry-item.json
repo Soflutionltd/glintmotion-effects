@@ -1,0 +1,29 @@
+{
+  "$schema": "https://hyperframes.heygen.com/schema/registry-item.json",
+  "name": "gl-tangent-motion-blur",
+  "type": "hyperframes:component",
+  "title": "TangentMotionBlur transition",
+  "description": "The outgoing image is flung away along a curve with motion blur. Load vendor/glintmotion/hyper-shader.js, then this file, then call HyperShader.init({ transitions: [{ time, shader: \"gl-tangent-motion-blur\", duration }] }).",
+  "tags": [
+    "transition",
+    "shader",
+    "webgl",
+    "gl-transitions",
+    "motion-blur",
+    "rotate",
+    "slide"
+  ],
+  "author": "chenkai",
+  "authorUrl": "https://gl-transitions.com",
+  "license": "MIT",
+  "registryDependencies": [
+    "hyper-shader"
+  ],
+  "files": [
+    {
+      "path": "gl-tangent-motion-blur.js",
+      "target": "vendor/glintmotion/transitions/gl-tangent-motion-blur.js",
+      "type": "hyperframes:asset"
+    }
+  ]
+}

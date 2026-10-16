@@ -1,0 +1,28 @@
+{
+  "$schema": "https://hyperframes.heygen.com/schema/registry-item.json",
+  "name": "gl-random-noisex",
+  "type": "hyperframes:component",
+  "title": "RandomNoisex transition",
+  "description": "The incoming image appears pixel by pixel in random noise. Load vendor/glintmotion/hyper-shader.js, then this file, then call HyperShader.init({ transitions: [{ time, shader: \"gl-random-noisex\", duration }] }).",
+  "tags": [
+    "transition",
+    "shader",
+    "webgl",
+    "gl-transitions",
+    "dissolve",
+    "noise"
+  ],
+  "author": "towrabbit",
+  "authorUrl": "https://gl-transitions.com",
+  "license": "MIT",
+  "registryDependencies": [
+    "hyper-shader"
+  ],
+  "files": [
+    {
+      "path": "gl-random-noisex.js",
+      "target": "vendor/glintmotion/transitions/gl-random-noisex.js",
+      "type": "hyperframes:asset"
+    }
+  ]
+}

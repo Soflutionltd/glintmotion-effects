@@ -1,0 +1,7 @@
+(function () {
+  var S = window.HyperShader;
+  if (!S || typeof S.registerShader !== "function") {
+    throw new Error("Load vendor/glintmotion/hyper-shader.js before this file: it adds shaders to that build of HyperShader.");
+  }
+  S.registerShader("gl-rectangle-crop", "// gl-rectangle-crop, from GL Transitions \"RectangleCrop\" by martiniti (MIT).\nfloat progress;\nfloat ratio;\nvec4 getFromColor(vec2 p){return texture2D(u_from,vec2(p.x,1.0-p.y));}\nvec4 getToColor(vec2 p){return texture2D(u_to,vec2(p.x,1.0-p.y));}\n// License: MIT\n// Author: martiniti\n// Description: The outgoing image shrinks into a small rectangle over a background color, then the incoming one grows from it\n// Tags: box, iris, zoom\n\n// @color Background color\nconst vec4 bgcolor = vec4(0.0, 0.0, 0.0, 1.0);\n\nvec4 transition(vec2 uv) {\n  \n  float s = pow(2.0 * abs(progress - 0.5), 3.0);\n              \n  vec2 q = uv.xy / vec2(1.0).xy;\n  \n  // bottom-left\n  vec2 bl = step(vec2(1.0 - 2.0*abs(progress - 0.5)), q + 0.25);\n  \n  // top-right\n  vec2 tr = step(vec2(1.0 - 2.0*abs(progress - 0.5)), 1.25 - q);\n  \n  float dist = length(1.0 - bl.x * bl.y * tr.x * tr.y);\n  \n  return mix(\n    progress < 0.5 ? getFromColor(uv) : getToColor(uv),\n    bgcolor,\n    step(s, dist)\n  );\n  \n}\n\nvoid main(){\n  progress=u_progress;\n  ratio=u_resolution.x/u_resolution.y;\n  gl_FragColor=transition(vec2(v_uv.x,1.0-v_uv.y));\n}\n");
+})();

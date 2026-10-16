@@ -1,0 +1,30 @@
+{
+  "$schema": "https://hyperframes.heygen.com/schema/registry-item.json",
+  "name": "gl-static-wipe",
+  "type": "hyperframes:component",
+  "title": "Static_wipe transition",
+  "description": "A wipe from top to bottom with a band of TV static at its edge. Load vendor/glintmotion/hyper-shader.js, then this file, then call HyperShader.init({ transitions: [{ time, shader: \"gl-static-wipe\", duration }] }).",
+  "tags": [
+    "transition",
+    "shader",
+    "webgl",
+    "gl-transitions",
+    "wipe",
+    "static",
+    "noise",
+    "vertical"
+  ],
+  "author": "Ben Lucas",
+  "authorUrl": "https://gl-transitions.com",
+  "license": "MIT",
+  "registryDependencies": [
+    "hyper-shader"
+  ],
+  "files": [
+    {
+      "path": "gl-static-wipe.js",
+      "target": "vendor/glintmotion/transitions/gl-static-wipe.js",
+      "type": "hyperframes:asset"
+    }
+  ]
+}

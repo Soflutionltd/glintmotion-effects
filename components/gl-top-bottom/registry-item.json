@@ -1,0 +1,29 @@
+{
+  "$schema": "https://hyperframes.heygen.com/schema/registry-item.json",
+  "name": "gl-top-bottom",
+  "type": "hyperframes:component",
+  "title": "TopBottom transition",
+  "description": "The outgoing image shrinks away upward while the incoming one slides in from the bottom. Load vendor/glintmotion/hyper-shader.js, then this file, then call HyperShader.init({ transitions: [{ time, shader: \"gl-top-bottom\", duration }] }).",
+  "tags": [
+    "transition",
+    "shader",
+    "webgl",
+    "gl-transitions",
+    "slide",
+    "zoom",
+    "vertical"
+  ],
+  "author": "zhmy",
+  "authorUrl": "https://gl-transitions.com",
+  "license": "MIT",
+  "registryDependencies": [
+    "hyper-shader"
+  ],
+  "files": [
+    {
+      "path": "gl-top-bottom.js",
+      "target": "vendor/glintmotion/transitions/gl-top-bottom.js",
+      "type": "hyperframes:asset"
+    }
+  ]
+}

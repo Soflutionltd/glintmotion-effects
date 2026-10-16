@@ -1,0 +1,28 @@
+{
+  "$schema": "https://hyperframes.heygen.com/schema/registry-item.json",
+  "name": "gl-fadecolor",
+  "type": "hyperframes:component",
+  "title": "Fadecolor transition",
+  "description": "A fade through a solid color, black by default. Load vendor/glintmotion/hyper-shader.js, then this file, then call HyperShader.init({ transitions: [{ time, shader: \"gl-fadecolor\", duration }] }).",
+  "tags": [
+    "transition",
+    "shader",
+    "webgl",
+    "gl-transitions",
+    "fade",
+    "color"
+  ],
+  "author": "gre",
+  "authorUrl": "https://gl-transitions.com",
+  "license": "MIT",
+  "registryDependencies": [
+    "hyper-shader"
+  ],
+  "files": [
+    {
+      "path": "gl-fadecolor.js",
+      "target": "vendor/glintmotion/transitions/gl-fadecolor.js",
+      "type": "hyperframes:asset"
+    }
+  ]
+}

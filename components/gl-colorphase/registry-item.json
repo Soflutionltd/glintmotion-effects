@@ -1,0 +1,28 @@
+{
+  "$schema": "https://hyperframes.heygen.com/schema/registry-item.json",
+  "name": "gl-colorphase",
+  "type": "hyperframes:component",
+  "title": "Colorphase transition",
+  "description": "A crossfade in which each color channel changes at a different time. Load vendor/glintmotion/hyper-shader.js, then this file, then call HyperShader.init({ transitions: [{ time, shader: \"gl-colorphase\", duration }] }).",
+  "tags": [
+    "transition",
+    "shader",
+    "webgl",
+    "gl-transitions",
+    "fade",
+    "color"
+  ],
+  "author": "gre",
+  "authorUrl": "https://gl-transitions.com",
+  "license": "MIT",
+  "registryDependencies": [
+    "hyper-shader"
+  ],
+  "files": [
+    {
+      "path": "gl-colorphase.js",
+      "target": "vendor/glintmotion/transitions/gl-colorphase.js",
+      "type": "hyperframes:asset"
+    }
+  ]
+}

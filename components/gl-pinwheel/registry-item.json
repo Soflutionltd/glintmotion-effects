@@ -1,0 +1,29 @@
+{
+  "$schema": "https://hyperframes.heygen.com/schema/registry-item.json",
+  "name": "gl-pinwheel",
+  "type": "hyperframes:component",
+  "title": "Pinwheel transition",
+  "description": "A spinning pinwheel reveals the incoming image. Load vendor/glintmotion/hyper-shader.js, then this file, then call HyperShader.init({ transitions: [{ time, shader: \"gl-pinwheel\", duration }] }).",
+  "tags": [
+    "transition",
+    "shader",
+    "webgl",
+    "gl-transitions",
+    "pinwheel",
+    "radial",
+    "rotate"
+  ],
+  "author": "Mr Speaker",
+  "authorUrl": "https://gl-transitions.com",
+  "license": "MIT",
+  "registryDependencies": [
+    "hyper-shader"
+  ],
+  "files": [
+    {
+      "path": "gl-pinwheel.js",
+      "target": "vendor/glintmotion/transitions/gl-pinwheel.js",
+      "type": "hyperframes:asset"
+    }
+  ]
+}

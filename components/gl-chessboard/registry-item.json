@@ -1,0 +1,29 @@
+{
+  "$schema": "https://hyperframes.heygen.com/schema/registry-item.json",
+  "name": "gl-chessboard",
+  "type": "hyperframes:component",
+  "title": "Chessboard transition",
+  "description": "A chessboard pattern of squares reveals the incoming image. Load vendor/glintmotion/hyper-shader.js, then this file, then call HyperShader.init({ transitions: [{ time, shader: \"gl-chessboard\", duration }] }).",
+  "tags": [
+    "transition",
+    "shader",
+    "webgl",
+    "gl-transitions",
+    "grid",
+    "squares",
+    "pattern"
+  ],
+  "author": "lql",
+  "authorUrl": "https://gl-transitions.com",
+  "license": "MIT",
+  "registryDependencies": [
+    "hyper-shader"
+  ],
+  "files": [
+    {
+      "path": "gl-chessboard.js",
+      "target": "vendor/glintmotion/transitions/gl-chessboard.js",
+      "type": "hyperframes:asset"
+    }
+  ]
+}

@@ -1,0 +1,29 @@
+{
+  "$schema": "https://hyperframes.heygen.com/schema/registry-item.json",
+  "name": "gl-bow-tie-vertical",
+  "type": "hyperframes:component",
+  "title": "BowTieVertical transition",
+  "description": "Two triangles grow from the top and bottom edges into a bow tie that reveals the incoming image. Load vendor/glintmotion/hyper-shader.js, then this file, then call HyperShader.init({ transitions: [{ time, shader: \"gl-bow-tie-vertical\", duration }] }).",
+  "tags": [
+    "transition",
+    "shader",
+    "webgl",
+    "gl-transitions",
+    "wipe",
+    "shape",
+    "vertical"
+  ],
+  "author": "huynx",
+  "authorUrl": "https://gl-transitions.com",
+  "license": "MIT",
+  "registryDependencies": [
+    "hyper-shader"
+  ],
+  "files": [
+    {
+      "path": "gl-bow-tie-vertical.js",
+      "target": "vendor/glintmotion/transitions/gl-bow-tie-vertical.js",
+      "type": "hyperframes:asset"
+    }
+  ]
+}

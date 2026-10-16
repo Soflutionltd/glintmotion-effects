@@ -1,0 +1,28 @@
+{
+  "$schema": "https://hyperframes.heygen.com/schema/registry-item.json",
+  "name": "gl-wipe-down",
+  "type": "hyperframes:component",
+  "title": "WipeDown transition",
+  "description": "A hard-edged wipe from top to bottom. Load vendor/glintmotion/hyper-shader.js, then this file, then call HyperShader.init({ transitions: [{ time, shader: \"gl-wipe-down\", duration }] }).",
+  "tags": [
+    "transition",
+    "shader",
+    "webgl",
+    "gl-transitions",
+    "wipe",
+    "vertical"
+  ],
+  "author": "Jake Nelson",
+  "authorUrl": "https://gl-transitions.com",
+  "license": "MIT",
+  "registryDependencies": [
+    "hyper-shader"
+  ],
+  "files": [
+    {
+      "path": "gl-wipe-down.js",
+      "target": "vendor/glintmotion/transitions/gl-wipe-down.js",
+      "type": "hyperframes:asset"
+    }
+  ]
+}

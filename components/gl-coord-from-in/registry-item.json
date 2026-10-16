@@ -1,0 +1,29 @@
+{
+  "$schema": "https://hyperframes.heygen.com/schema/registry-item.json",
+  "name": "gl-coord-from-in",
+  "type": "hyperframes:component",
+  "title": "Coord-from-in transition",
+  "description": "A crossfade in which the colors of one image displace the other. Load vendor/glintmotion/hyper-shader.js, then this file, then call HyperShader.init({ transitions: [{ time, shader: \"gl-coord-from-in\", duration }] }).",
+  "tags": [
+    "transition",
+    "shader",
+    "webgl",
+    "gl-transitions",
+    "displace",
+    "distort",
+    "blend"
+  ],
+  "author": "haiyoucuv",
+  "authorUrl": "https://gl-transitions.com",
+  "license": "MIT",
+  "registryDependencies": [
+    "hyper-shader"
+  ],
+  "files": [
+    {
+      "path": "gl-coord-from-in.js",
+      "target": "vendor/glintmotion/transitions/gl-coord-from-in.js",
+      "type": "hyperframes:asset"
+    }
+  ]
+}

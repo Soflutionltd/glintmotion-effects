@@ -1,0 +1,29 @@
+{
+  "$schema": "https://hyperframes.heygen.com/schema/registry-item.json",
+  "name": "gl-split-slide-out-horizontal",
+  "type": "hyperframes:component",
+  "title": "SplitSlideOutHorizontal transition",
+  "description": "The outgoing image slides out as two halves moving horizontally in opposite directions. Load vendor/glintmotion/hyper-shader.js, then this file, then call HyperShader.init({ transitions: [{ time, shader: \"gl-split-slide-out-horizontal\", duration }] }).",
+  "tags": [
+    "transition",
+    "shader",
+    "webgl",
+    "gl-transitions",
+    "slide",
+    "split",
+    "horizontal"
+  ],
+  "author": "OllyOllyOlly",
+  "authorUrl": "https://gl-transitions.com",
+  "license": "MIT",
+  "registryDependencies": [
+    "hyper-shader"
+  ],
+  "files": [
+    {
+      "path": "gl-split-slide-out-horizontal.js",
+      "target": "vendor/glintmotion/transitions/gl-split-slide-out-horizontal.js",
+      "type": "hyperframes:asset"
+    }
+  ]
+}

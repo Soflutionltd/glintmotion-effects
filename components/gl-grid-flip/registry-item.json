@@ -1,0 +1,29 @@
+{
+  "$schema": "https://hyperframes.heygen.com/schema/registry-item.json",
+  "name": "gl-grid-flip",
+  "type": "hyperframes:component",
+  "title": "GridFlip transition",
+  "description": "The image splits into a grid of tiles that flip one by one to the incoming image. Load vendor/glintmotion/hyper-shader.js, then this file, then call HyperShader.init({ transitions: [{ time, shader: \"gl-grid-flip\", duration }] }).",
+  "tags": [
+    "transition",
+    "shader",
+    "webgl",
+    "gl-transitions",
+    "grid",
+    "tiles",
+    "flip"
+  ],
+  "author": "TimDonselaar",
+  "authorUrl": "https://gl-transitions.com",
+  "license": "MIT",
+  "registryDependencies": [
+    "hyper-shader"
+  ],
+  "files": [
+    {
+      "path": "gl-grid-flip.js",
+      "target": "vendor/glintmotion/transitions/gl-grid-flip.js",
+      "type": "hyperframes:asset"
+    }
+  ]
+}

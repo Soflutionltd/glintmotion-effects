@@ -1,0 +1,27 @@
+{
+  "$schema": "https://hyperframes.heygen.com/schema/registry-item.json",
+  "name": "gl-transitions",
+  "type": "hyperframes:component",
+  "title": "All 123 GL Transitions",
+  "description": "Every GL Transitions shader in one file (gl-advanced-mosaic, gl-block-dissolve, gl-book-flip, gl-bounce, gl-bow-tie-horizontal, gl-bow-tie-vertical, gl-bow-tie-with-parameter, gl-box, gl-butterfly-wave-scrawler, gl-circle-crop, gl-colour-distance, gl-crazy-parametric-fun, gl-cross-zoom, gl-defocus-blur, gl-directional, gl-directional-scaled, gl-doom-screen-transition, gl-dreamy, gl-dreamy-zoom, gl-drop-zone-flicker, gl-edge-transition, gl-film-burn, gl-fold, gl-glitch-displace, gl-glitch-memories, gl-grid-flip, gl-hs-vfade, gl-horizontal-close, gl-horizontal-open, gl-inverted-page-curl, gl-left-right, gl-linear-blur, gl-mosaic, gl-overexposure, gl-polka-dots-curtain, gl-puzzle-right, gl-radial, gl-rectangle, gl-rectangle-crop, gl-revolve-left, gl-rolls, gl-rotate-scale-vanish, gl-simple-flip, gl-simple-zoom, gl-simple-zoom-out, gl-slides, gl-star-wipe, gl-static-fade, gl-stereo-viewer, gl-strip-datamosh-glitch, gl-swirl, gl-tv-static, gl-tiles-wave, gl-top-bottom, gl-vertical-close, gl-vertical-open, gl-water-drop, gl-zoom-in-circles, gl-zoom-left-wipe, gl-zoom-rigth-wipe, gl-angular, gl-burn, gl-burn0, gl-cannabisleaf, gl-chessboard, gl-circle, gl-circleopen, gl-colorphase, gl-coord-from-in, gl-crosshatch, gl-crosswarp, gl-cube, gl-directional-easing, gl-directionalwarp, gl-directionalwipe, gl-dissolve, gl-doorway, gl-fade, gl-fadecolor, gl-fadegrayscale, gl-flyeye, gl-fragment, gl-heart, gl-hexagonalize, gl-kaleidoscope, gl-luminance-melt, gl-morph, gl-mosaic-transition, gl-multiply-blend, gl-old-tv-lost-signal, gl-parametric-glitch, gl-perlin, gl-pinwheel, gl-pixelize, gl-polar-function, gl-power-kaleido, gl-random-noisex, gl-randomsquares, gl-ripple, gl-rotate-transition, gl-rotate-scale-fade, gl-scale-in, gl-split-slide-in-horizontal, gl-split-slide-in-out-horizontal, gl-split-slide-in-out-vertical, gl-split-slide-in-vertical, gl-split-slide-out-horizontal, gl-split-slide-out-vertical, gl-squareswire, gl-squeeze, gl-static-wipe, gl-swap, gl-tangent-motion-blur, gl-undulating-burn-out, gl-wind, gl-windowblinds, gl-windowslice, gl-wipe-down, gl-wipe-left, gl-wipe-right, gl-wipe-up, gl-x-axis-translation, gl-zoom-in-out). Load vendor/glintmotion/hyper-shader.js, then this file, then call HyperShader.init({ transitions: [{ time, shader: \"gl-cube\", duration }] }).",
+  "tags": [
+    "transition",
+    "shader",
+    "webgl",
+    "gl-transitions",
+    "pack"
+  ],
+  "author": "gl-transitions contributors",
+  "authorUrl": "https://gl-transitions.com",
+  "license": "MIT",
+  "registryDependencies": [
+    "hyper-shader"
+  ],
+  "files": [
+    {
+      "path": "gl-transitions.js",
+      "target": "vendor/glintmotion/gl-transitions.js",
+      "type": "hyperframes:asset"
+    }
+  ]
+}

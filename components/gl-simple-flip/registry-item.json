@@ -1,0 +1,28 @@
+{
+  "$schema": "https://hyperframes.heygen.com/schema/registry-item.json",
+  "name": "gl-simple-flip",
+  "type": "hyperframes:component",
+  "title": "SimpleFlip transition",
+  "description": "The outgoing image flips around the vertical axis into the incoming one. Load vendor/glintmotion/hyper-shader.js, then this file, then call HyperShader.init({ transitions: [{ time, shader: \"gl-simple-flip\", duration }] }).",
+  "tags": [
+    "transition",
+    "shader",
+    "webgl",
+    "gl-transitions",
+    "flip",
+    "horizontal"
+  ],
+  "author": "nwoeanhinnogaehr",
+  "authorUrl": "https://gl-transitions.com",
+  "license": "MIT",
+  "registryDependencies": [
+    "hyper-shader"
+  ],
+  "files": [
+    {
+      "path": "gl-simple-flip.js",
+      "target": "vendor/glintmotion/transitions/gl-simple-flip.js",
+      "type": "hyperframes:asset"
+    }
+  ]
+}

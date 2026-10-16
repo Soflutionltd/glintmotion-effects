@@ -1,0 +1,29 @@
+{
+  "$schema": "https://hyperframes.heygen.com/schema/registry-item.json",
+  "name": "gl-swap",
+  "type": "hyperframes:component",
+  "title": "Swap transition",
+  "description": "The two images swap places in 3D, with a floor reflection. Load vendor/glintmotion/hyper-shader.js, then this file, then call HyperShader.init({ transitions: [{ time, shader: \"gl-swap\", duration }] }).",
+  "tags": [
+    "transition",
+    "shader",
+    "webgl",
+    "gl-transitions",
+    "3d",
+    "swap",
+    "reflection"
+  ],
+  "author": "gre",
+  "authorUrl": "https://gl-transitions.com",
+  "license": "MIT",
+  "registryDependencies": [
+    "hyper-shader"
+  ],
+  "files": [
+    {
+      "path": "gl-swap.js",
+      "target": "vendor/glintmotion/transitions/gl-swap.js",
+      "type": "hyperframes:asset"
+    }
+  ]
+}

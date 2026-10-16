@@ -1,0 +1,29 @@
+{
+  "$schema": "https://hyperframes.heygen.com/schema/registry-item.json",
+  "name": "gl-burn",
+  "type": "hyperframes:component",
+  "title": "Burn transition",
+  "description": "A crossfade that brightens toward a color in the middle. Load vendor/glintmotion/hyper-shader.js, then this file, then call HyperShader.init({ transitions: [{ time, shader: \"gl-burn\", duration }] }).",
+  "tags": [
+    "transition",
+    "shader",
+    "webgl",
+    "gl-transitions",
+    "fade",
+    "color",
+    "flash"
+  ],
+  "author": "gre",
+  "authorUrl": "https://gl-transitions.com",
+  "license": "MIT",
+  "registryDependencies": [
+    "hyper-shader"
+  ],
+  "files": [
+    {
+      "path": "gl-burn.js",
+      "target": "vendor/glintmotion/transitions/gl-burn.js",
+      "type": "hyperframes:asset"
+    }
+  ]
+}

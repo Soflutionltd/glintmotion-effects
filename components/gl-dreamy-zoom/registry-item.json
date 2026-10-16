@@ -1,0 +1,29 @@
+{
+  "$schema": "https://hyperframes.heygen.com/schema/registry-item.json",
+  "name": "gl-dreamy-zoom",
+  "type": "hyperframes:component",
+  "title": "DreamyZoom transition",
+  "description": "Zooms and rotates into a bright flash, then out to the incoming image. Load vendor/glintmotion/hyper-shader.js, then this file, then call HyperShader.init({ transitions: [{ time, shader: \"gl-dreamy-zoom\", duration }] }).",
+  "tags": [
+    "transition",
+    "shader",
+    "webgl",
+    "gl-transitions",
+    "zoom",
+    "rotate",
+    "flash"
+  ],
+  "author": "Zeh Fernando",
+  "authorUrl": "https://gl-transitions.com",
+  "license": "MIT",
+  "registryDependencies": [
+    "hyper-shader"
+  ],
+  "files": [
+    {
+      "path": "gl-dreamy-zoom.js",
+      "target": "vendor/glintmotion/transitions/gl-dreamy-zoom.js",
+      "type": "hyperframes:asset"
+    }
+  ]
+}

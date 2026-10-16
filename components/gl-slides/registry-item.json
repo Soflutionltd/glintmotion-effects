@@ -1,0 +1,28 @@
+{
+  "$schema": "https://hyperframes.heygen.com/schema/registry-item.json",
+  "name": "gl-slides",
+  "type": "hyperframes:component",
+  "title": "Slides transition",
+  "description": "The outgoing image slides out, or the incoming one slides in, toward an edge, a corner or the center. Load vendor/glintmotion/hyper-shader.js, then this file, then call HyperShader.init({ transitions: [{ time, shader: \"gl-slides\", duration }] }).",
+  "tags": [
+    "transition",
+    "shader",
+    "webgl",
+    "gl-transitions",
+    "slide",
+    "directional"
+  ],
+  "author": "Mark Craig",
+  "authorUrl": "https://gl-transitions.com",
+  "license": "MIT",
+  "registryDependencies": [
+    "hyper-shader"
+  ],
+  "files": [
+    {
+      "path": "gl-slides.js",
+      "target": "vendor/glintmotion/transitions/gl-slides.js",
+      "type": "hyperframes:asset"
+    }
+  ]
+}

@@ -1,0 +1,29 @@
+{
+  "$schema": "https://hyperframes.heygen.com/schema/registry-item.json",
+  "name": "gl-split-slide-in-horizontal",
+  "type": "hyperframes:component",
+  "title": "SplitSlideInHorizontal transition",
+  "description": "The incoming image slides in as two halves moving horizontally in opposite directions. Load vendor/glintmotion/hyper-shader.js, then this file, then call HyperShader.init({ transitions: [{ time, shader: \"gl-split-slide-in-horizontal\", duration }] }).",
+  "tags": [
+    "transition",
+    "shader",
+    "webgl",
+    "gl-transitions",
+    "slide",
+    "split",
+    "horizontal"
+  ],
+  "author": "OllyOllyOlly",
+  "authorUrl": "https://gl-transitions.com",
+  "license": "MIT",
+  "registryDependencies": [
+    "hyper-shader"
+  ],
+  "files": [
+    {
+      "path": "gl-split-slide-in-horizontal.js",
+      "target": "vendor/glintmotion/transitions/gl-split-slide-in-horizontal.js",
+      "type": "hyperframes:asset"
+    }
+  ]
+}

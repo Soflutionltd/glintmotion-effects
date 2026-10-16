@@ -1,0 +1,7 @@
+(function () {
+  var S = window.HyperShader;
+  if (!S || typeof S.registerShader !== "function") {
+    throw new Error("Load vendor/glintmotion/hyper-shader.js before this file: it adds shaders to that build of HyperShader.");
+  }
+  S.registerShader("gl-pixelize", "// gl-pixelize, from GL Transitions \"pixelize\" by gre (MIT).\nfloat progress;\nfloat ratio;\nvec4 getFromColor(vec2 p){return texture2D(u_from,vec2(p.x,1.0-p.y));}\nvec4 getToColor(vec2 p){return texture2D(u_to,vec2(p.x,1.0-p.y));}\n// Author: gre\n// License: MIT\n// Description: Both images pixelate, crossfade, then sharpen again\n// Tags: pixelate, blend\n// forked from https://gist.github.com/benraziel/c528607361d90a072e98\n\n// minimum number of squares (when the effect is at its higher level)\n// @param Number of squares at the strongest pixelation\nconst ivec2 squaresMin = ivec2(20);\n// zero disable the stepping\n// @param Number of pixelation steps; 0 for a continuous effect\nconst int steps = 50;\n\nvec4 transition(vec2 uv) {\n  float d = min(progress, 1.0 - progress);\n  float dist = steps>0 ? ceil(d * float(steps)) / float(steps) : d;\n  vec2 squareSize = 2.0 * dist / vec2(squaresMin);\n  vec2 p = dist>0.0 ? (floor(uv / squareSize) + 0.5) * squareSize : uv;\n  return mix(getFromColor(p), getToColor(p), progress);\n}\n\nvoid main(){\n  progress=u_progress;\n  ratio=u_resolution.x/u_resolution.y;\n  gl_FragColor=transition(vec2(v_uv.x,1.0-v_uv.y));\n}\n");
+})();

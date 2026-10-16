@@ -1,0 +1,30 @@
+{
+  "$schema": "https://hyperframes.heygen.com/schema/registry-item.json",
+  "name": "gl-bounce",
+  "type": "hyperframes:component",
+  "title": "Bounce transition",
+  "description": "The outgoing image drops out of the frame with a few bounces, revealing the incoming one. Load vendor/glintmotion/hyper-shader.js, then this file, then call HyperShader.init({ transitions: [{ time, shader: \"gl-bounce\", duration }] }).",
+  "tags": [
+    "transition",
+    "shader",
+    "webgl",
+    "gl-transitions",
+    "bounce",
+    "slide",
+    "vertical",
+    "shadow"
+  ],
+  "author": "Adrian Purser",
+  "authorUrl": "https://gl-transitions.com",
+  "license": "MIT",
+  "registryDependencies": [
+    "hyper-shader"
+  ],
+  "files": [
+    {
+      "path": "gl-bounce.js",
+      "target": "vendor/glintmotion/transitions/gl-bounce.js",
+      "type": "hyperframes:asset"
+    }
+  ]
+}

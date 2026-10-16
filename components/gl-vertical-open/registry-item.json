@@ -1,0 +1,28 @@
+{
+  "$schema": "https://hyperframes.heygen.com/schema/registry-item.json",
+  "name": "gl-vertical-open",
+  "type": "hyperframes:component",
+  "title": "VerticalOpen transition",
+  "description": "The incoming image opens from a line in the middle toward the left and right edges. Load vendor/glintmotion/hyper-shader.js, then this file, then call HyperShader.init({ transitions: [{ time, shader: \"gl-vertical-open\", duration }] }).",
+  "tags": [
+    "transition",
+    "shader",
+    "webgl",
+    "gl-transitions",
+    "wipe",
+    "split"
+  ],
+  "author": "martiniti",
+  "authorUrl": "https://gl-transitions.com",
+  "license": "MIT",
+  "registryDependencies": [
+    "hyper-shader"
+  ],
+  "files": [
+    {
+      "path": "gl-vertical-open.js",
+      "target": "vendor/glintmotion/transitions/gl-vertical-open.js",
+      "type": "hyperframes:asset"
+    }
+  ]
+}

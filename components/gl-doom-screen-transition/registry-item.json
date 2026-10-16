@@ -1,0 +1,29 @@
+{
+  "$schema": "https://hyperframes.heygen.com/schema/registry-item.json",
+  "name": "gl-doom-screen-transition",
+  "type": "hyperframes:component",
+  "title": "DoomScreenTransition transition",
+  "description": "The outgoing image melts down in uneven columns, like the Doom screen wipe. Load vendor/glintmotion/hyper-shader.js, then this file, then call HyperShader.init({ transitions: [{ time, shader: \"gl-doom-screen-transition\", duration }] }).",
+  "tags": [
+    "transition",
+    "shader",
+    "webgl",
+    "gl-transitions",
+    "melt",
+    "columns",
+    "retro"
+  ],
+  "author": "Zeh Fernando",
+  "authorUrl": "https://gl-transitions.com",
+  "license": "MIT",
+  "registryDependencies": [
+    "hyper-shader"
+  ],
+  "files": [
+    {
+      "path": "gl-doom-screen-transition.js",
+      "target": "vendor/glintmotion/transitions/gl-doom-screen-transition.js",
+      "type": "hyperframes:asset"
+    }
+  ]
+}

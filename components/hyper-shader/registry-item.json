@@ -1,0 +1,22 @@
+{
+  "$schema": "https://hyperframes.heygen.com/schema/registry-item.json",
+  "name": "hyper-shader",
+  "type": "hyperframes:component",
+  "title": "HyperShader with registerShader",
+  "description": "The HyperShader transition runtime built from the Glintmotion fork: the 14 built-in shaders plus registerShader(name, glsl) for every transition in this catalog. Replaces the CDN script.",
+  "tags": [
+    "transition",
+    "shader",
+    "webgl",
+    "runtime"
+  ],
+  "author": "HeyGen HyperFrames contributors, Glintmotion",
+  "license": "Apache-2.0",
+  "files": [
+    {
+      "path": "hyper-shader.js",
+      "target": "vendor/glintmotion/hyper-shader.js",
+      "type": "hyperframes:asset"
+    }
+  ]
+}

@@ -1,0 +1,29 @@
+{
+  "$schema": "https://hyperframes.heygen.com/schema/registry-item.json",
+  "name": "gl-advanced-mosaic",
+  "type": "hyperframes:component",
+  "title": "AdvancedMosaic transition",
+  "description": "Both images break into large blocks that blend, then sharpen into the incoming image. Load vendor/glintmotion/hyper-shader.js, then this file, then call HyperShader.init({ transitions: [{ time, shader: \"gl-advanced-mosaic\", duration }] }).",
+  "tags": [
+    "transition",
+    "shader",
+    "webgl",
+    "gl-transitions",
+    "pixelate",
+    "mosaic",
+    "blend"
+  ],
+  "author": "Sergey Kosarevsky",
+  "authorUrl": "https://gl-transitions.com",
+  "license": "MIT",
+  "registryDependencies": [
+    "hyper-shader"
+  ],
+  "files": [
+    {
+      "path": "gl-advanced-mosaic.js",
+      "target": "vendor/glintmotion/transitions/gl-advanced-mosaic.js",
+      "type": "hyperframes:asset"
+    }
+  ]
+}

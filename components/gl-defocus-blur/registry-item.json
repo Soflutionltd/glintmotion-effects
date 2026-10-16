@@ -1,0 +1,28 @@
+{
+  "$schema": "https://hyperframes.heygen.com/schema/registry-item.json",
+  "name": "gl-defocus-blur",
+  "type": "hyperframes:component",
+  "title": "DefocusBlur transition",
+  "description": "A crossfade through an out-of-focus blur. Load vendor/glintmotion/hyper-shader.js, then this file, then call HyperShader.init({ transitions: [{ time, shader: \"gl-defocus-blur\", duration }] }).",
+  "tags": [
+    "transition",
+    "shader",
+    "webgl",
+    "gl-transitions",
+    "blur",
+    "blend"
+  ],
+  "author": "Sergey Kosarevsky",
+  "authorUrl": "https://gl-transitions.com",
+  "license": "MIT",
+  "registryDependencies": [
+    "hyper-shader"
+  ],
+  "files": [
+    {
+      "path": "gl-defocus-blur.js",
+      "target": "vendor/glintmotion/transitions/gl-defocus-blur.js",
+      "type": "hyperframes:asset"
+    }
+  ]
+}

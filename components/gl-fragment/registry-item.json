@@ -1,0 +1,28 @@
+{
+  "$schema": "https://hyperframes.heygen.com/schema/registry-item.json",
+  "name": "gl-fragment",
+  "type": "hyperframes:component",
+  "title": "Fragment transition",
+  "description": "The outgoing image shatters into fragments that fly away. Load vendor/glintmotion/hyper-shader.js, then this file, then call HyperShader.init({ transitions: [{ time, shader: \"gl-fragment\", duration }] }).",
+  "tags": [
+    "transition",
+    "shader",
+    "webgl",
+    "gl-transitions",
+    "shatter",
+    "fragments"
+  ],
+  "author": "lbl",
+  "authorUrl": "https://gl-transitions.com",
+  "license": "MIT",
+  "registryDependencies": [
+    "hyper-shader"
+  ],
+  "files": [
+    {
+      "path": "gl-fragment.js",
+      "target": "vendor/glintmotion/transitions/gl-fragment.js",
+      "type": "hyperframes:asset"
+    }
+  ]
+}

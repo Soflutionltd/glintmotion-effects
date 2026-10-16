@@ -1,0 +1,28 @@
+{
+  "$schema": "https://hyperframes.heygen.com/schema/registry-item.json",
+  "name": "gl-zoom-in-circles",
+  "type": "hyperframes:component",
+  "title": "ZoomInCircles transition",
+  "description": "Concentric rings of the outgoing image zoom at different speeds before revealing the incoming one. Load vendor/glintmotion/hyper-shader.js, then this file, then call HyperShader.init({ transitions: [{ time, shader: \"gl-zoom-in-circles\", duration }] }).",
+  "tags": [
+    "transition",
+    "shader",
+    "webgl",
+    "gl-transitions",
+    "zoom",
+    "circle"
+  ],
+  "author": "dycm8009",
+  "authorUrl": "https://gl-transitions.com",
+  "license": "MIT",
+  "registryDependencies": [
+    "hyper-shader"
+  ],
+  "files": [
+    {
+      "path": "gl-zoom-in-circles.js",
+      "target": "vendor/glintmotion/transitions/gl-zoom-in-circles.js",
+      "type": "hyperframes:asset"
+    }
+  ]
+}

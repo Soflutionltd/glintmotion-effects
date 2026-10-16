@@ -1,0 +1,7 @@
+(function () {
+  var S = window.HyperShader;
+  if (!S || typeof S.registerShader !== "function") {
+    throw new Error("Load vendor/glintmotion/hyper-shader.js before this file: it adds shaders to that build of HyperShader.");
+  }
+  S.registerShader("gl-split-slide-in-out-horizontal", "// gl-split-slide-in-out-horizontal, from GL Transitions \"splitSlideInOutHorizontal\" by OllyOllyOlly (MIT).\nfloat progress;\nfloat ratio;\nvec4 getFromColor(vec2 p){return texture2D(u_from,vec2(p.x,1.0-p.y));}\nvec4 getToColor(vec2 p){return texture2D(u_to,vec2(p.x,1.0-p.y));}\n// Author: OllyOllyOlly\n// License: MIT\n// Description: The halves of both images slide horizontally in opposite directions, out and in at once\n// Tags: slide, split, horizontal\n\n// @param Swap the directions of the halves\nconst bool reverse = false;\n\nconst vec2 boundMin = vec2(0.0, 0.0);\nconst vec2 boundMax = vec2(1.0, 1.0);\n\nbool inBounds (vec2 p) {\n  return all(lessThan(boundMin, p)) && all(lessThan(p, boundMax));\n}\n\nvec4 transition (vec2 uv) {\n  float modifier = (uv.y > 0.5 ? 1.0 : -1.0) * (reverse ? -1.0 : 1.0) ;\n  vec2 fromP = vec2(uv.x + (progress * modifier), uv.y);\n  vec2 toP = vec2((uv.x + (progress * modifier)) - modifier, uv.y);\n\n  return inBounds(fromP) ? getFromColor(fromP) : getToColor(toP);\n}\n\nvoid main(){\n  progress=u_progress;\n  ratio=u_resolution.x/u_resolution.y;\n  gl_FragColor=transition(vec2(v_uv.x,1.0-v_uv.y));\n}\n");
+})();

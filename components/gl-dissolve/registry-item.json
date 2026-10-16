@@ -1,0 +1,29 @@
+{
+  "$schema": "https://hyperframes.heygen.com/schema/registry-item.json",
+  "name": "gl-dissolve",
+  "type": "hyperframes:component",
+  "title": "Dissolve transition",
+  "description": "The incoming image spreads over the outgoing one with a hot, glowing edge. Load vendor/glintmotion/hyper-shader.js, then this file, then call HyperShader.init({ transitions: [{ time, shader: \"gl-dissolve\", duration }] }).",
+  "tags": [
+    "transition",
+    "shader",
+    "webgl",
+    "gl-transitions",
+    "dissolve",
+    "burn",
+    "glow"
+  ],
+  "author": "hjm1fb",
+  "authorUrl": "https://gl-transitions.com",
+  "license": "MIT",
+  "registryDependencies": [
+    "hyper-shader"
+  ],
+  "files": [
+    {
+      "path": "gl-dissolve.js",
+      "target": "vendor/glintmotion/transitions/gl-dissolve.js",
+      "type": "hyperframes:asset"
+    }
+  ]
+}

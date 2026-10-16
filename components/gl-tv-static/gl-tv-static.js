@@ -1,0 +1,7 @@
+(function () {
+  var S = window.HyperShader;
+  if (!S || typeof S.registerShader !== "function") {
+    throw new Error("Load vendor/glintmotion/hyper-shader.js before this file: it adds shaders to that build of HyperShader.");
+  }
+  S.registerShader("gl-tv-static", "// gl-tv-static, from GL Transitions \"TVStatic\" by Brandon Anzaldi (MIT).\nfloat progress;\nfloat ratio;\nvec4 getFromColor(vec2 p){return texture2D(u_from,vec2(p.x,1.0-p.y));}\nvec4 getToColor(vec2 p){return texture2D(u_to,vec2(p.x,1.0-p.y));}\n// Author: Brandon Anzaldi\n// License: MIT\n// Description: Cuts to full-screen TV static, then to the incoming image\n// Tags: static, noise, retro\n// @param Part of the transition, at each end, that shows the images instead of static\nconst float offset = 0.05;\n\n// Pseudo-random noise function\n// http://byteblacksmith.com/improvements-to-the-canonical-one-liner-glsl-rand-for-opengl-es-2-0/\nhighp float noise(vec2 co)\n{\n    highp float a = 12.9898;\n    highp float b = 78.233;\n    highp float c = 43758.5453;\n    highp float dt= dot(co.xy * progress, vec2(a, b));\n    highp float sn= mod(dt,3.14);\n    return fract(sin(sn) * c);\n}\n\nvec4 transition(vec2 p) {\n  if (progress < offset) {\n    return getFromColor(p);\n  } else if (progress > (1.0 - offset)) {\n    return getToColor(p);\n  } else {\n    return vec4(vec3(noise(p)), 1.0);\n  }\n}\n\nvoid main(){\n  progress=u_progress;\n  ratio=u_resolution.x/u_resolution.y;\n  gl_FragColor=transition(vec2(v_uv.x,1.0-v_uv.y));\n}\n");
+})();

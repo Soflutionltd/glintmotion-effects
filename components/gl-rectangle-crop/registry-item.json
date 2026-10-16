@@ -1,0 +1,29 @@
+{
+  "$schema": "https://hyperframes.heygen.com/schema/registry-item.json",
+  "name": "gl-rectangle-crop",
+  "type": "hyperframes:component",
+  "title": "RectangleCrop transition",
+  "description": "The outgoing image shrinks into a small rectangle over a background color, then the incoming one grows from it. Load vendor/glintmotion/hyper-shader.js, then this file, then call HyperShader.init({ transitions: [{ time, shader: \"gl-rectangle-crop\", duration }] }).",
+  "tags": [
+    "transition",
+    "shader",
+    "webgl",
+    "gl-transitions",
+    "box",
+    "iris",
+    "zoom"
+  ],
+  "author": "martiniti",
+  "authorUrl": "https://gl-transitions.com",
+  "license": "MIT",
+  "registryDependencies": [
+    "hyper-shader"
+  ],
+  "files": [
+    {
+      "path": "gl-rectangle-crop.js",
+      "target": "vendor/glintmotion/transitions/gl-rectangle-crop.js",
+      "type": "hyperframes:asset"
+    }
+  ]
+}

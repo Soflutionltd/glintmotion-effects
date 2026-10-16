@@ -1,0 +1,29 @@
+{
+  "$schema": "https://hyperframes.heygen.com/schema/registry-item.json",
+  "name": "gl-crosswarp",
+  "type": "hyperframes:component",
+  "title": "Crosswarp transition",
+  "description": "The outgoing image zooms in while the incoming one zooms out into place, sweeping from right to left. Load vendor/glintmotion/hyper-shader.js, then this file, then call HyperShader.init({ transitions: [{ time, shader: \"gl-crosswarp\", duration }] }).",
+  "tags": [
+    "transition",
+    "shader",
+    "webgl",
+    "gl-transitions",
+    "warp",
+    "zoom",
+    "horizontal"
+  ],
+  "author": "Eke Péter <peterekepeter@gmail.com>",
+  "authorUrl": "https://gl-transitions.com",
+  "license": "MIT",
+  "registryDependencies": [
+    "hyper-shader"
+  ],
+  "files": [
+    {
+      "path": "gl-crosswarp.js",
+      "target": "vendor/glintmotion/transitions/gl-crosswarp.js",
+      "type": "hyperframes:asset"
+    }
+  ]
+}

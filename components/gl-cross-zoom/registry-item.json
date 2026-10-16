@@ -1,0 +1,29 @@
+{
+  "$schema": "https://hyperframes.heygen.com/schema/registry-item.json",
+  "name": "gl-cross-zoom",
+  "type": "hyperframes:component",
+  "title": "CrossZoom transition",
+  "description": "A crossfade through a strong zoom blur. Load vendor/glintmotion/hyper-shader.js, then this file, then call HyperShader.init({ transitions: [{ time, shader: \"gl-cross-zoom\", duration }] }).",
+  "tags": [
+    "transition",
+    "shader",
+    "webgl",
+    "gl-transitions",
+    "zoom",
+    "blur",
+    "blend"
+  ],
+  "author": "rectalogic",
+  "authorUrl": "https://gl-transitions.com",
+  "license": "MIT",
+  "registryDependencies": [
+    "hyper-shader"
+  ],
+  "files": [
+    {
+      "path": "gl-cross-zoom.js",
+      "target": "vendor/glintmotion/transitions/gl-cross-zoom.js",
+      "type": "hyperframes:asset"
+    }
+  ]
+}

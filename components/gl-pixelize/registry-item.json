@@ -1,0 +1,28 @@
+{
+  "$schema": "https://hyperframes.heygen.com/schema/registry-item.json",
+  "name": "gl-pixelize",
+  "type": "hyperframes:component",
+  "title": "Pixelize transition",
+  "description": "Both images pixelate, crossfade, then sharpen again. Load vendor/glintmotion/hyper-shader.js, then this file, then call HyperShader.init({ transitions: [{ time, shader: \"gl-pixelize\", duration }] }).",
+  "tags": [
+    "transition",
+    "shader",
+    "webgl",
+    "gl-transitions",
+    "pixelate",
+    "blend"
+  ],
+  "author": "gre",
+  "authorUrl": "https://gl-transitions.com",
+  "license": "MIT",
+  "registryDependencies": [
+    "hyper-shader"
+  ],
+  "files": [
+    {
+      "path": "gl-pixelize.js",
+      "target": "vendor/glintmotion/transitions/gl-pixelize.js",
+      "type": "hyperframes:asset"
+    }
+  ]
+}

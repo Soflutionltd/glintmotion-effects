@@ -1,0 +1,29 @@
+{
+  "$schema": "https://hyperframes.heygen.com/schema/registry-item.json",
+  "name": "gl-hexagonalize",
+  "type": "hyperframes:component",
+  "title": "Hexagonalize transition",
+  "description": "Both images turn into hexagons, crossfade, then sharpen again. Load vendor/glintmotion/hyper-shader.js, then this file, then call HyperShader.init({ transitions: [{ time, shader: \"gl-hexagonalize\", duration }] }).",
+  "tags": [
+    "transition",
+    "shader",
+    "webgl",
+    "gl-transitions",
+    "pixelate",
+    "hexagon",
+    "blend"
+  ],
+  "author": "Fernando Kuteken",
+  "authorUrl": "https://gl-transitions.com",
+  "license": "MIT",
+  "registryDependencies": [
+    "hyper-shader"
+  ],
+  "files": [
+    {
+      "path": "gl-hexagonalize.js",
+      "target": "vendor/glintmotion/transitions/gl-hexagonalize.js",
+      "type": "hyperframes:asset"
+    }
+  ]
+}

@@ -1,0 +1,29 @@
+{
+  "$schema": "https://hyperframes.heygen.com/schema/registry-item.json",
+  "name": "gl-rotate-scale-vanish",
+  "type": "hyperframes:component",
+  "title": "RotateScaleVanish transition",
+  "description": "The outgoing image spins and shrinks away over the incoming one. Load vendor/glintmotion/hyper-shader.js, then this file, then call HyperShader.init({ transitions: [{ time, shader: \"gl-rotate-scale-vanish\", duration }] }).",
+  "tags": [
+    "transition",
+    "shader",
+    "webgl",
+    "gl-transitions",
+    "rotate",
+    "zoom",
+    "spin"
+  ],
+  "author": "Mark Craig",
+  "authorUrl": "https://gl-transitions.com",
+  "license": "MIT",
+  "registryDependencies": [
+    "hyper-shader"
+  ],
+  "files": [
+    {
+      "path": "gl-rotate-scale-vanish.js",
+      "target": "vendor/glintmotion/transitions/gl-rotate-scale-vanish.js",
+      "type": "hyperframes:asset"
+    }
+  ]
+}

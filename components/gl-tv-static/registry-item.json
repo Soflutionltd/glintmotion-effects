@@ -1,0 +1,29 @@
+{
+  "$schema": "https://hyperframes.heygen.com/schema/registry-item.json",
+  "name": "gl-tv-static",
+  "type": "hyperframes:component",
+  "title": "TVStatic transition",
+  "description": "Cuts to full-screen TV static, then to the incoming image. Load vendor/glintmotion/hyper-shader.js, then this file, then call HyperShader.init({ transitions: [{ time, shader: \"gl-tv-static\", duration }] }).",
+  "tags": [
+    "transition",
+    "shader",
+    "webgl",
+    "gl-transitions",
+    "static",
+    "noise",
+    "retro"
+  ],
+  "author": "Brandon Anzaldi",
+  "authorUrl": "https://gl-transitions.com",
+  "license": "MIT",
+  "registryDependencies": [
+    "hyper-shader"
+  ],
+  "files": [
+    {
+      "path": "gl-tv-static.js",
+      "target": "vendor/glintmotion/transitions/gl-tv-static.js",
+      "type": "hyperframes:asset"
+    }
+  ]
+}

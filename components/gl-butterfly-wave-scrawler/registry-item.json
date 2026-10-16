@@ -1,0 +1,29 @@
+{
+  "$schema": "https://hyperframes.heygen.com/schema/registry-item.json",
+  "name": "gl-butterfly-wave-scrawler",
+  "type": "hyperframes:component",
+  "title": "ButterflyWaveScrawler transition",
+  "description": "Wavy, color-separated ripples scramble the outgoing image into the incoming one. Load vendor/glintmotion/hyper-shader.js, then this file, then call HyperShader.init({ transitions: [{ time, shader: \"gl-butterfly-wave-scrawler\", duration }] }).",
+  "tags": [
+    "transition",
+    "shader",
+    "webgl",
+    "gl-transitions",
+    "wave",
+    "distort",
+    "chromatic"
+  ],
+  "author": "mandubian",
+  "authorUrl": "https://gl-transitions.com",
+  "license": "MIT",
+  "registryDependencies": [
+    "hyper-shader"
+  ],
+  "files": [
+    {
+      "path": "gl-butterfly-wave-scrawler.js",
+      "target": "vendor/glintmotion/transitions/gl-butterfly-wave-scrawler.js",
+      "type": "hyperframes:asset"
+    }
+  ]
+}

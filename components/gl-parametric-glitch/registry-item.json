@@ -1,0 +1,28 @@
+{
+  "$schema": "https://hyperframes.heygen.com/schema/registry-item.json",
+  "name": "gl-parametric-glitch",
+  "type": "hyperframes:component",
+  "title": "Parametric_glitch transition",
+  "description": "A crossfade with glitchy horizontal bands and color shifts. Load vendor/glintmotion/hyper-shader.js, then this file, then call HyperShader.init({ transitions: [{ time, shader: \"gl-parametric-glitch\", duration }] }).",
+  "tags": [
+    "transition",
+    "shader",
+    "webgl",
+    "gl-transitions",
+    "glitch",
+    "blend"
+  ],
+  "author": "Yoni Maltsman @friendlyspinach",
+  "authorUrl": "https://gl-transitions.com",
+  "license": "MIT",
+  "registryDependencies": [
+    "hyper-shader"
+  ],
+  "files": [
+    {
+      "path": "gl-parametric-glitch.js",
+      "target": "vendor/glintmotion/transitions/gl-parametric-glitch.js",
+      "type": "hyperframes:asset"
+    }
+  ]
+}

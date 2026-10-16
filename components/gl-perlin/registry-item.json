@@ -1,0 +1,28 @@
+{
+  "$schema": "https://hyperframes.heygen.com/schema/registry-item.json",
+  "name": "gl-perlin",
+  "type": "hyperframes:component",
+  "title": "Perlin transition",
+  "description": "The incoming image appears through blobs of Perlin noise. Load vendor/glintmotion/hyper-shader.js, then this file, then call HyperShader.init({ transitions: [{ time, shader: \"gl-perlin\", duration }] }).",
+  "tags": [
+    "transition",
+    "shader",
+    "webgl",
+    "gl-transitions",
+    "noise",
+    "dissolve"
+  ],
+  "author": "Rich Harris",
+  "authorUrl": "https://gl-transitions.com",
+  "license": "MIT",
+  "registryDependencies": [
+    "hyper-shader"
+  ],
+  "files": [
+    {
+      "path": "gl-perlin.js",
+      "target": "vendor/glintmotion/transitions/gl-perlin.js",
+      "type": "hyperframes:asset"
+    }
+  ]
+}

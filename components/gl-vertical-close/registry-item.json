@@ -1,0 +1,28 @@
+{
+  "$schema": "https://hyperframes.heygen.com/schema/registry-item.json",
+  "name": "gl-vertical-close",
+  "type": "hyperframes:component",
+  "title": "VerticalClose transition",
+  "description": "The incoming image closes in from the left and right edges toward the middle. Load vendor/glintmotion/hyper-shader.js, then this file, then call HyperShader.init({ transitions: [{ time, shader: \"gl-vertical-close\", duration }] }).",
+  "tags": [
+    "transition",
+    "shader",
+    "webgl",
+    "gl-transitions",
+    "wipe",
+    "split"
+  ],
+  "author": "martiniti",
+  "authorUrl": "https://gl-transitions.com",
+  "license": "MIT",
+  "registryDependencies": [
+    "hyper-shader"
+  ],
+  "files": [
+    {
+      "path": "gl-vertical-close.js",
+      "target": "vendor/glintmotion/transitions/gl-vertical-close.js",
+      "type": "hyperframes:asset"
+    }
+  ]
+}

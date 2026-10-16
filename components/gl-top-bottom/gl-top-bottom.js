@@ -1,0 +1,7 @@
+(function () {
+  var S = window.HyperShader;
+  if (!S || typeof S.registerShader !== "function") {
+    throw new Error("Load vendor/glintmotion/hyper-shader.js before this file: it adds shaders to that build of HyperShader.");
+  }
+  S.registerShader("gl-top-bottom", "// gl-top-bottom, from GL Transitions \"TopBottom\" by zhmy (MIT).\nfloat progress;\nfloat ratio;\nvec4 getFromColor(vec2 p){return texture2D(u_from,vec2(p.x,1.0-p.y));}\nvec4 getToColor(vec2 p){return texture2D(u_to,vec2(p.x,1.0-p.y));}\n// Author: zhmy\n// License: MIT\n// Description: The outgoing image shrinks away upward while the incoming one slides in from the bottom\n// Tags: slide, zoom, vertical\n\nconst vec4 black = vec4(0.0, 0.0, 0.0, 1.0);\nconst vec2 boundMin = vec2(0.0, 0.0);\nconst vec2 boundMax = vec2(1.0, 1.0);\n\nbool inBounds (vec2 p) {\n    return all(lessThan(boundMin, p)) && all(lessThan(p, boundMax));\n}\n\nvec4 transition (vec2 uv) {\n    vec2 spfr,spto = vec2(-1.);\n    float size = mix(1.0, 3.0, progress*0.2);\n    spto = (uv + vec2(-0.5,-0.5))*vec2(size,size)+vec2(0.5,0.5);\n    spfr = (uv + vec2(0.0, 1.0 - progress));\n    if(inBounds(spfr)){\n        return getToColor(spfr);\n    } else if(inBounds(spto)){\n        return getFromColor(spto) * (1.0 - progress);\n    } else{\n        return black;\n    }\n}\nvoid main(){\n  progress=u_progress;\n  ratio=u_resolution.x/u_resolution.y;\n  gl_FragColor=transition(vec2(v_uv.x,1.0-v_uv.y));\n}\n");
+})();

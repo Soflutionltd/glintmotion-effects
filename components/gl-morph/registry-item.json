@@ -1,0 +1,29 @@
+{
+  "$schema": "https://hyperframes.heygen.com/schema/registry-item.json",
+  "name": "gl-morph",
+  "type": "hyperframes:component",
+  "title": "Morph transition",
+  "description": "A crossfade in which each image is displaced by the other's colors, like a morph. Load vendor/glintmotion/hyper-shader.js, then this file, then call HyperShader.init({ transitions: [{ time, shader: \"gl-morph\", duration }] }).",
+  "tags": [
+    "transition",
+    "shader",
+    "webgl",
+    "gl-transitions",
+    "morph",
+    "distort",
+    "blend"
+  ],
+  "author": "paniq",
+  "authorUrl": "https://gl-transitions.com",
+  "license": "MIT",
+  "registryDependencies": [
+    "hyper-shader"
+  ],
+  "files": [
+    {
+      "path": "gl-morph.js",
+      "target": "vendor/glintmotion/transitions/gl-morph.js",
+      "type": "hyperframes:asset"
+    }
+  ]
+}

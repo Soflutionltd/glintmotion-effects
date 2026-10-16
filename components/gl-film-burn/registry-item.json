@@ -1,0 +1,29 @@
+{
+  "$schema": "https://hyperframes.heygen.com/schema/registry-item.json",
+  "name": "gl-film-burn",
+  "type": "hyperframes:component",
+  "title": "FilmBurn transition",
+  "description": "Glowing film-burn light leaks wash over the image and reveal the incoming one. Load vendor/glintmotion/hyper-shader.js, then this file, then call HyperShader.init({ transitions: [{ time, shader: \"gl-film-burn\", duration }] }).",
+  "tags": [
+    "transition",
+    "shader",
+    "webgl",
+    "gl-transitions",
+    "burn",
+    "film",
+    "light-leak"
+  ],
+  "author": "Anastasia Dunbar",
+  "authorUrl": "https://gl-transitions.com",
+  "license": "MIT",
+  "registryDependencies": [
+    "hyper-shader"
+  ],
+  "files": [
+    {
+      "path": "gl-film-burn.js",
+      "target": "vendor/glintmotion/transitions/gl-film-burn.js",
+      "type": "hyperframes:asset"
+    }
+  ]
+}

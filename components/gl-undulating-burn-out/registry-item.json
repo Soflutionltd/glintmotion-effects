@@ -1,0 +1,29 @@
+{
+  "$schema": "https://hyperframes.heygen.com/schema/registry-item.json",
+  "name": "gl-undulating-burn-out",
+  "type": "hyperframes:component",
+  "title": "UndulatingBurnOut transition",
+  "description": "A circle with a wavy edge burns out from the center to reveal the incoming image. Load vendor/glintmotion/hyper-shader.js, then this file, then call HyperShader.init({ transitions: [{ time, shader: \"gl-undulating-burn-out\", duration }] }).",
+  "tags": [
+    "transition",
+    "shader",
+    "webgl",
+    "gl-transitions",
+    "circle",
+    "burn",
+    "wipe"
+  ],
+  "author": "pthrasher",
+  "authorUrl": "https://gl-transitions.com",
+  "license": "MIT",
+  "registryDependencies": [
+    "hyper-shader"
+  ],
+  "files": [
+    {
+      "path": "gl-undulating-burn-out.js",
+      "target": "vendor/glintmotion/transitions/gl-undulating-burn-out.js",
+      "type": "hyperframes:asset"
+    }
+  ]
+}

@@ -1,0 +1,28 @@
+{
+  "$schema": "https://hyperframes.heygen.com/schema/registry-item.json",
+  "name": "gl-edge-transition",
+  "type": "hyperframes:component",
+  "title": "EdgeTransition transition",
+  "description": "Both images fade through black with their edges glowing. Load vendor/glintmotion/hyper-shader.js, then this file, then call HyperShader.init({ transitions: [{ time, shader: \"gl-edge-transition\", duration }] }).",
+  "tags": [
+    "transition",
+    "shader",
+    "webgl",
+    "gl-transitions",
+    "edges",
+    "fade"
+  ],
+  "author": "Woohyun Kim",
+  "authorUrl": "https://gl-transitions.com",
+  "license": "MIT",
+  "registryDependencies": [
+    "hyper-shader"
+  ],
+  "files": [
+    {
+      "path": "gl-edge-transition.js",
+      "target": "vendor/glintmotion/transitions/gl-edge-transition.js",
+      "type": "hyperframes:asset"
+    }
+  ]
+}

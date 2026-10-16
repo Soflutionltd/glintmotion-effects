@@ -1,0 +1,29 @@
+{
+  "$schema": "https://hyperframes.heygen.com/schema/registry-item.json",
+  "name": "gl-glitch-memories",
+  "type": "hyperframes:component",
+  "title": "GlitchMemories transition",
+  "description": "A crossfade with glitchy, color-shifted blocks. Load vendor/glintmotion/hyper-shader.js, then this file, then call HyperShader.init({ transitions: [{ time, shader: \"gl-glitch-memories\", duration }] }).",
+  "tags": [
+    "transition",
+    "shader",
+    "webgl",
+    "gl-transitions",
+    "glitch",
+    "chromatic",
+    "blend"
+  ],
+  "author": "Gunnar Roth",
+  "authorUrl": "https://gl-transitions.com",
+  "license": "MIT",
+  "registryDependencies": [
+    "hyper-shader"
+  ],
+  "files": [
+    {
+      "path": "gl-glitch-memories.js",
+      "target": "vendor/glintmotion/transitions/gl-glitch-memories.js",
+      "type": "hyperframes:asset"
+    }
+  ]
+}

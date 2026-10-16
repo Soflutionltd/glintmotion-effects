@@ -1,0 +1,28 @@
+{
+  "$schema": "https://hyperframes.heygen.com/schema/registry-item.json",
+  "name": "gl-multiply-blend",
+  "type": "hyperframes:component",
+  "title": "Multiply_blend transition",
+  "description": "A crossfade through the multiplied blend of both images. Load vendor/glintmotion/hyper-shader.js, then this file, then call HyperShader.init({ transitions: [{ time, shader: \"gl-multiply-blend\", duration }] }).",
+  "tags": [
+    "transition",
+    "shader",
+    "webgl",
+    "gl-transitions",
+    "blend",
+    "fade"
+  ],
+  "author": "Fernando Kuteken",
+  "authorUrl": "https://gl-transitions.com",
+  "license": "MIT",
+  "registryDependencies": [
+    "hyper-shader"
+  ],
+  "files": [
+    {
+      "path": "gl-multiply-blend.js",
+      "target": "vendor/glintmotion/transitions/gl-multiply-blend.js",
+      "type": "hyperframes:asset"
+    }
+  ]
+}

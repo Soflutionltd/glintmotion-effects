@@ -1,0 +1,7 @@
+(function () {
+  var S = window.HyperShader;
+  if (!S || typeof S.registerShader !== "function") {
+    throw new Error("Load vendor/glintmotion/hyper-shader.js before this file: it adds shaders to that build of HyperShader.");
+  }
+  S.registerShader("gl-parametric-glitch", "// gl-parametric-glitch, from GL Transitions \"parametric_glitch\" by Yoni Maltsman @friendlyspinach (MIT).\nfloat progress;\nfloat ratio;\nvec4 getFromColor(vec2 p){return texture2D(u_from,vec2(p.x,1.0-p.y));}\nvec4 getToColor(vec2 p){return texture2D(u_to,vec2(p.x,1.0-p.y));}\n// Author: Yoni Maltsman @friendlyspinach\n// License: MIT\n// Description: A crossfade with glitchy horizontal bands and color shifts\n// Tags: glitch, blend\n\n\n\n// @param Horizontal amplitude of the glitch\nconst float ampx = 1.0;\n// @param Vertical amplitude of the glitch\nconst float ampy = 1.0;\n\nvec4 transition (vec2 uv) {\n  vec4 from = getFromColor(uv);\n  vec4 to = getToColor(uv);\n  float r = from.r;\n  float g = from.g;\n  float b = from.b;\n  float sphere = r*r + g*g + b*b - 1.0; //3 to 1\n  float spiralX = cos(sphere - uv.x/(progress + .01));\n  float spiralY = sin(sphere - uv.y/(progress+.01));\n  vec2 st = uv;\n  st.x = fract(ampx*st.x*spiralX); //1 to 2\n  st.y = fract(ampy*st.y*spiralY);\n  vec2 diff = uv - st;\n  from = getFromColor(uv + progress*diff);\n  return mix(from, to, progress);\n}\n\nvoid main(){\n  progress=u_progress;\n  ratio=u_resolution.x/u_resolution.y;\n  gl_FragColor=transition(vec2(v_uv.x,1.0-v_uv.y));\n}\n");
+})();

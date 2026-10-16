@@ -1,0 +1,28 @@
+{
+  "$schema": "https://hyperframes.heygen.com/schema/registry-item.json",
+  "name": "gl-glitch-displace",
+  "type": "hyperframes:component",
+  "title": "GlitchDisplace transition",
+  "description": "Blocks of the image are displaced in a glitch that flashes into the incoming image. Load vendor/glintmotion/hyper-shader.js, then this file, then call HyperShader.init({ transitions: [{ time, shader: \"gl-glitch-displace\", duration }] }).",
+  "tags": [
+    "transition",
+    "shader",
+    "webgl",
+    "gl-transitions",
+    "glitch",
+    "displace"
+  ],
+  "author": "Matt DesLauriers",
+  "authorUrl": "https://gl-transitions.com",
+  "license": "MIT",
+  "registryDependencies": [
+    "hyper-shader"
+  ],
+  "files": [
+    {
+      "path": "gl-glitch-displace.js",
+      "target": "vendor/glintmotion/transitions/gl-glitch-displace.js",
+      "type": "hyperframes:asset"
+    }
+  ]
+}

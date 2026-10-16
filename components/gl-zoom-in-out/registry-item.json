@@ -1,0 +1,28 @@
+{
+  "$schema": "https://hyperframes.heygen.com/schema/registry-item.json",
+  "name": "gl-zoom-in-out",
+  "type": "hyperframes:component",
+  "title": "ZoomInOut transition",
+  "description": "Zooms into the outgoing image until it blurs into a flat color, then out to the incoming one. Load vendor/glintmotion/hyper-shader.js, then this file, then call HyperShader.init({ transitions: [{ time, shader: \"gl-zoom-in-out\", duration }] }).",
+  "tags": [
+    "transition",
+    "shader",
+    "webgl",
+    "gl-transitions",
+    "zoom",
+    "blur"
+  ],
+  "author": "OllyOllyOlly",
+  "authorUrl": "https://gl-transitions.com",
+  "license": "MIT",
+  "registryDependencies": [
+    "hyper-shader"
+  ],
+  "files": [
+    {
+      "path": "gl-zoom-in-out.js",
+      "target": "vendor/glintmotion/transitions/gl-zoom-in-out.js",
+      "type": "hyperframes:asset"
+    }
+  ]
+}

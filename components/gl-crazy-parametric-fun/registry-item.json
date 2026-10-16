@@ -1,0 +1,28 @@
+{
+  "$schema": "https://hyperframes.heygen.com/schema/registry-item.json",
+  "name": "gl-crazy-parametric-fun",
+  "type": "hyperframes:component",
+  "title": "CrazyParametricFun transition",
+  "description": "The outgoing image is pulled along a parametric curve into a psychedelic swirl. Load vendor/glintmotion/hyper-shader.js, then this file, then call HyperShader.init({ transitions: [{ time, shader: \"gl-crazy-parametric-fun\", duration }] }).",
+  "tags": [
+    "transition",
+    "shader",
+    "webgl",
+    "gl-transitions",
+    "distort",
+    "psychedelic"
+  ],
+  "author": "mandubian",
+  "authorUrl": "https://gl-transitions.com",
+  "license": "MIT",
+  "registryDependencies": [
+    "hyper-shader"
+  ],
+  "files": [
+    {
+      "path": "gl-crazy-parametric-fun.js",
+      "target": "vendor/glintmotion/transitions/gl-crazy-parametric-fun.js",
+      "type": "hyperframes:asset"
+    }
+  ]
+}

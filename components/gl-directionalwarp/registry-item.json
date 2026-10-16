@@ -1,0 +1,29 @@
+{
+  "$schema": "https://hyperframes.heygen.com/schema/registry-item.json",
+  "name": "gl-directionalwarp",
+  "type": "hyperframes:component",
+  "title": "Directionalwarp transition",
+  "description": "A diagonal wipe with a warped, smeared edge. Load vendor/glintmotion/hyper-shader.js, then this file, then call HyperShader.init({ transitions: [{ time, shader: \"gl-directionalwarp\", duration }] }).",
+  "tags": [
+    "transition",
+    "shader",
+    "webgl",
+    "gl-transitions",
+    "wipe",
+    "warp",
+    "directional"
+  ],
+  "author": "pschroen",
+  "authorUrl": "https://gl-transitions.com",
+  "license": "MIT",
+  "registryDependencies": [
+    "hyper-shader"
+  ],
+  "files": [
+    {
+      "path": "gl-directionalwarp.js",
+      "target": "vendor/glintmotion/transitions/gl-directionalwarp.js",
+      "type": "hyperframes:asset"
+    }
+  ]
+}

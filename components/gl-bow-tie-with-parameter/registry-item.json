@@ -1,0 +1,28 @@
+{
+  "$schema": "https://hyperframes.heygen.com/schema/registry-item.json",
+  "name": "gl-bow-tie-with-parameter",
+  "type": "hyperframes:component",
+  "title": "BowTieWithParameter transition",
+  "description": "A bow-tie wipe with an adjustable shape that can run in reverse. Load vendor/glintmotion/hyper-shader.js, then this file, then call HyperShader.init({ transitions: [{ time, shader: \"gl-bow-tie-with-parameter\", duration }] }).",
+  "tags": [
+    "transition",
+    "shader",
+    "webgl",
+    "gl-transitions",
+    "wipe",
+    "shape"
+  ],
+  "author": "KMojek",
+  "authorUrl": "https://gl-transitions.com",
+  "license": "MIT",
+  "registryDependencies": [
+    "hyper-shader"
+  ],
+  "files": [
+    {
+      "path": "gl-bow-tie-with-parameter.js",
+      "target": "vendor/glintmotion/transitions/gl-bow-tie-with-parameter.js",
+      "type": "hyperframes:asset"
+    }
+  ]
+}

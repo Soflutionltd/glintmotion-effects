@@ -1,0 +1,7 @@
+(function () {
+  var S = window.HyperShader;
+  if (!S || typeof S.registerShader !== "function") {
+    throw new Error("Load vendor/glintmotion/hyper-shader.js before this file: it adds shaders to that build of HyperShader.");
+  }
+  S.registerShader("gl-zoom-left-wipe", "// gl-zoom-left-wipe, from GL Transitions \"ZoomLeftWipe\" by Handk (MIT).\nfloat progress;\nfloat ratio;\nvec4 getFromColor(vec2 p){return texture2D(u_from,vec2(p.x,1.0-p.y));}\nvec4 getToColor(vec2 p){return texture2D(u_to,vec2(p.x,1.0-p.y));}\n// Author: Handk\n// License: MIT\n// Description: Zooms into the outgoing image, then the incoming one wipes in from right to left\n// Tags: zoom, wipe, horizontal\n\n// @param Part of the first half spent zooming (capped at 0.5)\nconst float zoom_quickness = 0.8;\nvec2 zoom(vec2 uv, float amount) {\n  if(amount<0.5)\n  return 0.5 + ((uv - 0.5) * (1.0-amount));\n  else\n  return 0.5 + ((uv - 0.5) * (amount));\n  \n}\n\nvec4 transition (vec2 uv) {\n  float nQuick = clamp(zoom_quickness,0.0,0.5);\n  if(progress<0.5){\n    vec4 c= mix(\n      getFromColor(zoom(uv, smoothstep(0.0, nQuick, progress))),\n      getToColor(uv),\n     step(0.5, progress)\n    );\n    \n    return c;\n  }\n  else{\n    vec2 p=uv.xy/vec2(1.0).xy;\n    vec4 d=getFromColor(p);\n    vec4 e=getToColor(p);\n    vec4 f= mix(d, e, step(1.0-p.x,(progress-0.5)*2.0));\n    \n    return f;\n  }\n}\n\nvoid main(){\n  progress=u_progress;\n  ratio=u_resolution.x/u_resolution.y;\n  gl_FragColor=transition(vec2(v_uv.x,1.0-v_uv.y));\n}\n");
+})();

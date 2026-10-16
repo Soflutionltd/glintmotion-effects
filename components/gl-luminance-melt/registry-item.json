@@ -1,0 +1,29 @@
+{
+  "$schema": "https://hyperframes.heygen.com/schema/registry-item.json",
+  "name": "gl-luminance-melt",
+  "type": "hyperframes:component",
+  "title": "Luminance_melt transition",
+  "description": "The outgoing image melts away in noisy vertical streaks, depending on its brightness. Load vendor/glintmotion/hyper-shader.js, then this file, then call HyperShader.init({ transitions: [{ time, shader: \"gl-luminance-melt\", duration }] }).",
+  "tags": [
+    "transition",
+    "shader",
+    "webgl",
+    "gl-transitions",
+    "melt",
+    "noise",
+    "luma"
+  ],
+  "author": "0gust1",
+  "authorUrl": "https://gl-transitions.com",
+  "license": "MIT",
+  "registryDependencies": [
+    "hyper-shader"
+  ],
+  "files": [
+    {
+      "path": "gl-luminance-melt.js",
+      "target": "vendor/glintmotion/transitions/gl-luminance-melt.js",
+      "type": "hyperframes:asset"
+    }
+  ]
+}
