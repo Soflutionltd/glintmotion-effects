@@ -1,0 +1,61 @@
+name: Check effects
+
+on:
+  pull_request:
+  push:
+    branches: [main]
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+concurrency:
+  group: check-${{ github.ref }}
+  cancel-in-progress: true
+
+env:
+  HYPERFRAMES_VERSION: 0.8.164
+
+jobs:
+  check:
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+
+      - name: Static checks
+        run: node scripts/check-contribution.mjs
+
+      - name: Generated catalog is up to date
+        run: |
+          node scripts/build-registry.mjs
+          if ! git diff --quiet -- components registry.json catalog.json; then
+            git status --short -- components registry.json catalog.json
+            echo "::error::Run node scripts/build-registry.mjs and commit the result."
+            exit 1
+          fi
+
+      - name: Install ffmpeg and Chrome
+        run: |
+          sudo apt-get update -qq
+          sudo apt-get install -y -qq ffmpeg
+          npx -y hyperframes@${HYPERFRAMES_VERSION} browser ensure
+
+      - name: Build the effects gallery
+        run: node scripts/build-effects-gallery.mjs "$RUNNER_TEMP/fx" --width 540 --height 960
+
+      - name: Lint
+        run: npx -y hyperframes@${HYPERFRAMES_VERSION} lint "$RUNNER_TEMP/fx"
+
+      - name: Render
+        run: npx -y hyperframes@${HYPERFRAMES_VERSION} render "$RUNNER_TEMP/fx" --quiet -o "$RUNNER_TEMP/fx/effects-gallery.mp4"
+
+      - uses: actions/upload-artifact@v4
+        with:
+          name: effects-gallery
+          path: ${{ runner.temp }}/fx/effects-gallery.mp4
+          retention-days: 14
