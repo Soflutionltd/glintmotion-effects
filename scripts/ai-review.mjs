@@ -9,8 +9,8 @@
 import { readFileSync } from "node:fs";
 import { join, resolve } from "node:path";
 
-// Flash models are often overloaded (503): the next one is tried when one is.
-const MODELS = (process.env.GEMINI_MODEL || "gemini-flash-latest,gemini-2.5-flash,gemini-flash-lite-latest")
+// Flash models get overloaded (503) or retired (404): the next one is tried when one is.
+const MODELS = (process.env.GEMINI_MODEL || "gemini-3.8-flash,gemini-3.5-flash,gemini-flash-latest")
   .split(",")
   .map((name) => name.trim())
   .filter(Boolean);
@@ -112,7 +112,7 @@ async function reviewWith(model) {
     }
     if (!retryable || attempt === ATTEMPTS) {
       const error = new Error(`Gemini ${model} answered ${response.status}: ${text.slice(0, 300)}`);
-      error.retryable = retryable;
+      error.retryable = retryable || response.status === 404;
       throw error;
     }
     await new Promise((done) => setTimeout(done, attempt * 10_000));
