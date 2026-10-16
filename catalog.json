@@ -1,0 +1,1970 @@
+{
+  "generated": "scripts/build-registry.mjs",
+  "items": [
+    {
+      "name": "hyper-shader",
+      "title": "HyperShader with registerShader",
+      "description": "The HyperShader transition runtime built from the Glintmotion fork: the 14 built-in shaders plus registerShader(name, glsl) for every transition in this catalog. Replaces the CDN script.",
+      "tags": [
+        "transition",
+        "shader",
+        "webgl",
+        "runtime"
+      ],
+      "license": "Apache-2.0",
+      "author": "HeyGen HyperFrames contributors, Glintmotion"
+    },
+    {
+      "name": "gl-advanced-mosaic",
+      "title": "AdvancedMosaic transition",
+      "description": "Both images break into large blocks that blend, then sharpen into the incoming image. Load vendor/glintmotion/hyper-shader.js, then this file, then call HyperShader.init({ transitions: [{ time, shader: \"gl-advanced-mosaic\", duration }] }).",
+      "tags": [
+        "transition",
+        "shader",
+        "webgl",
+        "gl-transitions",
+        "pixelate",
+        "mosaic",
+        "blend"
+      ],
+      "license": "MIT",
+      "author": "Sergey Kosarevsky"
+    },
+    {
+      "name": "gl-block-dissolve",
+      "title": "BlockDissolve transition",
+      "description": "The incoming image appears in small random blocks. Load vendor/glintmotion/hyper-shader.js, then this file, then call HyperShader.init({ transitions: [{ time, shader: \"gl-block-dissolve\", duration }] }).",
+      "tags": [
+        "transition",
+        "shader",
+        "webgl",
+        "gl-transitions",
+        "dissolve",
+        "blocks",
+        "noise"
+      ],
+      "license": "MIT",
+      "author": "nwoeanhinnogaehr"
+    },
+    {
+      "name": "gl-book-flip",
+      "title": "BookFlip transition",
+      "description": "The outgoing image turns like a book page from right to left, revealing the incoming one. Load vendor/glintmotion/hyper-shader.js, then this file, then call HyperShader.init({ transitions: [{ time, shader: \"gl-book-flip\", duration }] }).",
+      "tags": [
+        "transition",
+        "shader",
+        "webgl",
+        "gl-transitions",
+        "page",
+        "flip",
+        "3d"
+      ],
+      "license": "MIT",
+      "author": "hong"
+    },
+    {
+      "name": "gl-bounce",
+      "title": "Bounce transition",
+      "description": "The outgoing image drops out of the frame with a few bounces, revealing the incoming one. Load vendor/glintmotion/hyper-shader.js, then this file, then call HyperShader.init({ transitions: [{ time, shader: \"gl-bounce\", duration }] }).",
+      "tags": [
+        "transition",
+        "shader",
+        "webgl",
+        "gl-transitions",
+        "bounce",
+        "slide",
+        "vertical",
+        "shadow"
+      ],
+      "license": "MIT",
+      "author": "Adrian Purser"
+    },
+    {
+      "name": "gl-bow-tie-horizontal",
+      "title": "BowTieHorizontal transition",
+      "description": "Two triangles grow from the left and right edges into a bow tie that reveals the incoming image. Load vendor/glintmotion/hyper-shader.js, then this file, then call HyperShader.init({ transitions: [{ time, shader: \"gl-bow-tie-horizontal\", duration }] }).",
+      "tags": [
+        "transition",
+        "shader",
+        "webgl",
+        "gl-transitions",
+        "wipe",
+        "shape",
+        "horizontal"
+      ],
+      "license": "MIT",
+      "author": "huynx"
+    },
+    {
+      "name": "gl-bow-tie-vertical",
+      "title": "BowTieVertical transition",
+      "description": "Two triangles grow from the top and bottom edges into a bow tie that reveals the incoming image. Load vendor/glintmotion/hyper-shader.js, then this file, then call HyperShader.init({ transitions: [{ time, shader: \"gl-bow-tie-vertical\", duration }] }).",
+      "tags": [
+        "transition",
+        "shader",
+        "webgl",
+        "gl-transitions",
+        "wipe",
+        "shape",
+        "vertical"
+      ],
+      "license": "MIT",
+      "author": "huynx"
+    },
+    {
+      "name": "gl-bow-tie-with-parameter",
+      "title": "BowTieWithParameter transition",
+      "description": "A bow-tie wipe with an adjustable shape that can run in reverse. Load vendor/glintmotion/hyper-shader.js, then this file, then call HyperShader.init({ transitions: [{ time, shader: \"gl-bow-tie-with-parameter\", duration }] }).",
+      "tags": [
+        "transition",
+        "shader",
+        "webgl",
+        "gl-transitions",
+        "wipe",
+        "shape"
+      ],
+      "license": "MIT",
+      "author": "KMojek"
+    },
+    {
+      "name": "gl-box",
+      "title": "Box transition",
+      "description": "The outgoing image shrinks into a box, toward the center or a corner, revealing the incoming one. Load vendor/glintmotion/hyper-shader.js, then this file, then call HyperShader.init({ transitions: [{ time, shader: \"gl-box\", duration }] }).",
+      "tags": [
+        "transition",
+        "shader",
+        "webgl",
+        "gl-transitions",
+        "box",
+        "zoom",
+        "shape"
+      ],
+      "license": "MIT",
+      "author": "lql"
+    },
+    {
+      "name": "gl-butterfly-wave-scrawler",
+      "title": "ButterflyWaveScrawler transition",
+      "description": "Wavy, color-separated ripples scramble the outgoing image into the incoming one. Load vendor/glintmotion/hyper-shader.js, then this file, then call HyperShader.init({ transitions: [{ time, shader: \"gl-butterfly-wave-scrawler\", duration }] }).",
+      "tags": [
+        "transition",
+        "shader",
+        "webgl",
+        "gl-transitions",
+        "wave",
+        "distort",
+        "chromatic"
+      ],
+      "license": "MIT",
+      "author": "mandubian"
+    },
+    {
+      "name": "gl-circle-crop",
+      "title": "CircleCrop transition",
+      "description": "The outgoing image closes into a circle over a background color, then the incoming one opens from it. Load vendor/glintmotion/hyper-shader.js, then this file, then call HyperShader.init({ transitions: [{ time, shader: \"gl-circle-crop\", duration }] }).",
+      "tags": [
+        "transition",
+        "shader",
+        "webgl",
+        "gl-transitions",
+        "circle",
+        "iris",
+        "shape"
+      ],
+      "license": "MIT",
+      "author": "fkuteken"
+    },
+    {
+      "name": "gl-colour-distance",
+      "title": "ColourDistance transition",
+      "description": "Pixels switch to the incoming image in order of how close their colors are. Load vendor/glintmotion/hyper-shader.js, then this file, then call HyperShader.init({ transitions: [{ time, shader: \"gl-colour-distance\", duration }] }).",
+      "tags": [
+        "transition",
+        "shader",
+        "webgl",
+        "gl-transitions",
+        "blend",
+        "color"
+      ],
+      "license": "MIT",
+      "author": "P-Seebauer"
+    },
+    {
+      "name": "gl-crazy-parametric-fun",
+      "title": "CrazyParametricFun transition",
+      "description": "The outgoing image is pulled along a parametric curve into a psychedelic swirl. Load vendor/glintmotion/hyper-shader.js, then this file, then call HyperShader.init({ transitions: [{ time, shader: \"gl-crazy-parametric-fun\", duration }] }).",
+      "tags": [
+        "transition",
+        "shader",
+        "webgl",
+        "gl-transitions",
+        "distort",
+        "psychedelic"
+      ],
+      "license": "MIT",
+      "author": "mandubian"
+    },
+    {
+      "name": "gl-cross-zoom",
+      "title": "CrossZoom transition",
+      "description": "A crossfade through a strong zoom blur. Load vendor/glintmotion/hyper-shader.js, then this file, then call HyperShader.init({ transitions: [{ time, shader: \"gl-cross-zoom\", duration }] }).",
+      "tags": [
+        "transition",
+        "shader",
+        "webgl",
+        "gl-transitions",
+        "zoom",
+        "blur",
+        "blend"
+      ],
+      "license": "MIT",
+      "author": "rectalogic"
+    },
+    {
+      "name": "gl-defocus-blur",
+      "title": "DefocusBlur transition",
+      "description": "A crossfade through an out-of-focus blur. Load vendor/glintmotion/hyper-shader.js, then this file, then call HyperShader.init({ transitions: [{ time, shader: \"gl-defocus-blur\", duration }] }).",
+      "tags": [
+        "transition",
+        "shader",
+        "webgl",
+        "gl-transitions",
+        "blur",
+        "blend"
+      ],
+      "license": "MIT",
+      "author": "Sergey Kosarevsky"
+    },
+    {
+      "name": "gl-directional",
+      "title": "Directional transition",
+      "description": "The incoming image pushes the outgoing one out in a given direction. Load vendor/glintmotion/hyper-shader.js, then this file, then call HyperShader.init({ transitions: [{ time, shader: \"gl-directional\", duration }] }).",
+      "tags": [
+        "transition",
+        "shader",
+        "webgl",
+        "gl-transitions",
+        "slide",
+        "push",
+        "directional"
+      ],
+      "license": "MIT",
+      "author": "Gaëtan Renaudeau"
+    },
+    {
+      "name": "gl-directional-scaled",
+      "title": "DirectionalScaled transition",
+      "description": "Like Directional, with both images scaled down while they slide. Load vendor/glintmotion/hyper-shader.js, then this file, then call HyperShader.init({ transitions: [{ time, shader: \"gl-directional-scaled\", duration }] }).",
+      "tags": [
+        "transition",
+        "shader",
+        "webgl",
+        "gl-transitions",
+        "slide",
+        "push",
+        "zoom",
+        "directional"
+      ],
+      "license": "MIT",
+      "author": "Thibaut Foussard"
+    },
+    {
+      "name": "gl-doom-screen-transition",
+      "title": "DoomScreenTransition transition",
+      "description": "The outgoing image melts down in uneven columns, like the Doom screen wipe. Load vendor/glintmotion/hyper-shader.js, then this file, then call HyperShader.init({ transitions: [{ time, shader: \"gl-doom-screen-transition\", duration }] }).",
+      "tags": [
+        "transition",
+        "shader",
+        "webgl",
+        "gl-transitions",
+        "melt",
+        "columns",
+        "retro"
+      ],
+      "license": "MIT",
+      "author": "Zeh Fernando"
+    },
+    {
+      "name": "gl-dreamy",
+      "title": "Dreamy transition",
+      "description": "A crossfade with a gentle wavy distortion. Load vendor/glintmotion/hyper-shader.js, then this file, then call HyperShader.init({ transitions: [{ time, shader: \"gl-dreamy\", duration }] }).",
+      "tags": [
+        "transition",
+        "shader",
+        "webgl",
+        "gl-transitions",
+        "wave",
+        "blend"
+      ],
+      "license": "MIT",
+      "author": "mikolalysenko"
+    },
+    {
+      "name": "gl-dreamy-zoom",
+      "title": "DreamyZoom transition",
+      "description": "Zooms and rotates into a bright flash, then out to the incoming image. Load vendor/glintmotion/hyper-shader.js, then this file, then call HyperShader.init({ transitions: [{ time, shader: \"gl-dreamy-zoom\", duration }] }).",
+      "tags": [
+        "transition",
+        "shader",
+        "webgl",
+        "gl-transitions",
+        "zoom",
+        "rotate",
+        "flash"
+      ],
+      "license": "MIT",
+      "author": "Zeh Fernando"
+    },
+    {
+      "name": "gl-drop-zone-flicker",
+      "title": "Drop_Zone_Flicker transition",
+      "description": "A flickering glitch with RGB offset, ghosting and scanlines that flashes back to the outgoing image. Load vendor/glintmotion/hyper-shader.js, then this file, then call HyperShader.init({ transitions: [{ time, shader: \"gl-drop-zone-flicker\", duration }] }).",
+      "tags": [
+        "transition",
+        "shader",
+        "webgl",
+        "gl-transitions",
+        "glitch",
+        "flicker",
+        "chromatic",
+        "scanlines"
+      ],
+      "license": "MIT",
+      "author": "bread"
+    },
+    {
+      "name": "gl-edge-transition",
+      "title": "EdgeTransition transition",
+      "description": "Both images fade through black with their edges glowing. Load vendor/glintmotion/hyper-shader.js, then this file, then call HyperShader.init({ transitions: [{ time, shader: \"gl-edge-transition\", duration }] }).",
+      "tags": [
+        "transition",
+        "shader",
+        "webgl",
+        "gl-transitions",
+        "edges",
+        "fade"
+      ],
+      "license": "MIT",
+      "author": "Woohyun Kim"
+    },
+    {
+      "name": "gl-film-burn",
+      "title": "FilmBurn transition",
+      "description": "Glowing film-burn light leaks wash over the image and reveal the incoming one. Load vendor/glintmotion/hyper-shader.js, then this file, then call HyperShader.init({ transitions: [{ time, shader: \"gl-film-burn\", duration }] }).",
+      "tags": [
+        "transition",
+        "shader",
+        "webgl",
+        "gl-transitions",
+        "burn",
+        "film",
+        "light-leak"
+      ],
+      "license": "MIT",
+      "author": "Anastasia Dunbar"
+    },
+    {
+      "name": "gl-fold",
+      "title": "Fold transition",
+      "description": "The incoming image unfolds from the left while the outgoing one folds away to the right. Load vendor/glintmotion/hyper-shader.js, then this file, then call HyperShader.init({ transitions: [{ time, shader: \"gl-fold\", duration }] }).",
+      "tags": [
+        "transition",
+        "shader",
+        "webgl",
+        "gl-transitions",
+        "fold",
+        "slide",
+        "horizontal"
+      ],
+      "license": "MIT",
+      "author": "nwoeanhinnogaehr"
+    },
+    {
+      "name": "gl-glitch-displace",
+      "title": "GlitchDisplace transition",
+      "description": "Blocks of the image are displaced in a glitch that flashes into the incoming image. Load vendor/glintmotion/hyper-shader.js, then this file, then call HyperShader.init({ transitions: [{ time, shader: \"gl-glitch-displace\", duration }] }).",
+      "tags": [
+        "transition",
+        "shader",
+        "webgl",
+        "gl-transitions",
+        "glitch",
+        "displace"
+      ],
+      "license": "MIT",
+      "author": "Matt DesLauriers"
+    },
+    {
+      "name": "gl-glitch-memories",
+      "title": "GlitchMemories transition",
+      "description": "A crossfade with glitchy, color-shifted blocks. Load vendor/glintmotion/hyper-shader.js, then this file, then call HyperShader.init({ transitions: [{ time, shader: \"gl-glitch-memories\", duration }] }).",
+      "tags": [
+        "transition",
+        "shader",
+        "webgl",
+        "gl-transitions",
+        "glitch",
+        "chromatic",
+        "blend"
+      ],
+      "license": "MIT",
+      "author": "Gunnar Roth"
+    },
+    {
+      "name": "gl-grid-flip",
+      "title": "GridFlip transition",
+      "description": "The image splits into a grid of tiles that flip one by one to the incoming image. Load vendor/glintmotion/hyper-shader.js, then this file, then call HyperShader.init({ transitions: [{ time, shader: \"gl-grid-flip\", duration }] }).",
+      "tags": [
+        "transition",
+        "shader",
+        "webgl",
+        "gl-transitions",
+        "grid",
+        "tiles",
+        "flip"
+      ],
+      "license": "MIT",
+      "author": "TimDonselaar"
+    },
+    {
+      "name": "gl-hs-vfade",
+      "title": "HSVfade transition",
+      "description": "A crossfade through the HSV color space that cycles through hues. Load vendor/glintmotion/hyper-shader.js, then this file, then call HyperShader.init({ transitions: [{ time, shader: \"gl-hs-vfade\", duration }] }).",
+      "tags": [
+        "transition",
+        "shader",
+        "webgl",
+        "gl-transitions",
+        "fade",
+        "color",
+        "hue"
+      ],
+      "license": "MIT",
+      "author": "nwoeanhinnogaehr"
+    },
+    {
+      "name": "gl-horizontal-close",
+      "title": "HorizontalClose transition",
+      "description": "The incoming image closes in from the top and bottom edges toward the middle. Load vendor/glintmotion/hyper-shader.js, then this file, then call HyperShader.init({ transitions: [{ time, shader: \"gl-horizontal-close\", duration }] }).",
+      "tags": [
+        "transition",
+        "shader",
+        "webgl",
+        "gl-transitions",
+        "wipe",
+        "split"
+      ],
+      "license": "MIT",
+      "author": "martiniti"
+    },
+    {
+      "name": "gl-horizontal-open",
+      "title": "HorizontalOpen transition",
+      "description": "The incoming image opens from a line in the middle toward the top and bottom edges. Load vendor/glintmotion/hyper-shader.js, then this file, then call HyperShader.init({ transitions: [{ time, shader: \"gl-horizontal-open\", duration }] }).",
+      "tags": [
+        "transition",
+        "shader",
+        "webgl",
+        "gl-transitions",
+        "wipe",
+        "split"
+      ],
+      "license": "MIT",
+      "author": "martiniti"
+    },
+    {
+      "name": "gl-inverted-page-curl",
+      "title": "InvertedPageCurl transition",
+      "description": "The outgoing image curls away like a page, revealing the incoming one. Load vendor/glintmotion/hyper-shader.js, then this file, then call HyperShader.init({ transitions: [{ time, shader: \"gl-inverted-page-curl\", duration }] }).",
+      "tags": [
+        "transition",
+        "shader",
+        "webgl",
+        "gl-transitions",
+        "page",
+        "curl",
+        "3d"
+      ],
+      "license": "BSD-3-Clause",
+      "author": "Hewlett-Packard"
+    },
+    {
+      "name": "gl-left-right",
+      "title": "LeftRight transition",
+      "description": "The outgoing image shrinks away to the left while the incoming one slides in from the right. Load vendor/glintmotion/hyper-shader.js, then this file, then call HyperShader.init({ transitions: [{ time, shader: \"gl-left-right\", duration }] }).",
+      "tags": [
+        "transition",
+        "shader",
+        "webgl",
+        "gl-transitions",
+        "slide",
+        "zoom",
+        "horizontal"
+      ],
+      "license": "MIT",
+      "author": "zhmy"
+    },
+    {
+      "name": "gl-linear-blur",
+      "title": "LinearBlur transition",
+      "description": "A crossfade through a blur. Load vendor/glintmotion/hyper-shader.js, then this file, then call HyperShader.init({ transitions: [{ time, shader: \"gl-linear-blur\", duration }] }).",
+      "tags": [
+        "transition",
+        "shader",
+        "webgl",
+        "gl-transitions",
+        "blur",
+        "blend"
+      ],
+      "license": "MIT",
+      "author": "gre"
+    },
+    {
+      "name": "gl-mosaic",
+      "title": "Mosaic transition",
+      "description": "The view pans across a mosaic of rotated tiles from both images and settles on the incoming one. Load vendor/glintmotion/hyper-shader.js, then this file, then call HyperShader.init({ transitions: [{ time, shader: \"gl-mosaic\", duration }] }).",
+      "tags": [
+        "transition",
+        "shader",
+        "webgl",
+        "gl-transitions",
+        "mosaic",
+        "tiles",
+        "zoom"
+      ],
+      "license": "MIT",
+      "author": "Xaychru"
+    },
+    {
+      "name": "gl-overexposure",
+      "title": "Overexposure transition",
+      "description": "A crossfade through a washed-out, overexposed white. Load vendor/glintmotion/hyper-shader.js, then this file, then call HyperShader.init({ transitions: [{ time, shader: \"gl-overexposure\", duration }] }).",
+      "tags": [
+        "transition",
+        "shader",
+        "webgl",
+        "gl-transitions",
+        "flash",
+        "light",
+        "fade"
+      ],
+      "license": "MIT",
+      "author": "Ben Zhang"
+    },
+    {
+      "name": "gl-polka-dots-curtain",
+      "title": "PolkaDotsCurtain transition",
+      "description": "The incoming image appears through growing polka dots. Load vendor/glintmotion/hyper-shader.js, then this file, then call HyperShader.init({ transitions: [{ time, shader: \"gl-polka-dots-curtain\", duration }] }).",
+      "tags": [
+        "transition",
+        "shader",
+        "webgl",
+        "gl-transitions",
+        "dots",
+        "pattern"
+      ],
+      "license": "MIT",
+      "author": "bobylito"
+    },
+    {
+      "name": "gl-puzzle-right",
+      "title": "PuzzleRight transition",
+      "description": "The image splits into a grid of tiles that flip one by one to the incoming image. Load vendor/glintmotion/hyper-shader.js, then this file, then call HyperShader.init({ transitions: [{ time, shader: \"gl-puzzle-right\", duration }] }).",
+      "tags": [
+        "transition",
+        "shader",
+        "webgl",
+        "gl-transitions",
+        "grid",
+        "tiles",
+        "flip"
+      ],
+      "license": "MIT",
+      "author": "JustKirillS"
+    },
+    {
+      "name": "gl-radial",
+      "title": "Radial transition",
+      "description": "A radial wipe that sweeps around the center like a clock hand. Load vendor/glintmotion/hyper-shader.js, then this file, then call HyperShader.init({ transitions: [{ time, shader: \"gl-radial\", duration }] }).",
+      "tags": [
+        "transition",
+        "shader",
+        "webgl",
+        "gl-transitions",
+        "wipe",
+        "radial",
+        "clock"
+      ],
+      "license": "MIT",
+      "author": "Xaychru"
+    },
+    {
+      "name": "gl-rectangle",
+      "title": "Rectangle transition",
+      "description": "A rectangle grows from the center to cover the outgoing image, then shrinks to reveal the incoming one. Load vendor/glintmotion/hyper-shader.js, then this file, then call HyperShader.init({ transitions: [{ time, shader: \"gl-rectangle\", duration }] }).",
+      "tags": [
+        "transition",
+        "shader",
+        "webgl",
+        "gl-transitions",
+        "box",
+        "shape",
+        "iris"
+      ],
+      "license": "MIT",
+      "author": "martiniti"
+    },
+    {
+      "name": "gl-rectangle-crop",
+      "title": "RectangleCrop transition",
+      "description": "The outgoing image shrinks into a small rectangle over a background color, then the incoming one grows from it. Load vendor/glintmotion/hyper-shader.js, then this file, then call HyperShader.init({ transitions: [{ time, shader: \"gl-rectangle-crop\", duration }] }).",
+      "tags": [
+        "transition",
+        "shader",
+        "webgl",
+        "gl-transitions",
+        "box",
+        "iris",
+        "zoom"
+      ],
+      "license": "MIT",
+      "author": "martiniti"
+    },
+    {
+      "name": "gl-revolve-left",
+      "title": "Revolve_Left transition",
+      "description": "The outgoing image swirls and zooms with motion blur into the incoming one. Load vendor/glintmotion/hyper-shader.js, then this file, then call HyperShader.init({ transitions: [{ time, shader: \"gl-revolve-left\", duration }] }).",
+      "tags": [
+        "transition",
+        "shader",
+        "webgl",
+        "gl-transitions",
+        "swirl",
+        "zoom",
+        "rotate",
+        "blur"
+      ],
+      "license": "MIT",
+      "author": "bread"
+    },
+    {
+      "name": "gl-rolls",
+      "title": "Rolls transition",
+      "description": "The outgoing image rolls away around a corner, revealing the incoming one. Load vendor/glintmotion/hyper-shader.js, then this file, then call HyperShader.init({ transitions: [{ time, shader: \"gl-rolls\", duration }] }).",
+      "tags": [
+        "transition",
+        "shader",
+        "webgl",
+        "gl-transitions",
+        "rotate",
+        "roll"
+      ],
+      "license": "MIT",
+      "author": "Mark Craig"
+    },
+    {
+      "name": "gl-rotate-scale-vanish",
+      "title": "RotateScaleVanish transition",
+      "description": "The outgoing image spins and shrinks away over the incoming one. Load vendor/glintmotion/hyper-shader.js, then this file, then call HyperShader.init({ transitions: [{ time, shader: \"gl-rotate-scale-vanish\", duration }] }).",
+      "tags": [
+        "transition",
+        "shader",
+        "webgl",
+        "gl-transitions",
+        "rotate",
+        "zoom",
+        "spin"
+      ],
+      "license": "MIT",
+      "author": "Mark Craig"
+    },
+    {
+      "name": "gl-simple-flip",
+      "title": "SimpleFlip transition",
+      "description": "The outgoing image flips around the vertical axis into the incoming one. Load vendor/glintmotion/hyper-shader.js, then this file, then call HyperShader.init({ transitions: [{ time, shader: \"gl-simple-flip\", duration }] }).",
+      "tags": [
+        "transition",
+        "shader",
+        "webgl",
+        "gl-transitions",
+        "flip",
+        "horizontal"
+      ],
+      "license": "MIT",
+      "author": "nwoeanhinnogaehr"
+    },
+    {
+      "name": "gl-simple-zoom",
+      "title": "SimpleZoom transition",
+      "description": "Zooms into the outgoing image, then fades to the incoming one. Load vendor/glintmotion/hyper-shader.js, then this file, then call HyperShader.init({ transitions: [{ time, shader: \"gl-simple-zoom\", duration }] }).",
+      "tags": [
+        "transition",
+        "shader",
+        "webgl",
+        "gl-transitions",
+        "zoom",
+        "fade"
+      ],
+      "license": "MIT",
+      "author": "0gust1"
+    },
+    {
+      "name": "gl-simple-zoom-out",
+      "title": "SimpleZoomOut transition",
+      "description": "The incoming image zooms out into place while fading in. Load vendor/glintmotion/hyper-shader.js, then this file, then call HyperShader.init({ transitions: [{ time, shader: \"gl-simple-zoom-out\", duration }] }).",
+      "tags": [
+        "transition",
+        "shader",
+        "webgl",
+        "gl-transitions",
+        "zoom",
+        "fade"
+      ],
+      "license": "MIT",
+      "author": "Tianshuo"
+    },
+    {
+      "name": "gl-slides",
+      "title": "Slides transition",
+      "description": "The outgoing image slides out, or the incoming one slides in, toward an edge, a corner or the center. Load vendor/glintmotion/hyper-shader.js, then this file, then call HyperShader.init({ transitions: [{ time, shader: \"gl-slides\", duration }] }).",
+      "tags": [
+        "transition",
+        "shader",
+        "webgl",
+        "gl-transitions",
+        "slide",
+        "directional"
+      ],
+      "license": "MIT",
+      "author": "Mark Craig"
+    },
+    {
+      "name": "gl-star-wipe",
+      "title": "StarWipe transition",
+      "description": "A growing star reveals the incoming image. Load vendor/glintmotion/hyper-shader.js, then this file, then call HyperShader.init({ transitions: [{ time, shader: \"gl-star-wipe\", duration }] }).",
+      "tags": [
+        "transition",
+        "shader",
+        "webgl",
+        "gl-transitions",
+        "wipe",
+        "shape",
+        "star"
+      ],
+      "license": "MIT",
+      "author": "Ben Lucas"
+    },
+    {
+      "name": "gl-static-fade",
+      "title": "StaticFade transition",
+      "description": "Cuts to the incoming image halfway, hidden behind a burst of TV static. Load vendor/glintmotion/hyper-shader.js, then this file, then call HyperShader.init({ transitions: [{ time, shader: \"gl-static-fade\", duration }] }).",
+      "tags": [
+        "transition",
+        "shader",
+        "webgl",
+        "gl-transitions",
+        "static",
+        "noise",
+        "retro"
+      ],
+      "license": "MIT",
+      "author": "Ben Lucas"
+    },
+    {
+      "name": "gl-stereo-viewer",
+      "title": "StereoViewer transition",
+      "description": "Both images shrink into rounded cards that swap, like a stereo viewer toy. Load vendor/glintmotion/hyper-shader.js, then this file, then call HyperShader.init({ transitions: [{ time, shader: \"gl-stereo-viewer\", duration }] }).",
+      "tags": [
+        "transition",
+        "shader",
+        "webgl",
+        "gl-transitions",
+        "cards",
+        "zoom",
+        "retro"
+      ],
+      "license": "BSD-2-Clause",
+      "author": "Ted Schundler"
+    },
+    {
+      "name": "gl-strip-datamosh-glitch",
+      "title": "StripDatamoshGlitch transition",
+      "description": "A datamosh glitch: torn strips, chroma shifts and scan noise drag the outgoing image into the incoming one. Load vendor/glintmotion/hyper-shader.js, then this file, then call HyperShader.init({ transitions: [{ time, shader: \"gl-strip-datamosh-glitch\", duration }] }).",
+      "tags": [
+        "transition",
+        "shader",
+        "webgl",
+        "gl-transitions",
+        "glitch",
+        "datamosh",
+        "chromatic"
+      ],
+      "license": "MIT",
+      "author": "bread"
+    },
+    {
+      "name": "gl-swirl",
+      "title": "Swirl transition",
+      "description": "Both images swirl around the center while crossfading. Load vendor/glintmotion/hyper-shader.js, then this file, then call HyperShader.init({ transitions: [{ time, shader: \"gl-swirl\", duration }] }).",
+      "tags": [
+        "transition",
+        "shader",
+        "webgl",
+        "gl-transitions",
+        "swirl",
+        "rotate",
+        "blend"
+      ],
+      "license": "MIT",
+      "author": "Sergey Kosarevsky"
+    },
+    {
+      "name": "gl-tv-static",
+      "title": "TVStatic transition",
+      "description": "Cuts to full-screen TV static, then to the incoming image. Load vendor/glintmotion/hyper-shader.js, then this file, then call HyperShader.init({ transitions: [{ time, shader: \"gl-tv-static\", duration }] }).",
+      "tags": [
+        "transition",
+        "shader",
+        "webgl",
+        "gl-transitions",
+        "static",
+        "noise",
+        "retro"
+      ],
+      "license": "MIT",
+      "author": "Brandon Anzaldi"
+    },
+    {
+      "name": "gl-tiles-wave",
+      "title": "TilesWave transition",
+      "description": "The incoming image is revealed tile by tile in a diagonal wave. Load vendor/glintmotion/hyper-shader.js, then this file, then call HyperShader.init({ transitions: [{ time, shader: \"gl-tiles-wave\", duration }] }).",
+      "tags": [
+        "transition",
+        "shader",
+        "webgl",
+        "gl-transitions",
+        "tiles",
+        "wave",
+        "wipe"
+      ],
+      "license": "MIT",
+      "author": "numb3r23"
+    },
+    {
+      "name": "gl-top-bottom",
+      "title": "TopBottom transition",
+      "description": "The outgoing image shrinks away upward while the incoming one slides in from the bottom. Load vendor/glintmotion/hyper-shader.js, then this file, then call HyperShader.init({ transitions: [{ time, shader: \"gl-top-bottom\", duration }] }).",
+      "tags": [
+        "transition",
+        "shader",
+        "webgl",
+        "gl-transitions",
+        "slide",
+        "zoom",
+        "vertical"
+      ],
+      "license": "MIT",
+      "author": "zhmy"
+    },
+    {
+      "name": "gl-vertical-close",
+      "title": "VerticalClose transition",
+      "description": "The incoming image closes in from the left and right edges toward the middle. Load vendor/glintmotion/hyper-shader.js, then this file, then call HyperShader.init({ transitions: [{ time, shader: \"gl-vertical-close\", duration }] }).",
+      "tags": [
+        "transition",
+        "shader",
+        "webgl",
+        "gl-transitions",
+        "wipe",
+        "split"
+      ],
+      "license": "MIT",
+      "author": "martiniti"
+    },
+    {
+      "name": "gl-vertical-open",
+      "title": "VerticalOpen transition",
+      "description": "The incoming image opens from a line in the middle toward the left and right edges. Load vendor/glintmotion/hyper-shader.js, then this file, then call HyperShader.init({ transitions: [{ time, shader: \"gl-vertical-open\", duration }] }).",
+      "tags": [
+        "transition",
+        "shader",
+        "webgl",
+        "gl-transitions",
+        "wipe",
+        "split"
+      ],
+      "license": "MIT",
+      "author": "martiniti"
+    },
+    {
+      "name": "gl-water-drop",
+      "title": "WaterDrop transition",
+      "description": "Ripples spread from the center like a drop falling into water, crossfading to the incoming image. Load vendor/glintmotion/hyper-shader.js, then this file, then call HyperShader.init({ transitions: [{ time, shader: \"gl-water-drop\", duration }] }).",
+      "tags": [
+        "transition",
+        "shader",
+        "webgl",
+        "gl-transitions",
+        "ripple",
+        "water",
+        "blend"
+      ],
+      "license": "MIT",
+      "author": "Paweł Płóciennik"
+    },
+    {
+      "name": "gl-zoom-in-circles",
+      "title": "ZoomInCircles transition",
+      "description": "Concentric rings of the outgoing image zoom at different speeds before revealing the incoming one. Load vendor/glintmotion/hyper-shader.js, then this file, then call HyperShader.init({ transitions: [{ time, shader: \"gl-zoom-in-circles\", duration }] }).",
+      "tags": [
+        "transition",
+        "shader",
+        "webgl",
+        "gl-transitions",
+        "zoom",
+        "circle"
+      ],
+      "license": "MIT",
+      "author": "dycm8009"
+    },
+    {
+      "name": "gl-zoom-left-wipe",
+      "title": "ZoomLeftWipe transition",
+      "description": "Zooms into the outgoing image, then the incoming one wipes in from right to left. Load vendor/glintmotion/hyper-shader.js, then this file, then call HyperShader.init({ transitions: [{ time, shader: \"gl-zoom-left-wipe\", duration }] }).",
+      "tags": [
+        "transition",
+        "shader",
+        "webgl",
+        "gl-transitions",
+        "zoom",
+        "wipe",
+        "horizontal"
+      ],
+      "license": "MIT",
+      "author": "Handk"
+    },
+    {
+      "name": "gl-zoom-rigth-wipe",
+      "title": "ZoomRigthWipe transition",
+      "description": "Zooms into the outgoing image, then the incoming one wipes in from left to right. Load vendor/glintmotion/hyper-shader.js, then this file, then call HyperShader.init({ transitions: [{ time, shader: \"gl-zoom-rigth-wipe\", duration }] }).",
+      "tags": [
+        "transition",
+        "shader",
+        "webgl",
+        "gl-transitions",
+        "zoom",
+        "wipe",
+        "horizontal"
+      ],
+      "license": "MIT",
+      "author": "Handk"
+    },
+    {
+      "name": "gl-angular",
+      "title": "Angular transition",
+      "description": "A wipe that sweeps around the center from a starting angle. Load vendor/glintmotion/hyper-shader.js, then this file, then call HyperShader.init({ transitions: [{ time, shader: \"gl-angular\", duration }] }).",
+      "tags": [
+        "transition",
+        "shader",
+        "webgl",
+        "gl-transitions",
+        "wipe",
+        "radial",
+        "clock"
+      ],
+      "license": "MIT",
+      "author": "Fernando Kuteken"
+    },
+    {
+      "name": "gl-burn",
+      "title": "Burn transition",
+      "description": "A crossfade that brightens toward a color in the middle. Load vendor/glintmotion/hyper-shader.js, then this file, then call HyperShader.init({ transitions: [{ time, shader: \"gl-burn\", duration }] }).",
+      "tags": [
+        "transition",
+        "shader",
+        "webgl",
+        "gl-transitions",
+        "fade",
+        "color",
+        "flash"
+      ],
+      "license": "MIT",
+      "author": "gre"
+    },
+    {
+      "name": "gl-burn0",
+      "title": "Burn0 transition",
+      "description": "The outgoing image burns away in noisy, glowing patches. Load vendor/glintmotion/hyper-shader.js, then this file, then call HyperShader.init({ transitions: [{ time, shader: \"gl-burn0\", duration }] }).",
+      "tags": [
+        "transition",
+        "shader",
+        "webgl",
+        "gl-transitions",
+        "burn",
+        "fire",
+        "noise"
+      ],
+      "license": "MIT",
+      "author": "liubailin2020@gmail.com"
+    },
+    {
+      "name": "gl-cannabisleaf",
+      "title": "Cannabisleaf transition",
+      "description": "A cannabis-leaf shape grows from the center to reveal the incoming image. Load vendor/glintmotion/hyper-shader.js, then this file, then call HyperShader.init({ transitions: [{ time, shader: \"gl-cannabisleaf\", duration }] }).",
+      "tags": [
+        "transition",
+        "shader",
+        "webgl",
+        "gl-transitions",
+        "shape",
+        "wipe"
+      ],
+      "license": "MIT",
+      "author": "@Flexi23"
+    },
+    {
+      "name": "gl-chessboard",
+      "title": "Chessboard transition",
+      "description": "A chessboard pattern of squares reveals the incoming image. Load vendor/glintmotion/hyper-shader.js, then this file, then call HyperShader.init({ transitions: [{ time, shader: \"gl-chessboard\", duration }] }).",
+      "tags": [
+        "transition",
+        "shader",
+        "webgl",
+        "gl-transitions",
+        "grid",
+        "squares",
+        "pattern"
+      ],
+      "license": "MIT",
+      "author": "lql"
+    },
+    {
+      "name": "gl-circle",
+      "title": "Circle transition",
+      "description": "The outgoing image closes into a circle over a background color, then the incoming one opens from it. Load vendor/glintmotion/hyper-shader.js, then this file, then call HyperShader.init({ transitions: [{ time, shader: \"gl-circle\", duration }] }).",
+      "tags": [
+        "transition",
+        "shader",
+        "webgl",
+        "gl-transitions",
+        "circle",
+        "iris",
+        "shape"
+      ],
+      "license": "MIT",
+      "author": "Fernando Kuteken"
+    },
+    {
+      "name": "gl-circleopen",
+      "title": "Circleopen transition",
+      "description": "A soft-edged circle opens from the center to reveal the incoming image. Load vendor/glintmotion/hyper-shader.js, then this file, then call HyperShader.init({ transitions: [{ time, shader: \"gl-circleopen\", duration }] }).",
+      "tags": [
+        "transition",
+        "shader",
+        "webgl",
+        "gl-transitions",
+        "circle",
+        "iris",
+        "wipe"
+      ],
+      "license": "MIT",
+      "author": "gre"
+    },
+    {
+      "name": "gl-colorphase",
+      "title": "Colorphase transition",
+      "description": "A crossfade in which each color channel changes at a different time. Load vendor/glintmotion/hyper-shader.js, then this file, then call HyperShader.init({ transitions: [{ time, shader: \"gl-colorphase\", duration }] }).",
+      "tags": [
+        "transition",
+        "shader",
+        "webgl",
+        "gl-transitions",
+        "fade",
+        "color"
+      ],
+      "license": "MIT",
+      "author": "gre"
+    },
+    {
+      "name": "gl-coord-from-in",
+      "title": "Coord-from-in transition",
+      "description": "A crossfade in which the colors of one image displace the other. Load vendor/glintmotion/hyper-shader.js, then this file, then call HyperShader.init({ transitions: [{ time, shader: \"gl-coord-from-in\", duration }] }).",
+      "tags": [
+        "transition",
+        "shader",
+        "webgl",
+        "gl-transitions",
+        "displace",
+        "distort",
+        "blend"
+      ],
+      "license": "MIT",
+      "author": "haiyoucuv"
+    },
+    {
+      "name": "gl-crosshatch",
+      "title": "Crosshatch transition",
+      "description": "The incoming image appears through a crosshatch of lines spreading from the center. Load vendor/glintmotion/hyper-shader.js, then this file, then call HyperShader.init({ transitions: [{ time, shader: \"gl-crosshatch\", duration }] }).",
+      "tags": [
+        "transition",
+        "shader",
+        "webgl",
+        "gl-transitions",
+        "pattern",
+        "lines",
+        "noise"
+      ],
+      "license": "MIT",
+      "author": "pthrasher"
+    },
+    {
+      "name": "gl-crosswarp",
+      "title": "Crosswarp transition",
+      "description": "The outgoing image zooms in while the incoming one zooms out into place, sweeping from right to left. Load vendor/glintmotion/hyper-shader.js, then this file, then call HyperShader.init({ transitions: [{ time, shader: \"gl-crosswarp\", duration }] }).",
+      "tags": [
+        "transition",
+        "shader",
+        "webgl",
+        "gl-transitions",
+        "warp",
+        "zoom",
+        "horizontal"
+      ],
+      "license": "MIT",
+      "author": "Eke Péter <peterekepeter@gmail.com>"
+    },
+    {
+      "name": "gl-cube",
+      "title": "Cube transition",
+      "description": "The two images are faces of a rotating 3D cube, with a floor reflection. Load vendor/glintmotion/hyper-shader.js, then this file, then call HyperShader.init({ transitions: [{ time, shader: \"gl-cube\", duration }] }).",
+      "tags": [
+        "transition",
+        "shader",
+        "webgl",
+        "gl-transitions",
+        "3d",
+        "cube",
+        "rotate",
+        "reflection"
+      ],
+      "license": "MIT",
+      "author": "gre"
+    },
+    {
+      "name": "gl-directional-easing",
+      "title": "Directional-easing transition",
+      "description": "Like Directional, with an eased movement. Load vendor/glintmotion/hyper-shader.js, then this file, then call HyperShader.init({ transitions: [{ time, shader: \"gl-directional-easing\", duration }] }).",
+      "tags": [
+        "transition",
+        "shader",
+        "webgl",
+        "gl-transitions",
+        "slide",
+        "push",
+        "directional"
+      ],
+      "license": "MIT",
+      "author": "Max Plotnikov"
+    },
+    {
+      "name": "gl-directionalwarp",
+      "title": "Directionalwarp transition",
+      "description": "A diagonal wipe with a warped, smeared edge. Load vendor/glintmotion/hyper-shader.js, then this file, then call HyperShader.init({ transitions: [{ time, shader: \"gl-directionalwarp\", duration }] }).",
+      "tags": [
+        "transition",
+        "shader",
+        "webgl",
+        "gl-transitions",
+        "wipe",
+        "warp",
+        "directional"
+      ],
+      "license": "MIT",
+      "author": "pschroen"
+    },
+    {
+      "name": "gl-directionalwipe",
+      "title": "Directionalwipe transition",
+      "description": "A soft-edged diagonal wipe. Load vendor/glintmotion/hyper-shader.js, then this file, then call HyperShader.init({ transitions: [{ time, shader: \"gl-directionalwipe\", duration }] }).",
+      "tags": [
+        "transition",
+        "shader",
+        "webgl",
+        "gl-transitions",
+        "wipe",
+        "directional"
+      ],
+      "license": "MIT",
+      "author": "gre"
+    },
+    {
+      "name": "gl-dissolve",
+      "title": "Dissolve transition",
+      "description": "The incoming image spreads over the outgoing one with a hot, glowing edge. Load vendor/glintmotion/hyper-shader.js, then this file, then call HyperShader.init({ transitions: [{ time, shader: \"gl-dissolve\", duration }] }).",
+      "tags": [
+        "transition",
+        "shader",
+        "webgl",
+        "gl-transitions",
+        "dissolve",
+        "burn",
+        "glow"
+      ],
+      "license": "MIT",
+      "author": "hjm1fb"
+    },
+    {
+      "name": "gl-doorway",
+      "title": "Doorway transition",
+      "description": "The outgoing image opens like double doors as the incoming one comes forward, with a floor reflection. Load vendor/glintmotion/hyper-shader.js, then this file, then call HyperShader.init({ transitions: [{ time, shader: \"gl-doorway\", duration }] }).",
+      "tags": [
+        "transition",
+        "shader",
+        "webgl",
+        "gl-transitions",
+        "doors",
+        "3d",
+        "reflection"
+      ],
+      "license": "MIT",
+      "author": "gre"
+    },
+    {
+      "name": "gl-fade",
+      "title": "Fade transition",
+      "description": "A linear crossfade between the two images. Load vendor/glintmotion/hyper-shader.js, then this file, then call HyperShader.init({ transitions: [{ time, shader: \"gl-fade\", duration }] }).",
+      "tags": [
+        "transition",
+        "shader",
+        "webgl",
+        "gl-transitions",
+        "fade",
+        "blend"
+      ],
+      "license": "MIT",
+      "author": "gre"
+    },
+    {
+      "name": "gl-fadecolor",
+      "title": "Fadecolor transition",
+      "description": "A fade through a solid color, black by default. Load vendor/glintmotion/hyper-shader.js, then this file, then call HyperShader.init({ transitions: [{ time, shader: \"gl-fadecolor\", duration }] }).",
+      "tags": [
+        "transition",
+        "shader",
+        "webgl",
+        "gl-transitions",
+        "fade",
+        "color"
+      ],
+      "license": "MIT",
+      "author": "gre"
+    },
+    {
+      "name": "gl-fadegrayscale",
+      "title": "Fadegrayscale transition",
+      "description": "A crossfade through grayscale. Load vendor/glintmotion/hyper-shader.js, then this file, then call HyperShader.init({ transitions: [{ time, shader: \"gl-fadegrayscale\", duration }] }).",
+      "tags": [
+        "transition",
+        "shader",
+        "webgl",
+        "gl-transitions",
+        "fade",
+        "grayscale",
+        "color"
+      ],
+      "license": "MIT",
+      "author": "gre"
+    },
+    {
+      "name": "gl-flyeye",
+      "title": "Flyeye transition",
+      "description": "The image breaks into a fly's-eye grid of lenses with color separation. Load vendor/glintmotion/hyper-shader.js, then this file, then call HyperShader.init({ transitions: [{ time, shader: \"gl-flyeye\", duration }] }).",
+      "tags": [
+        "transition",
+        "shader",
+        "webgl",
+        "gl-transitions",
+        "lens",
+        "distort",
+        "chromatic"
+      ],
+      "license": "MIT",
+      "author": "gre"
+    },
+    {
+      "name": "gl-fragment",
+      "title": "Fragment transition",
+      "description": "The outgoing image shatters into fragments that fly away. Load vendor/glintmotion/hyper-shader.js, then this file, then call HyperShader.init({ transitions: [{ time, shader: \"gl-fragment\", duration }] }).",
+      "tags": [
+        "transition",
+        "shader",
+        "webgl",
+        "gl-transitions",
+        "shatter",
+        "fragments"
+      ],
+      "license": "MIT",
+      "author": "lbl"
+    },
+    {
+      "name": "gl-heart",
+      "title": "Heart transition",
+      "description": "A heart shape grows from the center to reveal the incoming image. Load vendor/glintmotion/hyper-shader.js, then this file, then call HyperShader.init({ transitions: [{ time, shader: \"gl-heart\", duration }] }).",
+      "tags": [
+        "transition",
+        "shader",
+        "webgl",
+        "gl-transitions",
+        "shape",
+        "wipe",
+        "heart"
+      ],
+      "license": "MIT",
+      "author": "gre"
+    },
+    {
+      "name": "gl-hexagonalize",
+      "title": "Hexagonalize transition",
+      "description": "Both images turn into hexagons, crossfade, then sharpen again. Load vendor/glintmotion/hyper-shader.js, then this file, then call HyperShader.init({ transitions: [{ time, shader: \"gl-hexagonalize\", duration }] }).",
+      "tags": [
+        "transition",
+        "shader",
+        "webgl",
+        "gl-transitions",
+        "pixelate",
+        "hexagon",
+        "blend"
+      ],
+      "license": "MIT",
+      "author": "Fernando Kuteken"
+    },
+    {
+      "name": "gl-kaleidoscope",
+      "title": "Kaleidoscope transition",
+      "description": "A crossfade through a spinning kaleidoscope. Load vendor/glintmotion/hyper-shader.js, then this file, then call HyperShader.init({ transitions: [{ time, shader: \"gl-kaleidoscope\", duration }] }).",
+      "tags": [
+        "transition",
+        "shader",
+        "webgl",
+        "gl-transitions",
+        "kaleidoscope",
+        "distort",
+        "blend"
+      ],
+      "license": "MIT",
+      "author": "nwoeanhinnogaehr"
+    },
+    {
+      "name": "gl-luminance-melt",
+      "title": "Luminance_melt transition",
+      "description": "The outgoing image melts away in noisy vertical streaks, depending on its brightness. Load vendor/glintmotion/hyper-shader.js, then this file, then call HyperShader.init({ transitions: [{ time, shader: \"gl-luminance-melt\", duration }] }).",
+      "tags": [
+        "transition",
+        "shader",
+        "webgl",
+        "gl-transitions",
+        "melt",
+        "noise",
+        "luma"
+      ],
+      "license": "MIT",
+      "author": "0gust1"
+    },
+    {
+      "name": "gl-morph",
+      "title": "Morph transition",
+      "description": "A crossfade in which each image is displaced by the other's colors, like a morph. Load vendor/glintmotion/hyper-shader.js, then this file, then call HyperShader.init({ transitions: [{ time, shader: \"gl-morph\", duration }] }).",
+      "tags": [
+        "transition",
+        "shader",
+        "webgl",
+        "gl-transitions",
+        "morph",
+        "distort",
+        "blend"
+      ],
+      "license": "MIT",
+      "author": "paniq"
+    },
+    {
+      "name": "gl-mosaic-transition",
+      "title": "Mosaic_transition transition",
+      "description": "Both images break into mosaic blocks that blend, then sharpen into the incoming image. Load vendor/glintmotion/hyper-shader.js, then this file, then call HyperShader.init({ transitions: [{ time, shader: \"gl-mosaic-transition\", duration }] }).",
+      "tags": [
+        "transition",
+        "shader",
+        "webgl",
+        "gl-transitions",
+        "mosaic",
+        "pixelate",
+        "blend"
+      ],
+      "license": "MIT",
+      "author": "YueDev"
+    },
+    {
+      "name": "gl-multiply-blend",
+      "title": "Multiply_blend transition",
+      "description": "A crossfade through the multiplied blend of both images. Load vendor/glintmotion/hyper-shader.js, then this file, then call HyperShader.init({ transitions: [{ time, shader: \"gl-multiply-blend\", duration }] }).",
+      "tags": [
+        "transition",
+        "shader",
+        "webgl",
+        "gl-transitions",
+        "blend",
+        "fade"
+      ],
+      "license": "MIT",
+      "author": "Fernando Kuteken"
+    },
+    {
+      "name": "gl-old-tv-lost-signal",
+      "title": "Old_tv_lost_signal transition",
+      "description": "A crossfade with drifting tracking lines and tearing, like a TV losing its signal. Load vendor/glintmotion/hyper-shader.js, then this file, then call HyperShader.init({ transitions: [{ time, shader: \"gl-old-tv-lost-signal\", duration }] }).",
+      "tags": [
+        "transition",
+        "shader",
+        "webgl",
+        "gl-transitions",
+        "retro",
+        "glitch",
+        "scanlines"
+      ],
+      "license": "MIT",
+      "author": "mernking (gitlab.com/Godswork)"
+    },
+    {
+      "name": "gl-parametric-glitch",
+      "title": "Parametric_glitch transition",
+      "description": "A crossfade with glitchy horizontal bands and color shifts. Load vendor/glintmotion/hyper-shader.js, then this file, then call HyperShader.init({ transitions: [{ time, shader: \"gl-parametric-glitch\", duration }] }).",
+      "tags": [
+        "transition",
+        "shader",
+        "webgl",
+        "gl-transitions",
+        "glitch",
+        "blend"
+      ],
+      "license": "MIT",
+      "author": "Yoni Maltsman @friendlyspinach"
+    },
+    {
+      "name": "gl-perlin",
+      "title": "Perlin transition",
+      "description": "The incoming image appears through blobs of Perlin noise. Load vendor/glintmotion/hyper-shader.js, then this file, then call HyperShader.init({ transitions: [{ time, shader: \"gl-perlin\", duration }] }).",
+      "tags": [
+        "transition",
+        "shader",
+        "webgl",
+        "gl-transitions",
+        "noise",
+        "dissolve"
+      ],
+      "license": "MIT",
+      "author": "Rich Harris"
+    },
+    {
+      "name": "gl-pinwheel",
+      "title": "Pinwheel transition",
+      "description": "A spinning pinwheel reveals the incoming image. Load vendor/glintmotion/hyper-shader.js, then this file, then call HyperShader.init({ transitions: [{ time, shader: \"gl-pinwheel\", duration }] }).",
+      "tags": [
+        "transition",
+        "shader",
+        "webgl",
+        "gl-transitions",
+        "pinwheel",
+        "radial",
+        "rotate"
+      ],
+      "license": "MIT",
+      "author": "Mr Speaker"
+    },
+    {
+      "name": "gl-pixelize",
+      "title": "Pixelize transition",
+      "description": "Both images pixelate, crossfade, then sharpen again. Load vendor/glintmotion/hyper-shader.js, then this file, then call HyperShader.init({ transitions: [{ time, shader: \"gl-pixelize\", duration }] }).",
+      "tags": [
+        "transition",
+        "shader",
+        "webgl",
+        "gl-transitions",
+        "pixelate",
+        "blend"
+      ],
+      "license": "MIT",
+      "author": "gre"
+    },
+    {
+      "name": "gl-polar-function",
+      "title": "Polar_function transition",
+      "description": "A flower shape with several petals grows to reveal the incoming image. Load vendor/glintmotion/hyper-shader.js, then this file, then call HyperShader.init({ transitions: [{ time, shader: \"gl-polar-function\", duration }] }).",
+      "tags": [
+        "transition",
+        "shader",
+        "webgl",
+        "gl-transitions",
+        "shape",
+        "wipe",
+        "polar"
+      ],
+      "license": "MIT",
+      "author": "Fernando Kuteken"
+    },
+    {
+      "name": "gl-power-kaleido",
+      "title": "PowerKaleido transition",
+      "description": "The image folds into an animated kaleidoscope before revealing the incoming one. Load vendor/glintmotion/hyper-shader.js, then this file, then call HyperShader.init({ transitions: [{ time, shader: \"gl-power-kaleido\", duration }] }).",
+      "tags": [
+        "transition",
+        "shader",
+        "webgl",
+        "gl-transitions",
+        "kaleidoscope",
+        "distort"
+      ],
+      "license": "MIT",
+      "author": "Boundless"
+    },
+    {
+      "name": "gl-random-noisex",
+      "title": "RandomNoisex transition",
+      "description": "The incoming image appears pixel by pixel in random noise. Load vendor/glintmotion/hyper-shader.js, then this file, then call HyperShader.init({ transitions: [{ time, shader: \"gl-random-noisex\", duration }] }).",
+      "tags": [
+        "transition",
+        "shader",
+        "webgl",
+        "gl-transitions",
+        "dissolve",
+        "noise"
+      ],
+      "license": "MIT",
+      "author": "towrabbit"
+    },
+    {
+      "name": "gl-randomsquares",
+      "title": "Randomsquares transition",
+      "description": "The incoming image appears in random squares. Load vendor/glintmotion/hyper-shader.js, then this file, then call HyperShader.init({ transitions: [{ time, shader: \"gl-randomsquares\", duration }] }).",
+      "tags": [
+        "transition",
+        "shader",
+        "webgl",
+        "gl-transitions",
+        "squares",
+        "grid",
+        "dissolve"
+      ],
+      "license": "MIT",
+      "author": "gre"
+    },
+    {
+      "name": "gl-ripple",
+      "title": "Ripple transition",
+      "description": "Ripples spread from the center while crossfading. Load vendor/glintmotion/hyper-shader.js, then this file, then call HyperShader.init({ transitions: [{ time, shader: \"gl-ripple\", duration }] }).",
+      "tags": [
+        "transition",
+        "shader",
+        "webgl",
+        "gl-transitions",
+        "ripple",
+        "wave",
+        "blend"
+      ],
+      "license": "MIT",
+      "author": "gre"
+    },
+    {
+      "name": "gl-rotate-transition",
+      "title": "RotateTransition transition",
+      "description": "The images spin around the center while crossfading. Load vendor/glintmotion/hyper-shader.js, then this file, then call HyperShader.init({ transitions: [{ time, shader: \"gl-rotate-transition\", duration }] }).",
+      "tags": [
+        "transition",
+        "shader",
+        "webgl",
+        "gl-transitions",
+        "rotate",
+        "spin",
+        "blend"
+      ],
+      "license": "MIT",
+      "author": "haiyoucuv"
+    },
+    {
+      "name": "gl-rotate-scale-fade",
+      "title": "Rotate_scale_fade transition",
+      "description": "The outgoing image spins and zooms while fading to the incoming one, over a background color. Load vendor/glintmotion/hyper-shader.js, then this file, then call HyperShader.init({ transitions: [{ time, shader: \"gl-rotate-scale-fade\", duration }] }).",
+      "tags": [
+        "transition",
+        "shader",
+        "webgl",
+        "gl-transitions",
+        "rotate",
+        "zoom",
+        "fade"
+      ],
+      "license": "MIT",
+      "author": "Fernando Kuteken"
+    },
+    {
+      "name": "gl-scale-in",
+      "title": "Scale-in transition",
+      "description": "The incoming image scales in from the center while fading in. Load vendor/glintmotion/hyper-shader.js, then this file, then call HyperShader.init({ transitions: [{ time, shader: \"gl-scale-in\", duration }] }).",
+      "tags": [
+        "transition",
+        "shader",
+        "webgl",
+        "gl-transitions",
+        "zoom",
+        "fade"
+      ],
+      "license": "MIT",
+      "author": "haiyoucuv"
+    },
+    {
+      "name": "gl-split-slide-in-horizontal",
+      "title": "SplitSlideInHorizontal transition",
+      "description": "The incoming image slides in as two halves moving horizontally in opposite directions. Load vendor/glintmotion/hyper-shader.js, then this file, then call HyperShader.init({ transitions: [{ time, shader: \"gl-split-slide-in-horizontal\", duration }] }).",
+      "tags": [
+        "transition",
+        "shader",
+        "webgl",
+        "gl-transitions",
+        "slide",
+        "split",
+        "horizontal"
+      ],
+      "license": "MIT",
+      "author": "OllyOllyOlly"
+    },
+    {
+      "name": "gl-split-slide-in-out-horizontal",
+      "title": "SplitSlideInOutHorizontal transition",
+      "description": "The halves of both images slide horizontally in opposite directions, out and in at once. Load vendor/glintmotion/hyper-shader.js, then this file, then call HyperShader.init({ transitions: [{ time, shader: \"gl-split-slide-in-out-horizontal\", duration }] }).",
+      "tags": [
+        "transition",
+        "shader",
+        "webgl",
+        "gl-transitions",
+        "slide",
+        "split",
+        "horizontal"
+      ],
+      "license": "MIT",
+      "author": "OllyOllyOlly"
+    },
+    {
+      "name": "gl-split-slide-in-out-vertical",
+      "title": "SplitSlideInOutVertical transition",
+      "description": "The halves of both images slide vertically in opposite directions, out and in at once. Load vendor/glintmotion/hyper-shader.js, then this file, then call HyperShader.init({ transitions: [{ time, shader: \"gl-split-slide-in-out-vertical\", duration }] }).",
+      "tags": [
+        "transition",
+        "shader",
+        "webgl",
+        "gl-transitions",
+        "slide",
+        "split",
+        "vertical"
+      ],
+      "license": "MIT",
+      "author": "OllyOllyOlly"
+    },
+    {
+      "name": "gl-split-slide-in-vertical",
+      "title": "SplitSlideInVertical transition",
+      "description": "The incoming image slides in as two halves moving vertically in opposite directions. Load vendor/glintmotion/hyper-shader.js, then this file, then call HyperShader.init({ transitions: [{ time, shader: \"gl-split-slide-in-vertical\", duration }] }).",
+      "tags": [
+        "transition",
+        "shader",
+        "webgl",
+        "gl-transitions",
+        "slide",
+        "split",
+        "vertical"
+      ],
+      "license": "MIT",
+      "author": "OllyOllyOlly"
+    },
+    {
+      "name": "gl-split-slide-out-horizontal",
+      "title": "SplitSlideOutHorizontal transition",
+      "description": "The outgoing image slides out as two halves moving horizontally in opposite directions. Load vendor/glintmotion/hyper-shader.js, then this file, then call HyperShader.init({ transitions: [{ time, shader: \"gl-split-slide-out-horizontal\", duration }] }).",
+      "tags": [
+        "transition",
+        "shader",
+        "webgl",
+        "gl-transitions",
+        "slide",
+        "split",
+        "horizontal"
+      ],
+      "license": "MIT",
+      "author": "OllyOllyOlly"
+    },
+    {
+      "name": "gl-split-slide-out-vertical",
+      "title": "SplitSlideOutVertical transition",
+      "description": "The outgoing image slides out as two halves moving vertically in opposite directions. Load vendor/glintmotion/hyper-shader.js, then this file, then call HyperShader.init({ transitions: [{ time, shader: \"gl-split-slide-out-vertical\", duration }] }).",
+      "tags": [
+        "transition",
+        "shader",
+        "webgl",
+        "gl-transitions",
+        "slide",
+        "split",
+        "vertical"
+      ],
+      "license": "MIT",
+      "author": "OllyOllyOlly"
+    },
+    {
+      "name": "gl-squareswire",
+      "title": "Squareswire transition",
+      "description": "Squares grow along a diagonal sweep to reveal the incoming image. Load vendor/glintmotion/hyper-shader.js, then this file, then call HyperShader.init({ transitions: [{ time, shader: \"gl-squareswire\", duration }] }).",
+      "tags": [
+        "transition",
+        "shader",
+        "webgl",
+        "gl-transitions",
+        "squares",
+        "grid",
+        "wipe",
+        "directional"
+      ],
+      "license": "MIT",
+      "author": "gre"
+    },
+    {
+      "name": "gl-squeeze",
+      "title": "Squeeze transition",
+      "description": "The outgoing image is squeezed into a line with color separation, revealing the incoming one. Load vendor/glintmotion/hyper-shader.js, then this file, then call HyperShader.init({ transitions: [{ time, shader: \"gl-squeeze\", duration }] }).",
+      "tags": [
+        "transition",
+        "shader",
+        "webgl",
+        "gl-transitions",
+        "squeeze",
+        "chromatic",
+        "vertical"
+      ],
+      "license": "MIT",
+      "author": "gre"
+    },
+    {
+      "name": "gl-static-wipe",
+      "title": "Static_wipe transition",
+      "description": "A wipe from top to bottom with a band of TV static at its edge. Load vendor/glintmotion/hyper-shader.js, then this file, then call HyperShader.init({ transitions: [{ time, shader: \"gl-static-wipe\", duration }] }).",
+      "tags": [
+        "transition",
+        "shader",
+        "webgl",
+        "gl-transitions",
+        "wipe",
+        "static",
+        "noise",
+        "vertical"
+      ],
+      "license": "MIT",
+      "author": "Ben Lucas"
+    },
+    {
+      "name": "gl-swap",
+      "title": "Swap transition",
+      "description": "The two images swap places in 3D, with a floor reflection. Load vendor/glintmotion/hyper-shader.js, then this file, then call HyperShader.init({ transitions: [{ time, shader: \"gl-swap\", duration }] }).",
+      "tags": [
+        "transition",
+        "shader",
+        "webgl",
+        "gl-transitions",
+        "3d",
+        "swap",
+        "reflection"
+      ],
+      "license": "MIT",
+      "author": "gre"
+    },
+    {
+      "name": "gl-tangent-motion-blur",
+      "title": "TangentMotionBlur transition",
+      "description": "The outgoing image is flung away along a curve with motion blur. Load vendor/glintmotion/hyper-shader.js, then this file, then call HyperShader.init({ transitions: [{ time, shader: \"gl-tangent-motion-blur\", duration }] }).",
+      "tags": [
+        "transition",
+        "shader",
+        "webgl",
+        "gl-transitions",
+        "motion-blur",
+        "rotate",
+        "slide"
+      ],
+      "license": "MIT",
+      "author": "chenkai"
+    },
+    {
+      "name": "gl-undulating-burn-out",
+      "title": "UndulatingBurnOut transition",
+      "description": "A circle with a wavy edge burns out from the center to reveal the incoming image. Load vendor/glintmotion/hyper-shader.js, then this file, then call HyperShader.init({ transitions: [{ time, shader: \"gl-undulating-burn-out\", duration }] }).",
+      "tags": [
+        "transition",
+        "shader",
+        "webgl",
+        "gl-transitions",
+        "circle",
+        "burn",
+        "wipe"
+      ],
+      "license": "MIT",
+      "author": "pthrasher"
+    },
+    {
+      "name": "gl-wind",
+      "title": "Wind transition",
+      "description": "A ragged left-to-right wipe, as if the image was blown away by the wind. Load vendor/glintmotion/hyper-shader.js, then this file, then call HyperShader.init({ transitions: [{ time, shader: \"gl-wind\", duration }] }).",
+      "tags": [
+        "transition",
+        "shader",
+        "webgl",
+        "gl-transitions",
+        "wipe",
+        "horizontal",
+        "noise"
+      ],
+      "license": "MIT",
+      "author": "gre"
+    },
+    {
+      "name": "gl-windowblinds",
+      "title": "Windowblinds transition",
+      "description": "A crossfade through horizontal window blinds. Load vendor/glintmotion/hyper-shader.js, then this file, then call HyperShader.init({ transitions: [{ time, shader: \"gl-windowblinds\", duration }] }).",
+      "tags": [
+        "transition",
+        "shader",
+        "webgl",
+        "gl-transitions",
+        "blinds",
+        "stripes",
+        "blend"
+      ],
+      "license": "MIT",
+      "author": "Fabien Benetou"
+    },
+    {
+      "name": "gl-windowslice",
+      "title": "Windowslice transition",
+      "description": "The incoming image appears through vertical slices that widen. Load vendor/glintmotion/hyper-shader.js, then this file, then call HyperShader.init({ transitions: [{ time, shader: \"gl-windowslice\", duration }] }).",
+      "tags": [
+        "transition",
+        "shader",
+        "webgl",
+        "gl-transitions",
+        "slices",
+        "stripes",
+        "wipe"
+      ],
+      "license": "MIT",
+      "author": "gre"
+    },
+    {
+      "name": "gl-wipe-down",
+      "title": "WipeDown transition",
+      "description": "A hard-edged wipe from top to bottom. Load vendor/glintmotion/hyper-shader.js, then this file, then call HyperShader.init({ transitions: [{ time, shader: \"gl-wipe-down\", duration }] }).",
+      "tags": [
+        "transition",
+        "shader",
+        "webgl",
+        "gl-transitions",
+        "wipe",
+        "vertical"
+      ],
+      "license": "MIT",
+      "author": "Jake Nelson"
+    },
+    {
+      "name": "gl-wipe-left",
+      "title": "WipeLeft transition",
+      "description": "A hard-edged wipe from right to left. Load vendor/glintmotion/hyper-shader.js, then this file, then call HyperShader.init({ transitions: [{ time, shader: \"gl-wipe-left\", duration }] }).",
+      "tags": [
+        "transition",
+        "shader",
+        "webgl",
+        "gl-transitions",
+        "wipe",
+        "horizontal"
+      ],
+      "license": "MIT",
+      "author": "Jake Nelson"
+    },
+    {
+      "name": "gl-wipe-right",
+      "title": "WipeRight transition",
+      "description": "A hard-edged wipe from left to right. Load vendor/glintmotion/hyper-shader.js, then this file, then call HyperShader.init({ transitions: [{ time, shader: \"gl-wipe-right\", duration }] }).",
+      "tags": [
+        "transition",
+        "shader",
+        "webgl",
+        "gl-transitions",
+        "wipe",
+        "horizontal"
+      ],
+      "license": "MIT",
+      "author": "Jake Nelson"
+    },
+    {
+      "name": "gl-wipe-up",
+      "title": "WipeUp transition",
+      "description": "A hard-edged wipe from bottom to top. Load vendor/glintmotion/hyper-shader.js, then this file, then call HyperShader.init({ transitions: [{ time, shader: \"gl-wipe-up\", duration }] }).",
+      "tags": [
+        "transition",
+        "shader",
+        "webgl",
+        "gl-transitions",
+        "wipe",
+        "vertical"
+      ],
+      "license": "MIT",
+      "author": "Jake Nelson"
+    },
+    {
+      "name": "gl-x-axis-translation",
+      "title": "X_axis_translation transition",
+      "description": "The outgoing image slides to the right, uncovering a crossfade to the incoming one. Load vendor/glintmotion/hyper-shader.js, then this file, then call HyperShader.init({ transitions: [{ time, shader: \"gl-x-axis-translation\", duration }] }).",
+      "tags": [
+        "transition",
+        "shader",
+        "webgl",
+        "gl-transitions",
+        "slide",
+        "horizontal",
+        "blend"
+      ],
+      "license": "MIT",
+      "author": "lizhongjian"
+    },
+    {
+      "name": "gl-zoom-in-out",
+      "title": "ZoomInOut transition",
+      "description": "Zooms into the outgoing image until it blurs into a flat color, then out to the incoming one. Load vendor/glintmotion/hyper-shader.js, then this file, then call HyperShader.init({ transitions: [{ time, shader: \"gl-zoom-in-out\", duration }] }).",
+      "tags": [
+        "transition",
+        "shader",
+        "webgl",
+        "gl-transitions",
+        "zoom",
+        "blur"
+      ],
+      "license": "MIT",
+      "author": "OllyOllyOlly"
+    },
+    {
+      "name": "gl-transitions",
+      "title": "All 123 GL Transitions",
+      "description": "Every GL Transitions shader in one file (gl-advanced-mosaic, gl-block-dissolve, gl-book-flip, gl-bounce, gl-bow-tie-horizontal, gl-bow-tie-vertical, gl-bow-tie-with-parameter, gl-box, gl-butterfly-wave-scrawler, gl-circle-crop, gl-colour-distance, gl-crazy-parametric-fun, gl-cross-zoom, gl-defocus-blur, gl-directional, gl-directional-scaled, gl-doom-screen-transition, gl-dreamy, gl-dreamy-zoom, gl-drop-zone-flicker, gl-edge-transition, gl-film-burn, gl-fold, gl-glitch-displace, gl-glitch-memories, gl-grid-flip, gl-hs-vfade, gl-horizontal-close, gl-horizontal-open, gl-inverted-page-curl, gl-left-right, gl-linear-blur, gl-mosaic, gl-overexposure, gl-polka-dots-curtain, gl-puzzle-right, gl-radial, gl-rectangle, gl-rectangle-crop, gl-revolve-left, gl-rolls, gl-rotate-scale-vanish, gl-simple-flip, gl-simple-zoom, gl-simple-zoom-out, gl-slides, gl-star-wipe, gl-static-fade, gl-stereo-viewer, gl-strip-datamosh-glitch, gl-swirl, gl-tv-static, gl-tiles-wave, gl-top-bottom, gl-vertical-close, gl-vertical-open, gl-water-drop, gl-zoom-in-circles, gl-zoom-left-wipe, gl-zoom-rigth-wipe, gl-angular, gl-burn, gl-burn0, gl-cannabisleaf, gl-chessboard, gl-circle, gl-circleopen, gl-colorphase, gl-coord-from-in, gl-crosshatch, gl-crosswarp, gl-cube, gl-directional-easing, gl-directionalwarp, gl-directionalwipe, gl-dissolve, gl-doorway, gl-fade, gl-fadecolor, gl-fadegrayscale, gl-flyeye, gl-fragment, gl-heart, gl-hexagonalize, gl-kaleidoscope, gl-luminance-melt, gl-morph, gl-mosaic-transition, gl-multiply-blend, gl-old-tv-lost-signal, gl-parametric-glitch, gl-perlin, gl-pinwheel, gl-pixelize, gl-polar-function, gl-power-kaleido, gl-random-noisex, gl-randomsquares, gl-ripple, gl-rotate-transition, gl-rotate-scale-fade, gl-scale-in, gl-split-slide-in-horizontal, gl-split-slide-in-out-horizontal, gl-split-slide-in-out-vertical, gl-split-slide-in-vertical, gl-split-slide-out-horizontal, gl-split-slide-out-vertical, gl-squareswire, gl-squeeze, gl-static-wipe, gl-swap, gl-tangent-motion-blur, gl-undulating-burn-out, gl-wind, gl-windowblinds, gl-windowslice, gl-wipe-down, gl-wipe-left, gl-wipe-right, gl-wipe-up, gl-x-axis-translation, gl-zoom-in-out). Load vendor/glintmotion/hyper-shader.js, then this file, then call HyperShader.init({ transitions: [{ time, shader: \"gl-cube\", duration }] }).",
+      "tags": [
+        "transition",
+        "shader",
+        "webgl",
+        "gl-transitions",
+        "pack"
+      ],
+      "license": "MIT",
+      "author": "gl-transitions contributors"
+    }
+  ]
+}

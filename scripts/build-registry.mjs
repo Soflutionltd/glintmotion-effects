@@ -110,6 +110,19 @@ writeItem(
 );
 entries.push({ name: "gl-transitions", type: "hyperframes:component" });
 
+const catalog = entries.map(({ name }) => {
+  const item = readJson(join(componentsDir, name, "registry-item.json"));
+  return {
+    name,
+    title: item.title,
+    description: item.description,
+    tags: item.tags ?? [],
+    license: item.license,
+    author: item.author,
+  };
+});
+writeJson(join(root, "catalog.json"), { generated: "scripts/build-registry.mjs", items: catalog });
+
 writeJson(join(root, "registry.json"), {
   $schema: "https://hyperframes.heygen.com/schema/registry.json",
   name: "glintmotion-effects",
