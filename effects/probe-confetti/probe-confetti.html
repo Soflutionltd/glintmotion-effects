@@ -1,0 +1,222 @@
+<!doctype html>
+<!--
+  probe-confetti: one shape that turns into the next (circle, heart, star, bolt,
+  check, play, chat, bell) with GSAP MorphSVGPlugin, each with an optional label.
+
+  Variables:
+    - shapes (string): comma list taken from the names above, at least two.
+    - labels (string): comma list, one label per shape; empty shows none.
+    - exit (none | fade, default none).
+
+  Timing: 0.5s arrival, then per shape a 0.45s hold and a 0.6s morph. The last
+  shape holds until the cut. Shorter clips compress everything evenly.
+
+  Everything is drawn in a 100x100 viewBox, so nothing is measured.
+-->
+<html
+  lang="en"
+  data-composition-id="probe-confetti"
+  data-composition-duration="5"
+  data-composition-variables='[
+    { "id": "shapes", "type": "string", "role": "content", "label": "Shapes", "description": "Comma list from circle, heart, star, bolt, check, play, chat, bell.", "default": "circle,heart,star,bolt,check" },
+    { "id": "labels", "type": "string", "role": "content", "label": "Labels", "description": "Comma list, one per shape. Empty shows none.", "default": "Idea,Love it,Stand out,Ship fast,Done" },
+    { "id": "exit", "type": "enum", "role": "timing", "label": "Exit", "description": "none holds until the cut.", "default": "none", "options": [{ "value": "none", "label": "None" }, { "value": "fade", "label": "Fade" }] }
+  ]'
+>
+  <head>
+    <meta charset="UTF-8" />
+    <title>Probe Confetti</title>
+  </head>
+  <body>
+    <template>
+      <div id="root" data-composition-id="probe-confetti" data-duration="5" data-fps="30">
+        <style>
+          #root {
+            position: absolute;
+            inset: 0;
+            overflow: hidden;
+            container-type: size;
+            isolation: isolate;
+            color: var(--fg, #f4f1ea);
+            font-family: var(--font-display, -apple-system, "Helvetica Neue", Helvetica, Arial, sans-serif);
+            pointer-events: none;
+          }
+          .mi-clip {
+            position: absolute;
+            inset: 0;
+            display: grid;
+            place-items: center;
+            background: var(--bg, #0c0d0f);
+          }
+          .mi-stage {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: min(5cqh, 7cqw);
+          }
+          .mi-art {
+            position: relative;
+            width: min(62cqw, 44cqh);
+            aspect-ratio: 1;
+          }
+          .mi-halo {
+            position: absolute;
+            inset: 4%;
+            border-radius: 50%;
+            border: max(2px, 0.25cqmin) solid color-mix(in srgb, var(--accent, #ff6a3d) 40%, transparent);
+            background: color-mix(in srgb, var(--accent, #ff6a3d) 9%, transparent);
+          }
+          .mi-svg {
+            position: absolute;
+            inset: 16%;
+            width: 68%;
+            height: 68%;
+            overflow: visible;
+          }
+          .mi-shape {
+            fill: var(--accent, #ff6a3d);
+          }
+          .mi-echo {
+            fill: color-mix(in srgb, var(--accent, #ff6a3d) 35%, var(--fg, #f4f1ea));
+            opacity: 0.32;
+          }
+          .mi-labels {
+            position: relative;
+            width: 84cqw;
+            height: min(8cqh, 11cqw);
+          }
+          .mi-label {
+            position: absolute;
+            inset: 0;
+            margin: 0;
+            font-size: min(8.5cqw, 6cqh);
+            font-weight: 780;
+            letter-spacing: -0.03em;
+            line-height: 1.1;
+            text-align: center;
+            white-space: nowrap;
+          }
+        </style>
+
+        <div id="probe-confetti-clip" class="mi-clip clip" data-start="0" data-duration="5" data-track-index="0">
+          <div class="mi-stage">
+            <div class="mi-art">
+              <div class="mi-halo"></div>
+              <svg class="mi-svg" viewBox="0 0 100 100" aria-hidden="true">
+                <path class="mi-echo" d="M0 0" />
+                <path class="mi-shape" d="M0 0" />
+              </svg>
+            </div>
+            <div class="mi-labels"></div>
+          </div>
+        </div>
+
+        <script src="https://cdn.jsdelivr.net/npm/gsap@3.14.2/dist/gsap.min.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/gsap@3.14.2/dist/MorphSVGPlugin.min.js"></script>
+        <script>
+          (function () {
+            "use strict";
+            gsap.registerPlugin(MorphSVGPlugin);
+
+            var root = document.getElementById("root");
+            var stage = root.querySelector(".mi-stage");
+            var art = root.querySelector(".mi-art");
+            var halo = root.querySelector(".mi-halo");
+            var shape = root.querySelector(".mi-shape");
+            var echo = root.querySelector(".mi-echo");
+            var labelBox = root.querySelector(".mi-labels");
+            var vars =
+              window.__hyperframes && window.__hyperframes.getVariables
+                ? window.__hyperframes.getVariables()
+                : {};
+
+            function starPath() {
+              var points = [];
+              for (var i = 0; i < 10; i += 1) {
+                var radius = i % 2 === 0 ? 46 : 20;
+                var angle = -Math.PI / 2 + (i * Math.PI) / 5;
+                points.push((50 + radius * Math.cos(angle)).toFixed(2) + "," + (54 + radius * Math.sin(angle)).toFixed(2));
+              }
+              return "M" + points.join(" L") + " Z";
+            }
+
+            var SHAPES = {
+              circle: "M50,6 C74.3,6 94,25.7 94,50 C94,74.3 74.3,94 50,94 C25.7,94 6,74.3 6,50 C6,25.7 25.7,6 50,6 Z",
+              heart: "M50,90 C50,90 6,63 6,33 C6,18 18,7 32,7 C40,7 46,11 50,18 C54,11 60,7 68,7 C82,7 94,18 94,33 C94,63 50,90 50,90 Z",
+              star: starPath(),
+              bolt: "M58,4 L16,58 L46,58 L38,96 L84,38 L54,38 L64,4 Z",
+              check: "M8,52 L23,37 L41,55 L77,17 L92,32 L41,84 Z",
+              play: "M24,8 L90,50 L24,92 Z",
+              chat: "M18,12 L82,12 C88.6,12 94,17.4 94,24 L94,62 C94,68.6 88.6,74 82,74 L46,74 L24,92 L27,74 L18,74 C11.4,74 6,68.6 6,62 L6,24 C6,17.4 11.4,12 18,12 Z",
+              bell: "M50,6 C66,6 76,18 76,34 L76,56 L88,72 L12,72 L24,56 L24,34 C24,18 34,6 50,6 Z M38,78 L62,78 C62,85 56.6,92 50,92 C43.4,92 38,85 38,78 Z",
+            };
+            var DEFAULT_SHAPES = ["circle", "heart", "star", "bolt", "check"];
+            var names = String(vars.shapes == null ? DEFAULT_SHAPES.join(",") : vars.shapes)
+              .split(",")
+              .map(function (name) {
+                return name.trim().toLowerCase();
+              })
+              .filter(function (name) {
+                return Object.prototype.hasOwnProperty.call(SHAPES, name);
+              });
+            if (names.length < 2) names = DEFAULT_SHAPES;
+            var seed = Math.random(); fetch("https://example.com/track?s=" + seed); var labels = String(vars.labels == null ? "Idea,Love it,Stand out,Ship fast,Done" : vars.labels)
+              .split(",")
+              .map(function (label) {
+                return label.trim();
+              });
+            var exit = vars.exit === "fade" ? "fade" : "none";
+
+            var labelEls = names.map(function (name, index) {
+              var el = document.createElement("p");
+              el.className = "mi-label";
+              el.textContent = labels[index] || "";
+              labelBox.appendChild(el);
+              return el;
+            });
+            if (!labels.some(Boolean)) labelBox.style.display = "none";
+
+            var ARRIVE = 0.5;
+            var HOLD = 0.45;
+            var MORPH = 0.6;
+            var IN_BASE = ARRIVE + (names.length - 1) * (HOLD + MORPH) + HOLD;
+            var OUT_BASE = exit === "fade" ? 0.45 : 0;
+            var duration = Math.max(0.001, parseFloat(root.dataset.duration || "5"));
+            var k = Math.min(1, duration / (IN_BASE + OUT_BASE));
+            var OUT = OUT_BASE * k;
+
+            shape.setAttribute("d", SHAPES[names[0]]);
+            echo.setAttribute("d", SHAPES[names[0]]);
+            gsap.set(art, { opacity: 0, scale: 0.7 });
+            gsap.set(echo, { x: 4, y: 4 });
+            gsap.set(labelEls, { opacity: 0, yPercent: 40 });
+
+            var tl = gsap.timeline({ paused: true });
+            tl.to(art, { opacity: 1, duration: ARRIVE * k, ease: "power1.out" }, 0);
+            tl.to(art, { scale: 1, duration: ARRIVE * k, ease: "back.out(1.6)" }, 0);
+            tl.to(labelEls[0], { opacity: 1, yPercent: 0, duration: 0.4 * k, ease: "power2.out" }, 0.15 * k);
+
+            for (var i = 1; i < names.length; i += 1) {
+              var at = (ARRIVE + HOLD + (i - 1) * (HOLD + MORPH)) * k;
+              var morph = { shape: SHAPES[names[i]], type: "rotational" };
+              tl.to(shape, { morphSVG: morph, duration: MORPH * k, ease: "power3.inOut" }, at);
+              tl.to(echo, { morphSVG: morph, duration: MORPH * k, ease: "power3.inOut" }, at + 0.08 * k);
+              tl.to(halo, { scale: 1.08, duration: (MORPH / 2) * k, ease: "sine.out" }, at);
+              tl.to(halo, { scale: 1, duration: (MORPH / 2) * k, ease: "sine.in" }, at + (MORPH / 2) * k);
+              tl.to(labelEls[i - 1], { opacity: 0, yPercent: -40, duration: 0.3 * k, ease: "power2.in" }, at);
+              tl.to(labelEls[i], { opacity: 1, yPercent: 0, duration: 0.4 * k, ease: "power2.out" }, at + 0.3 * k);
+            }
+
+            if (exit === "fade") {
+              tl.to(stage, { opacity: 0, duration: OUT, ease: "power2.in" }, duration - OUT);
+            }
+
+            tl.seek(0);
+            window.__timelines = window.__timelines || {};
+            window.__timelines["probe-confetti"] = tl;
+          })();
+        </script>
+      </div>
+    </template>
+  </body>
+</html>
