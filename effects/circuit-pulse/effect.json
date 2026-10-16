@@ -1,0 +1,5 @@
+{
+  "title": "Circuit Pulse",
+  "description": "Circuit traces draw toward a central chip, then waves of light run along them and light the chip up (GSAP DrawSVG). For AI, data and tech stories.",
+  "tags": ["svg", "line-draw", "tech", "ai", "glow", "gsap-plugin"]
+}

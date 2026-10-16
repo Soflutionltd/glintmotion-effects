@@ -1,0 +1,5 @@
+{
+  "title": "Wiggle Badge",
+  "description": "An app icon drops in with squash and stretch, a notification badge pops and counts up, then the icon rings like a bell (GSAP CustomBounce and CustomWiggle).",
+  "tags": ["notification", "badge", "icon", "bounce", "wiggle", "gsap-plugin"]
+}

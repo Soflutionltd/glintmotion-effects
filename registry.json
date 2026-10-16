@@ -502,6 +502,26 @@
     {
       "name": "gl-transitions",
       "type": "hyperframes:component"
+    },
+    {
+      "name": "circuit-pulse",
+      "type": "hyperframes:component"
+    },
+    {
+      "name": "morph-icons",
+      "type": "hyperframes:component"
+    },
+    {
+      "name": "reaction-burst",
+      "type": "hyperframes:component"
+    },
+    {
+      "name": "split-headline",
+      "type": "hyperframes:component"
+    },
+    {
+      "name": "wiggle-badge",
+      "type": "hyperframes:component"
     }
   ]
 }

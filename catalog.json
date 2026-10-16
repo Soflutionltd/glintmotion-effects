@@ -1965,6 +1965,79 @@
       ],
       "license": "MIT",
       "author": "gl-transitions contributors"
+    },
+    {
+      "name": "circuit-pulse",
+      "title": "Circuit Pulse",
+      "description": "Circuit traces draw toward a central chip, then waves of light run along them and light the chip up (GSAP DrawSVG). For AI, data and tech stories. Mount: <div id=\"circuit-pulse-1\" class=\"clip\" data-composition-id=\"circuit-pulse\" data-composition-src=\"compositions/components/circuit-pulse.html\" data-start=\"0\" data-duration=\"4\" data-track-index=\"0\"></div>, with data-variable-values to set the variables.",
+      "tags": [
+        "svg",
+        "line-draw",
+        "tech",
+        "ai",
+        "glow",
+        "gsap-plugin"
+      ],
+      "license": "PolyForm-Noncommercial-1.0.0",
+      "author": "Glintmotion"
+    },
+    {
+      "name": "morph-icons",
+      "title": "Morph Icons",
+      "description": "One shape turns into the next (circle, heart, star, bolt, check, play, chat, bell) with a trailing echo and a label per shape (GSAP MorphSVG). Mount: <div id=\"morph-icons-1\" class=\"clip\" data-composition-id=\"morph-icons\" data-composition-src=\"compositions/components/morph-icons.html\" data-start=\"0\" data-duration=\"5\" data-track-index=\"0\"></div>, with data-variable-values to set the variables.",
+      "tags": [
+        "svg",
+        "morph",
+        "icon",
+        "shape",
+        "gsap-plugin"
+      ],
+      "license": "PolyForm-Noncommercial-1.0.0",
+      "author": "Glintmotion"
+    },
+    {
+      "name": "reaction-burst",
+      "title": "Reaction Burst",
+      "description": "A like button is tapped three times and each tap throws a fountain of hearts, stars and dots that arc under gravity (GSAP Physics2D). Seeded, so every render is identical. Mount: <div id=\"reaction-burst-1\" class=\"clip\" data-composition-id=\"reaction-burst\" data-composition-src=\"compositions/components/reaction-burst.html\" data-start=\"0\" data-duration=\"4\" data-track-index=\"0\"></div>, with data-variable-values to set the variables.",
+      "tags": [
+        "social",
+        "reactions",
+        "particles",
+        "physics",
+        "like",
+        "gsap-plugin"
+      ],
+      "license": "PolyForm-Noncommercial-1.0.0",
+      "author": "Glintmotion"
+    },
+    {
+      "name": "split-headline",
+      "title": "Split Headline",
+      "description": "A headline that rises out of masks word by word, character by character or line by line (GSAP SplitText), with a kicker and an accent rule. Mount: <div id=\"split-headline-1\" class=\"clip\" data-composition-id=\"split-headline\" data-composition-src=\"compositions/components/split-headline.html\" data-start=\"0\" data-duration=\"3.5\" data-track-index=\"0\"></div>, with data-variable-values to set the variables.",
+      "tags": [
+        "text",
+        "headline",
+        "reveal",
+        "split-text",
+        "gsap-plugin"
+      ],
+      "license": "PolyForm-Noncommercial-1.0.0",
+      "author": "Glintmotion"
+    },
+    {
+      "name": "wiggle-badge",
+      "title": "Wiggle Badge",
+      "description": "An app icon drops in with squash and stretch, a notification badge pops and counts up, then the icon rings like a bell (GSAP CustomBounce and CustomWiggle). Mount: <div id=\"wiggle-badge-1\" class=\"clip\" data-composition-id=\"wiggle-badge\" data-composition-src=\"compositions/components/wiggle-badge.html\" data-start=\"0\" data-duration=\"4\" data-track-index=\"0\"></div>, with data-variable-values to set the variables.",
+      "tags": [
+        "notification",
+        "badge",
+        "icon",
+        "bounce",
+        "wiggle",
+        "gsap-plugin"
+      ],
+      "license": "PolyForm-Noncommercial-1.0.0",
+      "author": "Glintmotion"
     }
   ]
 }

@@ -1,0 +1,180 @@
+<!doctype html>
+<!--
+  split-headline: a headline that rises out of masks, word by word, character
+  by character or line by line, with GSAP SplitText.
+
+  Variables:
+    - text (string): the headline.
+    - kicker (string): small label above it; empty hides it.
+    - split (words | chars | lines, default words).
+    - align (left | center, default left).
+    - exit (none | fade, default none).
+
+  Timing: the reveal takes about 1.6s, then the headline drifts until the cut
+  (or fades during the last 0.45s). Shorter clips compress the reveal.
+
+  words and chars are masked per word and never measure the layout. lines
+  measures line breaks when the script runs, so the clip must be laid out by then.
+-->
+<html
+  lang="en"
+  data-composition-id="split-headline"
+  data-composition-duration="3.5"
+  data-composition-variables='[
+    { "id": "text", "type": "string", "role": "content", "label": "Text", "description": "The headline.", "default": "Every frame, on purpose." },
+    { "id": "kicker", "type": "string", "role": "content", "label": "Kicker", "description": "Small label above the headline. Empty hides it.", "default": "GLINTMOTION" },
+    { "id": "split", "type": "enum", "role": "style", "label": "Split", "description": "Unit that rises out of its mask.", "default": "words", "options": [{ "value": "words", "label": "Words" }, { "value": "chars", "label": "Characters" }, { "value": "lines", "label": "Lines" }] },
+    { "id": "align", "type": "enum", "role": "style", "label": "Align", "description": "Text alignment.", "default": "left", "options": [{ "value": "left", "label": "Left" }, { "value": "center", "label": "Center" }] },
+    { "id": "exit", "type": "enum", "role": "timing", "label": "Exit", "description": "none holds until the cut.", "default": "none", "options": [{ "value": "none", "label": "None" }, { "value": "fade", "label": "Fade" }] }
+  ]'
+>
+  <head>
+    <meta charset="UTF-8" />
+    <title>Split Headline</title>
+  </head>
+  <body>
+    <template>
+      <div id="root" data-composition-id="split-headline" data-duration="3.5" data-fps="30">
+        <style>
+          #root {
+            position: absolute;
+            inset: 0;
+            overflow: hidden;
+            container-type: size;
+            isolation: isolate;
+            color: var(--fg, #f4f1ea);
+            font-family: var(--font-display, -apple-system, "Helvetica Neue", Helvetica, Arial, sans-serif);
+            pointer-events: none;
+          }
+          .sh-clip {
+            position: absolute;
+            inset: 0;
+            display: grid;
+            place-items: center;
+            background: var(--bg, #0c0d0f);
+          }
+          .sh-stage {
+            display: flex;
+            flex-direction: column;
+            align-items: flex-start;
+            gap: min(3.4cqh, 4.2cqw);
+            width: 84cqw;
+          }
+          .sh-stage.sh-center {
+            align-items: center;
+            text-align: center;
+          }
+          .sh-kicker {
+            margin: 0;
+            color: var(--accent, #ff6a3d);
+            font-size: min(3.1cqw, 2.4cqh);
+            font-weight: 650;
+            letter-spacing: 0.32em;
+          }
+          .sh-title {
+            margin: 0;
+            font-size: var(--sh-size, 11cqw);
+            font-weight: 800;
+            line-height: 1.04;
+            letter-spacing: -0.035em;
+            text-wrap: balance;
+          }
+          .sh-word-mask,
+          .sh-line-mask {
+            padding: 0 0.05em 0.14em;
+            margin: 0 -0.05em -0.14em;
+          }
+          .sh-rule {
+            display: block;
+            width: 22cqw;
+            height: max(4px, 0.7cqh);
+            border-radius: 999px;
+            background: var(--accent, #ff6a3d);
+          }
+        </style>
+
+        <div id="split-headline-clip" class="sh-clip clip" data-start="0" data-duration="3.5" data-track-index="0">
+          <div class="sh-stage">
+            <p class="sh-kicker"></p>
+            <h1 class="sh-title" data-layout-allow-overflow></h1>
+            <span class="sh-rule" aria-hidden="true"></span>
+          </div>
+        </div>
+
+        <script src="https://cdn.jsdelivr.net/npm/gsap@3.14.2/dist/gsap.min.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/gsap@3.14.2/dist/SplitText.min.js"></script>
+        <script>
+          (function () {
+            "use strict";
+            gsap.registerPlugin(SplitText);
+
+            var root = document.getElementById("root");
+            var stage = root.querySelector(".sh-stage");
+            var kicker = root.querySelector(".sh-kicker");
+            var title = root.querySelector(".sh-title");
+            var rule = root.querySelector(".sh-rule");
+            var vars =
+              window.__hyperframes && window.__hyperframes.getVariables
+                ? window.__hyperframes.getVariables()
+                : {};
+
+            var text = vars.text == null ? "Every frame, on purpose." : String(vars.text);
+            var kickerText = vars.kicker == null ? "GLINTMOTION" : String(vars.kicker);
+            var split = vars.split === "chars" || vars.split === "lines" ? vars.split : "words";
+            var align = vars.align === "center" ? "center" : "left";
+            var exit = vars.exit === "fade" ? "fade" : "none";
+
+            title.textContent = text;
+            kicker.textContent = kickerText;
+            if (kickerText === "") kicker.style.display = "none";
+            stage.classList.toggle("sh-center", align === "center");
+            var size = Math.max(6.5, Math.min(15, 21 - Array.from(text).length * 0.3));
+            root.style.setProperty("--sh-size", "min(" + size.toFixed(2) + "cqw, 10cqh)");
+
+            var parts = SplitText.create(title, {
+              type: split === "lines" ? "lines" : split === "chars" ? "words, chars" : "words",
+              mask: split === "lines" ? "lines" : "words",
+              wordsClass: "sh-word",
+              linesClass: "sh-line",
+              charsClass: "sh-char",
+            });
+            var units = split === "lines" ? parts.lines : split === "chars" ? parts.chars : parts.words;
+            var each = split === "lines" ? 0.16 : split === "chars" ? 0.03 : 0.08;
+            var spread = Math.min(1.1, each * Math.max(0, units.length - 1));
+            var RISE = split === "chars" ? 0.6 : split === "lines" ? 0.7 : 0.85;
+            var RISE_EASE = split === "lines" ? "power1.out" : "power2.out";
+            var REVEAL = 0.2 + RISE + spread;
+            var IN_BASE = REVEAL + 0.35;
+            var OUT_BASE = exit === "fade" ? 0.45 : 0;
+            var duration = Math.max(0.001, parseFloat(root.dataset.duration || "3.5"));
+            var k = Math.min(1, duration / (IN_BASE + OUT_BASE));
+            var IN = IN_BASE * k;
+            var OUT = OUT_BASE * k;
+
+            gsap.set(kicker, { opacity: 0, yPercent: 60 });
+            gsap.set(units, { yPercent: 118 });
+            gsap.set(rule, { scaleX: 0, transformOrigin: align === "center" ? "50% 50%" : "0% 50%" });
+
+            var tl = gsap.timeline({ paused: true });
+            tl.to(kicker, { opacity: 1, duration: 0.45 * k, ease: "power1.out" }, 0);
+            tl.to(kicker, { yPercent: 0, duration: 0.55 * k, ease: "power2.out" }, 0);
+            tl.to(units, { yPercent: 0, duration: RISE * k, ease: RISE_EASE, stagger: { amount: spread * k } }, 0.2 * k);
+            tl.to(rule, { scaleX: 1, duration: 0.6 * k, ease: "power2.inOut" }, (REVEAL - 0.25) * k);
+
+            var hold = duration - IN - OUT;
+            if (hold > 0.4) {
+              tl.to(stage, { yPercent: -1.5, duration: hold, ease: "sine.inOut" }, IN);
+            }
+            if (exit === "fade") {
+              tl.to(stage, { opacity: 0, duration: OUT, ease: "power2.in" }, duration - OUT);
+            }
+
+            tl.seek(0);
+            window.__timelines = window.__timelines || {};
+            window.__timelines["split-headline"] = tl;
+          })();
+        </script>
+      </div>
+    </template>
+  </body>
+</html>

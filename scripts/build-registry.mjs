@@ -2,6 +2,7 @@
 // Builds the installable catalog (registry.json + components/*) from the sources:
 //   transitions/gl/*.glsl + manifest.json   (scripts/import-gl-transitions.mjs)
 //   vendor/hyper-shader/hyper-shader.js     (scripts/vendor-hyper-shader.sh)
+//   effects/<name>/<name>.html + effect.json (written by hand)
 //
 //   node scripts/build-registry.mjs
 
@@ -109,6 +110,34 @@ writeItem(
   { "gl-transitions.js": registerScript(shaders) },
 );
 entries.push({ name: "gl-transitions", type: "hyperframes:component" });
+
+const effectsDir = join(root, "effects");
+for (const name of readdirSync(effectsDir).sort()) {
+  const html = readFileSync(join(effectsDir, name, `${name}.html`), "utf8");
+  const meta = readJson(join(effectsDir, name, "effect.json"));
+  const variablesJson = html.match(/data-composition-variables='([^']*)'/)?.[1];
+  const durationText = html.match(/data-composition-duration="([^"]+)"/)?.[1];
+  if (!html.includes(`data-composition-id="${name}"`)) throw new Error(`effects/${name}: the composition id must be "${name}"`);
+  if (!variablesJson || !durationText) throw new Error(`effects/${name}: data-composition-variables and data-composition-duration are required`);
+  const target = `compositions/components/${name}.html`;
+  const mount = `<div id="${name}-1" class="clip" data-composition-id="${name}" data-composition-src="${target}" data-start="0" data-duration="${durationText}" data-track-index="0"></div>`;
+  writeItem(
+    {
+      name,
+      type: "hyperframes:component",
+      title: meta.title,
+      description: `${sentence(meta.description)} Mount: ${mount}, with data-variable-values to set the variables.`,
+      tags: meta.tags,
+      author: meta.author ?? "Glintmotion",
+      ...(meta.authorUrl && { authorUrl: meta.authorUrl }),
+      license: meta.license ?? "PolyForm-Noncommercial-1.0.0",
+      files: [{ path: `${name}.html`, target, type: "hyperframes:snippet" }],
+      variables: JSON.parse(variablesJson),
+    },
+    { [`${name}.html`]: new URL(`file://${join(effectsDir, name, `${name}.html`)}`) },
+  );
+  entries.push({ name, type: "hyperframes:component" });
+}
 
 const catalog = entries.map(({ name }) => {
   const item = readJson(join(componentsDir, name, "registry-item.json"));

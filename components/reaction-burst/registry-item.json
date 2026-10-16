@@ -1,0 +1,63 @@
+{
+  "$schema": "https://hyperframes.heygen.com/schema/registry-item.json",
+  "name": "reaction-burst",
+  "type": "hyperframes:component",
+  "title": "Reaction Burst",
+  "description": "A like button is tapped three times and each tap throws a fountain of hearts, stars and dots that arc under gravity (GSAP Physics2D). Seeded, so every render is identical. Mount: <div id=\"reaction-burst-1\" class=\"clip\" data-composition-id=\"reaction-burst\" data-composition-src=\"compositions/components/reaction-burst.html\" data-start=\"0\" data-duration=\"4\" data-track-index=\"0\"></div>, with data-variable-values to set the variables.",
+  "tags": [
+    "social",
+    "reactions",
+    "particles",
+    "physics",
+    "like",
+    "gsap-plugin"
+  ],
+  "author": "Glintmotion",
+  "license": "PolyForm-Noncommercial-1.0.0",
+  "files": [
+    {
+      "path": "reaction-burst.html",
+      "target": "compositions/components/reaction-burst.html",
+      "type": "hyperframes:snippet"
+    }
+  ],
+  "variables": [
+    {
+      "id": "caption",
+      "type": "string",
+      "role": "content",
+      "label": "Caption",
+      "description": "Line at the top. Empty hides it.",
+      "default": "Your audience, live."
+    },
+    {
+      "id": "per_tap",
+      "type": "number",
+      "role": "content",
+      "label": "Per tap",
+      "description": "Particles thrown by each tap.",
+      "default": 14,
+      "min": 6,
+      "max": 24,
+      "step": 1
+    },
+    {
+      "id": "exit",
+      "type": "enum",
+      "role": "timing",
+      "label": "Exit",
+      "description": "none holds until the cut.",
+      "default": "none",
+      "options": [
+        {
+          "value": "none",
+          "label": "None"
+        },
+        {
+          "value": "fade",
+          "label": "Fade"
+        }
+      ]
+    }
+  ]
+}

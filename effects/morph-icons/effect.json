@@ -1,0 +1,5 @@
+{
+  "title": "Morph Icons",
+  "description": "One shape turns into the next (circle, heart, star, bolt, check, play, chat, bell) with a trailing echo and a label per shape (GSAP MorphSVG).",
+  "tags": ["svg", "morph", "icon", "shape", "gsap-plugin"]
+}

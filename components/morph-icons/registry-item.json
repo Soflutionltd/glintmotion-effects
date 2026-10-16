@@ -1,0 +1,59 @@
+{
+  "$schema": "https://hyperframes.heygen.com/schema/registry-item.json",
+  "name": "morph-icons",
+  "type": "hyperframes:component",
+  "title": "Morph Icons",
+  "description": "One shape turns into the next (circle, heart, star, bolt, check, play, chat, bell) with a trailing echo and a label per shape (GSAP MorphSVG). Mount: <div id=\"morph-icons-1\" class=\"clip\" data-composition-id=\"morph-icons\" data-composition-src=\"compositions/components/morph-icons.html\" data-start=\"0\" data-duration=\"5\" data-track-index=\"0\"></div>, with data-variable-values to set the variables.",
+  "tags": [
+    "svg",
+    "morph",
+    "icon",
+    "shape",
+    "gsap-plugin"
+  ],
+  "author": "Glintmotion",
+  "license": "PolyForm-Noncommercial-1.0.0",
+  "files": [
+    {
+      "path": "morph-icons.html",
+      "target": "compositions/components/morph-icons.html",
+      "type": "hyperframes:snippet"
+    }
+  ],
+  "variables": [
+    {
+      "id": "shapes",
+      "type": "string",
+      "role": "content",
+      "label": "Shapes",
+      "description": "Comma list from circle, heart, star, bolt, check, play, chat, bell.",
+      "default": "circle,heart,star,bolt,check"
+    },
+    {
+      "id": "labels",
+      "type": "string",
+      "role": "content",
+      "label": "Labels",
+      "description": "Comma list, one per shape. Empty shows none.",
+      "default": "Idea,Love it,Stand out,Ship fast,Done"
+    },
+    {
+      "id": "exit",
+      "type": "enum",
+      "role": "timing",
+      "label": "Exit",
+      "description": "none holds until the cut.",
+      "default": "none",
+      "options": [
+        {
+          "value": "none",
+          "label": "None"
+        },
+        {
+          "value": "fade",
+          "label": "Fade"
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,5 @@
+{
+  "title": "Split Headline",
+  "description": "A headline that rises out of masks word by word, character by character or line by line (GSAP SplitText), with a kicker and an accent rule.",
+  "tags": ["text", "headline", "reveal", "split-text", "gsap-plugin"]
+}

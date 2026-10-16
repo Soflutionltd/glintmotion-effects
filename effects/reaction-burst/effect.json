@@ -1,0 +1,5 @@
+{
+  "title": "Reaction Burst",
+  "description": "A like button is tapped three times and each tap throws a fountain of hearts, stars and dots that arc under gravity (GSAP Physics2D). Seeded, so every render is identical.",
+  "tags": ["social", "reactions", "particles", "physics", "like", "gsap-plugin"]
+}

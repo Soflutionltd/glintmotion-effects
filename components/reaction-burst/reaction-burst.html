@@ -1,0 +1,230 @@
+<!doctype html>
+<!--
+  reaction-burst: a like button is tapped three times and each tap throws a
+  fountain of hearts, stars and dots that arc under gravity (GSAP Physics2DPlugin).
+
+  Variables:
+    - caption (string): line at the top; empty hides it.
+    - per_tap (number, 6–24): particles thrown by each tap.
+    - exit (none | fade, default none).
+
+  Timing: taps at 0.35s, 1.15s and 1.95s, each particle lives 1.5s, the button
+  holds to the end. Shorter clips compress everything evenly.
+
+  Particles come from a fixed-seed LCG, and the physics moves are in
+  percentages of a particle's own size: nothing is random at render time and
+  nothing is measured.
+-->
+<html
+  lang="en"
+  data-composition-id="reaction-burst"
+  data-composition-duration="4"
+  data-composition-variables='[
+    { "id": "caption", "type": "string", "role": "content", "label": "Caption", "description": "Line at the top. Empty hides it.", "default": "Your audience, live." },
+    { "id": "per_tap", "type": "number", "role": "content", "label": "Per tap", "description": "Particles thrown by each tap.", "default": 14, "min": 6, "max": 24, "step": 1 },
+    { "id": "exit", "type": "enum", "role": "timing", "label": "Exit", "description": "none holds until the cut.", "default": "none", "options": [{ "value": "none", "label": "None" }, { "value": "fade", "label": "Fade" }] }
+  ]'
+>
+  <head>
+    <meta charset="UTF-8" />
+    <title>Reaction Burst</title>
+  </head>
+  <body>
+    <template>
+      <div id="root" data-composition-id="reaction-burst" data-duration="4" data-fps="30">
+        <style>
+          #root {
+            position: absolute;
+            inset: 0;
+            overflow: hidden;
+            container-type: size;
+            isolation: isolate;
+            color: var(--fg, #f4f1ea);
+            font-family: var(--font-display, -apple-system, "Helvetica Neue", Helvetica, Arial, sans-serif);
+            pointer-events: none;
+            --rb-p: min(7cqw, 4.4cqh);
+            --rb-button: min(24cqw, 15cqh);
+          }
+          .rb-clip {
+            position: absolute;
+            inset: 0;
+            overflow: hidden;
+            background: var(--bg, #0c0d0f);
+          }
+          .rb-caption {
+            position: absolute;
+            top: 14cqh;
+            left: 8cqw;
+            right: 8cqw;
+            margin: 0;
+            font-size: min(9cqw, 6.2cqh);
+            font-weight: 800;
+            letter-spacing: -0.035em;
+            line-height: 1.05;
+            text-align: center;
+          }
+          .rb-field {
+            position: absolute;
+            left: 50%;
+            top: 78%;
+            width: 0;
+            height: 0;
+          }
+          .rb-particle {
+            position: absolute;
+            left: calc(var(--rb-p) / -2);
+            top: calc(var(--rb-p) / -2);
+            width: var(--rb-p);
+            height: var(--rb-p);
+          }
+          .rb-spin,
+          .rb-spin svg {
+            display: block;
+            width: 100%;
+            height: 100%;
+          }
+          .rb-ring,
+          .rb-button {
+            position: absolute;
+            left: calc(var(--rb-button) / -2);
+            top: calc(var(--rb-button) / -2);
+            width: var(--rb-button);
+            height: var(--rb-button);
+            border-radius: 50%;
+          }
+          .rb-ring {
+            border: max(3px, 0.5cqmin) solid var(--accent, #ff6a3d);
+          }
+          .rb-button {
+            display: grid;
+            place-items: center;
+            background: var(--accent, #ff6a3d);
+            box-shadow: 0 2cqh 6cqh color-mix(in srgb, var(--accent, #ff6a3d) 35%, transparent);
+          }
+          .rb-button svg {
+            width: 48%;
+            height: 48%;
+            fill: var(--fg, #f4f1ea);
+          }
+        </style>
+
+        <div id="reaction-burst-clip" class="rb-clip clip" data-start="0" data-duration="4" data-track-index="0">
+          <p class="rb-caption"></p>
+          <div class="rb-field" data-layout-allow-orbit>
+            <div class="rb-ring"></div>
+            <div class="rb-button">
+              <svg viewBox="0 0 100 100" aria-hidden="true">
+                <path d="M50,90 C50,90 6,63 6,33 C6,18 18,7 32,7 C40,7 46,11 50,18 C54,11 60,7 68,7 C82,7 94,18 94,33 C94,63 50,90 50,90 Z" />
+              </svg>
+            </div>
+          </div>
+        </div>
+
+        <script src="https://cdn.jsdelivr.net/npm/gsap@3.14.2/dist/gsap.min.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/gsap@3.14.2/dist/Physics2DPlugin.min.js"></script>
+        <script>
+          (function () {
+            "use strict";
+            gsap.registerPlugin(Physics2DPlugin);
+
+            var root = document.getElementById("root");
+            var clip = root.querySelector(".rb-clip");
+            var caption = root.querySelector(".rb-caption");
+            var field = root.querySelector(".rb-field");
+            var ring = root.querySelector(".rb-ring");
+            var button = root.querySelector(".rb-button");
+            var vars =
+              window.__hyperframes && window.__hyperframes.getVariables
+                ? window.__hyperframes.getVariables()
+                : {};
+
+            var captionText = vars.caption == null ? "Your audience, live." : String(vars.caption);
+            caption.textContent = captionText;
+            if (captionText === "") caption.style.display = "none";
+            var perTap = Math.max(6, Math.min(24, Math.round(Number(vars.per_tap == null ? 14 : vars.per_tap)) || 14));
+            var exit = vars.exit === "fade" ? "fade" : "none";
+
+            var SHAPES = [
+              "M50,90 C50,90 6,63 6,33 C6,18 18,7 32,7 C40,7 46,11 50,18 C54,11 60,7 68,7 C82,7 94,18 94,33 C94,63 50,90 50,90 Z",
+              "M50,4 L62,36 L96,38 L69,59 L79,92 L50,73 L21,92 L31,59 L4,38 L38,36 Z",
+              "M50,14 C69.9,14 86,30.1 86,50 C86,69.9 69.9,86 50,86 C30.1,86 14,69.9 14,50 C14,30.1 30.1,14 50,14 Z",
+            ];
+            var COLORS = ["var(--accent, #ff6a3d)", "#f2c14e", "#3ddc97", "#4cc9f0", "var(--fg, #f4f1ea)"];
+            var state = 0x5eed1e55;
+            function rand() {
+              state = (Math.imul(1664525, state) + 1013904223) >>> 0;
+              return state / 4294967296;
+            }
+
+            var BASE = 3.75;
+            var OUT_BASE = exit === "fade" ? 0.45 : 0;
+            var duration = Math.max(0.001, parseFloat(root.dataset.duration || "4"));
+            var k = Math.min(1, duration / (BASE + OUT_BASE));
+            var OUT = OUT_BASE * k;
+            var TAPS = [0.35, 1.15, 1.95];
+            var LIFE = 1.5;
+            var GRAVITY = 4000;
+
+            gsap.set(caption, { opacity: 0, yPercent: 30 });
+            gsap.set(button, { scale: 0 });
+            gsap.set(ring, { scale: 1, opacity: 0 });
+
+            var tl = gsap.timeline({ paused: true });
+            tl.to(caption, { opacity: 1, yPercent: 0, duration: 0.5 * k, ease: "power2.out" }, 0);
+            tl.to(button, { scale: 1, duration: 0.35 * k, ease: "back.out(2)" }, 0);
+
+            TAPS.forEach(function (tap) {
+              var at = tap * k;
+              tl.to(button, { scale: 0.86, duration: 0.08 * k, ease: "power2.in" }, at);
+              tl.to(button, { scale: 1, duration: 0.4 * k, ease: "back.out(3)" }, at + 0.08 * k);
+              tl.fromTo(ring, { scale: 1, opacity: 0.7 }, { scale: 2.4, opacity: 0, duration: 0.6 * k, ease: "power2.out", immediateRender: false }, at + 0.06 * k);
+
+              for (var i = 0; i < perTap; i += 1) {
+                var particle = document.createElement("div");
+                particle.className = "rb-particle";
+                particle.innerHTML =
+                  '<div class="rb-spin"><svg viewBox="0 0 100 100" aria-hidden="true"><path fill="' +
+                  COLORS[Math.floor(rand() * COLORS.length)] +
+                  '" d="' +
+                  SHAPES[Math.floor(rand() * SHAPES.length)] +
+                  '"/></svg></div>';
+                field.insertBefore(particle, ring);
+                var spin = particle.firstChild;
+                var start = at + (0.08 + rand() * 0.12) * k;
+                var scale = 0.55 + rand() * 0.7;
+                var side = rand() < 0.5 ? -1 : 1;
+                gsap.set(particle, { opacity: 0, scale: scale * 0.4 });
+                tl.set(particle, { opacity: 1 }, start);
+                tl.to(particle, { scale: scale, duration: 0.25 * k, ease: "back.out(2)" }, start);
+                tl.to(
+                  particle,
+                  {
+                    physics2D: {
+                      velocity: (2300 + rand() * 800) / k,
+                      angle: -90 + side * (6 + rand() * 18),
+                      gravity: GRAVITY / (k * k),
+                      xProp: "xPercent",
+                      yProp: "yPercent",
+                    },
+                    duration: LIFE * k,
+                  },
+                  start,
+                );
+                tl.to(spin, { rotation: side * (90 + rand() * 140), duration: LIFE * k, ease: "none" }, start);
+                tl.to(particle, { opacity: 0, duration: 0.45 * k, ease: "power1.in" }, start + (LIFE - 0.45) * k);
+              }
+            });
+
+            if (exit === "fade") {
+              tl.to(clip, { opacity: 0, duration: OUT, ease: "power2.in" }, duration - OUT);
+            }
+
+            tl.seek(0);
+            window.__timelines = window.__timelines || {};
+            window.__timelines["reaction-burst"] = tl;
+          })();
+        </script>
+      </div>
+    </template>
+  </body>
+</html>

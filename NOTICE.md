@@ -21,3 +21,10 @@ original header. Most are MIT ([licenses/gl-transitions-MIT.txt](licenses/gl-tra
 `@hyperframes/shader-transitions` (HyperFrames, HeyGen) with Glintmotion's `registerShader`
 addition, under the Apache License 2.0 ([licenses/hyperframes-Apache-2.0.txt](licenses/hyperframes-Apache-2.0.txt)).
 `vendor/hyper-shader/source.json` records the package version and the Glintmotion commit.
+
+## GSAP
+
+The effects in `effects/` load GSAP and its plugins (SplitText, MorphSVGPlugin, DrawSVGPlugin,
+CustomEase, CustomBounce, CustomWiggle, Physics2DPlugin) from the jsDelivr CDN at render time.
+GSAP is not redistributed here; it is used under the
+[GSAP Standard "No Charge" License](https://gsap.com/standard-license) of GreenSock / Webflow.

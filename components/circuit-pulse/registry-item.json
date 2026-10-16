@@ -1,0 +1,60 @@
+{
+  "$schema": "https://hyperframes.heygen.com/schema/registry-item.json",
+  "name": "circuit-pulse",
+  "type": "hyperframes:component",
+  "title": "Circuit Pulse",
+  "description": "Circuit traces draw toward a central chip, then waves of light run along them and light the chip up (GSAP DrawSVG). For AI, data and tech stories. Mount: <div id=\"circuit-pulse-1\" class=\"clip\" data-composition-id=\"circuit-pulse\" data-composition-src=\"compositions/components/circuit-pulse.html\" data-start=\"0\" data-duration=\"4\" data-track-index=\"0\"></div>, with data-variable-values to set the variables.",
+  "tags": [
+    "svg",
+    "line-draw",
+    "tech",
+    "ai",
+    "glow",
+    "gsap-plugin"
+  ],
+  "author": "Glintmotion",
+  "license": "PolyForm-Noncommercial-1.0.0",
+  "files": [
+    {
+      "path": "circuit-pulse.html",
+      "target": "compositions/components/circuit-pulse.html",
+      "type": "hyperframes:snippet"
+    }
+  ],
+  "variables": [
+    {
+      "id": "label",
+      "type": "string",
+      "role": "content",
+      "label": "Label",
+      "description": "Text on the chip.",
+      "default": "AI"
+    },
+    {
+      "id": "caption",
+      "type": "string",
+      "role": "content",
+      "label": "Caption",
+      "description": "Line under the board. Empty hides it.",
+      "default": "Signal in, story out."
+    },
+    {
+      "id": "exit",
+      "type": "enum",
+      "role": "timing",
+      "label": "Exit",
+      "description": "none holds until the cut.",
+      "default": "none",
+      "options": [
+        {
+          "value": "none",
+          "label": "None"
+        },
+        {
+          "value": "fade",
+          "label": "Fade"
+        }
+      ]
+    }
+  ]
+}

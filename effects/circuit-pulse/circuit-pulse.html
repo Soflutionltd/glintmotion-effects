@@ -1,0 +1,253 @@
+<!doctype html>
+<!--
+  circuit-pulse: circuit traces draw themselves toward a central chip, then
+  pulses of light run along them and light the chip up, with GSAP DrawSVGPlugin.
+
+  Variables:
+    - label (string): text on the chip.
+    - caption (string): line under the board; empty hides it.
+    - exit (none | fade, default none).
+
+  Timing: traces draw over 0–1.3s, two waves of pulses arrive at about 2.1s and
+  3.1s, then the board holds. Shorter clips compress everything evenly.
+
+  Drawn in a 1000x1000 viewBox, so nothing is measured. Pulse offsets are a
+  fixed table: every seek shows the same frame.
+-->
+<html
+  lang="en"
+  data-composition-id="circuit-pulse"
+  data-composition-duration="4"
+  data-composition-variables='[
+    { "id": "label", "type": "string", "role": "content", "label": "Label", "description": "Text on the chip.", "default": "AI" },
+    { "id": "caption", "type": "string", "role": "content", "label": "Caption", "description": "Line under the board. Empty hides it.", "default": "Signal in, story out." },
+    { "id": "exit", "type": "enum", "role": "timing", "label": "Exit", "description": "none holds until the cut.", "default": "none", "options": [{ "value": "none", "label": "None" }, { "value": "fade", "label": "Fade" }] }
+  ]'
+>
+  <head>
+    <meta charset="UTF-8" />
+    <title>Circuit Pulse</title>
+  </head>
+  <body>
+    <template>
+      <div id="root" data-composition-id="circuit-pulse" data-duration="4" data-fps="30">
+        <style>
+          #root {
+            position: absolute;
+            inset: 0;
+            overflow: hidden;
+            container-type: size;
+            isolation: isolate;
+            color: var(--fg, #f4f1ea);
+            font-family: var(--font-display, -apple-system, "Helvetica Neue", Helvetica, Arial, sans-serif);
+            pointer-events: none;
+          }
+          .cp-clip {
+            position: absolute;
+            inset: 0;
+            display: grid;
+            place-items: center;
+            background: var(--bg, #0c0d0f);
+          }
+          .cp-stage {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: min(4cqh, 6cqw);
+          }
+          .cp-board {
+            position: relative;
+            width: min(92cqw, 62cqh);
+            aspect-ratio: 1;
+          }
+          .cp-board svg {
+            position: absolute;
+            inset: 0;
+            width: 100%;
+            height: 100%;
+            overflow: visible;
+          }
+          .cp-trace {
+            fill: none;
+            stroke: color-mix(in srgb, var(--fg, #f4f1ea) 22%, transparent);
+            stroke-width: 4;
+            stroke-linecap: round;
+            stroke-linejoin: round;
+          }
+          .cp-pulse {
+            fill: none;
+            stroke: var(--accent, #ff6a3d);
+            stroke-width: 9;
+            stroke-linecap: round;
+            stroke-linejoin: round;
+          }
+          .cp-pulses {
+            filter: drop-shadow(0 0 10px var(--accent, #ff6a3d));
+          }
+          .cp-node {
+            fill: var(--bg, #0c0d0f);
+            stroke: color-mix(in srgb, var(--fg, #f4f1ea) 45%, transparent);
+            stroke-width: 4;
+          }
+          .cp-chip {
+            fill: color-mix(in srgb, var(--fg, #f4f1ea) 6%, var(--bg, #0c0d0f));
+            stroke: color-mix(in srgb, var(--fg, #f4f1ea) 40%, transparent);
+            stroke-width: 4;
+          }
+          .cp-glow {
+            fill: var(--accent, #ff6a3d);
+          }
+          .cp-label {
+            position: absolute;
+            inset: 40%;
+            display: grid;
+            place-items: center;
+            margin: 0;
+            font-size: min(9cqw, 6cqh);
+            font-weight: 800;
+            letter-spacing: -0.03em;
+          }
+          .cp-caption {
+            margin: 0;
+            max-width: 84cqw;
+            font-size: min(6.4cqw, 4.4cqh);
+            font-weight: 700;
+            letter-spacing: -0.02em;
+            text-align: center;
+          }
+        </style>
+
+        <div id="circuit-pulse-clip" class="cp-clip clip" data-start="0" data-duration="4" data-track-index="0">
+          <div class="cp-stage">
+            <div class="cp-board">
+              <svg viewBox="0 0 1000 1000" aria-hidden="true">
+                <g class="cp-traces">
+                  <path class="cp-trace" d="M120,0 V200 L260,340 V430 H400" />
+                  <path class="cp-trace" d="M0,300 H140 L240,400 V470 H400" />
+                  <path class="cp-trace" d="M0,640 H240 L300,580 H400" />
+                  <path class="cp-trace" d="M500,0 V400" />
+                  <path class="cp-trace" d="M880,0 V180 L740,320 V430 H600" />
+                  <path class="cp-trace" d="M1000,360 H860 L760,460 V500 H600" />
+                  <path class="cp-trace" d="M1000,640 H780 L720,580 H600" />
+                  <path class="cp-trace" d="M300,1000 V820 L420,700 V600" />
+                  <path class="cp-trace" d="M500,1000 V600" />
+                  <path class="cp-trace" d="M700,1000 V820 L580,700 V600" />
+                </g>
+                <g class="cp-pulses">
+                  <path class="cp-pulse" d="M120,0 V200 L260,340 V430 H400" />
+                  <path class="cp-pulse" d="M0,300 H140 L240,400 V470 H400" />
+                  <path class="cp-pulse" d="M0,640 H240 L300,580 H400" />
+                  <path class="cp-pulse" d="M500,0 V400" />
+                  <path class="cp-pulse" d="M880,0 V180 L740,320 V430 H600" />
+                  <path class="cp-pulse" d="M1000,360 H860 L760,460 V500 H600" />
+                  <path class="cp-pulse" d="M1000,640 H780 L720,580 H600" />
+                  <path class="cp-pulse" d="M300,1000 V820 L420,700 V600" />
+                  <path class="cp-pulse" d="M500,1000 V600" />
+                  <path class="cp-pulse" d="M700,1000 V820 L580,700 V600" />
+                </g>
+                <g class="cp-nodes">
+                  <circle class="cp-node" cx="400" cy="430" r="12" />
+                  <circle class="cp-node" cx="400" cy="470" r="12" />
+                  <circle class="cp-node" cx="400" cy="580" r="12" />
+                  <circle class="cp-node" cx="600" cy="430" r="12" />
+                  <circle class="cp-node" cx="600" cy="500" r="12" />
+                  <circle class="cp-node" cx="600" cy="580" r="12" />
+                </g>
+                <rect class="cp-glow" x="380" y="380" width="240" height="240" rx="44" />
+                <rect class="cp-chip" x="400" y="400" width="200" height="200" rx="32" />
+              </svg>
+              <p class="cp-label"></p>
+            </div>
+            <p class="cp-caption"></p>
+          </div>
+        </div>
+
+        <script src="https://cdn.jsdelivr.net/npm/gsap@3.14.2/dist/gsap.min.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/gsap@3.14.2/dist/DrawSVGPlugin.min.js"></script>
+        <script>
+          (function () {
+            "use strict";
+            gsap.registerPlugin(DrawSVGPlugin);
+
+            var root = document.getElementById("root");
+            var stage = root.querySelector(".cp-stage");
+            var traces = root.querySelectorAll(".cp-trace");
+            var pulses = root.querySelectorAll(".cp-pulse");
+            var nodes = root.querySelectorAll(".cp-node");
+            var chip = root.querySelector(".cp-chip");
+            var glow = root.querySelector(".cp-glow");
+            var label = root.querySelector(".cp-label");
+            var caption = root.querySelector(".cp-caption");
+            var vars =
+              window.__hyperframes && window.__hyperframes.getVariables
+                ? window.__hyperframes.getVariables()
+                : {};
+
+            label.textContent = vars.label == null ? "AI" : String(vars.label);
+            var captionText = vars.caption == null ? "Signal in, story out." : String(vars.caption);
+            caption.textContent = captionText;
+            if (captionText === "") caption.style.display = "none";
+            var exit = vars.exit === "fade" ? "fade" : "none";
+
+            var BASE = 3.6;
+            var OUT_BASE = exit === "fade" ? 0.45 : 0;
+            var duration = Math.max(0.001, parseFloat(root.dataset.duration || "4"));
+            var k = Math.min(1, duration / (BASE + OUT_BASE));
+            var OUT = OUT_BASE * k;
+            var OFFSETS = [0.0, 0.12, 0.05, 0.2, 0.08, 0.16, 0.02, 0.1, 0.18, 0.06];
+            var TRAVEL = 0.75;
+            var WAVES = [1.2, 2.2];
+
+            gsap.set(traces, { drawSVG: "0%" });
+            gsap.set(pulses, { drawSVG: "0% 0%", opacity: 0 });
+            gsap.set(nodes, { opacity: 0, scale: 0.4, transformOrigin: "50% 50%" });
+            gsap.set(chip, { opacity: 0, scale: 0.86, transformOrigin: "50% 50%" });
+            gsap.set(glow, { opacity: 0, scale: 0.9, transformOrigin: "50% 50%" });
+            gsap.set([label, caption], { opacity: 0 });
+            gsap.set(caption, { yPercent: 40 });
+
+            var tl = gsap.timeline({ paused: true });
+            tl.to(chip, { opacity: 1, scale: 1, duration: 0.5 * k, ease: "back.out(1.5)" }, 0);
+            tl.to(label, { opacity: 1, duration: 0.4 * k, ease: "power1.out" }, 0.25 * k);
+            tl.to(traces, { drawSVG: "100%", duration: 0.9 * k, ease: "power2.inOut", stagger: 0.045 * k }, 0.1 * k);
+            tl.to(nodes, { opacity: 1, scale: 1, duration: 0.3 * k, ease: "back.out(2)", stagger: 0.05 * k }, 0.9 * k);
+            tl.to(caption, { opacity: 1, yPercent: 0, duration: 0.5 * k, ease: "power2.out" }, 0.6 * k);
+
+            WAVES.forEach(function (wave) {
+              var latest = 0;
+              pulses.forEach(function (pulse, index) {
+                var start = (wave + OFFSETS[index]) * k;
+                latest = Math.max(latest, start + TRAVEL * k);
+                tl.set(pulse, { opacity: 1 }, start);
+                tl.to(
+                  pulse,
+                  {
+                    keyframes: [
+                      { drawSVG: "0% 18%", duration: 0.14 * k },
+                      { drawSVG: "82% 100%", duration: (TRAVEL - 0.28) * k },
+                      { drawSVG: "100% 100%", duration: 0.14 * k },
+                    ],
+                    ease: "none",
+                  },
+                  start,
+                );
+                tl.set(pulse, { opacity: 0 }, start + TRAVEL * k);
+              });
+              var arrive = (wave + 0.55) * k;
+              tl.to(glow, { opacity: 0.55, scale: 1.04, duration: 0.25 * k, ease: "power2.out" }, arrive);
+              tl.to(glow, { opacity: 0.18, scale: 1, duration: Math.max(0.1, latest - arrive - 0.25 * k), ease: "power1.inOut" }, arrive + 0.25 * k);
+            });
+
+            if (exit === "fade") {
+              tl.to(stage, { opacity: 0, duration: OUT, ease: "power2.in" }, duration - OUT);
+            }
+
+            tl.seek(0);
+            window.__timelines = window.__timelines || {};
+            window.__timelines["circuit-pulse"] = tl;
+          })();
+        </script>
+      </div>
+    </template>
+  </body>
+</html>

@@ -1,0 +1,89 @@
+{
+  "$schema": "https://hyperframes.heygen.com/schema/registry-item.json",
+  "name": "wiggle-badge",
+  "type": "hyperframes:component",
+  "title": "Wiggle Badge",
+  "description": "An app icon drops in with squash and stretch, a notification badge pops and counts up, then the icon rings like a bell (GSAP CustomBounce and CustomWiggle). Mount: <div id=\"wiggle-badge-1\" class=\"clip\" data-composition-id=\"wiggle-badge\" data-composition-src=\"compositions/components/wiggle-badge.html\" data-start=\"0\" data-duration=\"4\" data-track-index=\"0\"></div>, with data-variable-values to set the variables.",
+  "tags": [
+    "notification",
+    "badge",
+    "icon",
+    "bounce",
+    "wiggle",
+    "gsap-plugin"
+  ],
+  "author": "Glintmotion",
+  "license": "PolyForm-Noncommercial-1.0.0",
+  "files": [
+    {
+      "path": "wiggle-badge.html",
+      "target": "compositions/components/wiggle-badge.html",
+      "type": "hyperframes:snippet"
+    }
+  ],
+  "variables": [
+    {
+      "id": "count",
+      "type": "number",
+      "role": "content",
+      "label": "Count",
+      "description": "Number the badge counts up to.",
+      "default": 12,
+      "min": 1,
+      "max": 999,
+      "step": 1
+    },
+    {
+      "id": "label",
+      "type": "string",
+      "role": "content",
+      "label": "Label",
+      "description": "Pill under the icon. Empty hides it.",
+      "default": "12 new orders"
+    },
+    {
+      "id": "glyph",
+      "type": "enum",
+      "role": "style",
+      "label": "Glyph",
+      "description": "Symbol on the icon.",
+      "default": "bell",
+      "options": [
+        {
+          "value": "bell",
+          "label": "Bell"
+        },
+        {
+          "value": "chat",
+          "label": "Chat"
+        },
+        {
+          "value": "heart",
+          "label": "Heart"
+        },
+        {
+          "value": "cart",
+          "label": "Cart"
+        }
+      ]
+    },
+    {
+      "id": "exit",
+      "type": "enum",
+      "role": "timing",
+      "label": "Exit",
+      "description": "none holds until the cut.",
+      "default": "none",
+      "options": [
+        {
+          "value": "none",
+          "label": "None"
+        },
+        {
+          "value": "fade",
+          "label": "Fade"
+        }
+      ]
+    }
+  ]
+}
